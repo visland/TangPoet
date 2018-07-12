@@ -1,3 +1,24 @@
+# 项目相关信息
+
+## git代码管理相关指令
+
+一般流程：
+```
+                          //开始修改
+git checkout -b branchA
+                          //修改中……
+                          //修改完毕
+git status                //查看修改状态
+git add fileName          //add文件
+git commit -m "log"       //在branchA中commit 
+git checkout branchB      //切换回BranchA父分支branchB
+git pull                  //从远程数据库拉取代码
+git merge branchA         //合并分支
+git push                  //将修改提交到远程数据库
+git branch -d branchA     //将branchA删除
+```
+
+# React相关
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
