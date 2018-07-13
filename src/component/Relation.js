@@ -1,6 +1,8 @@
 import React from 'react';
 import * as d3 from 'd3';
 import relationships from '../data/miserables.json';
+import female from './img/female.png';
+import male from './img/male.png'
 
 export default class Relation extends React.Component {
 	constructor() {
@@ -9,40 +11,54 @@ export default class Relation extends React.Component {
 	}
 
 	componentDidMount() {
-   const svg = d3.select("svg");
-   const width = 700;
-   const height = 600;
-   svg.attr('width', width).attr('height', height);
+    const svg = d3.select("svg");
+    const width = 700;
+    const height = 600;
+    svg.attr('width', width).attr('height', height);
 
-		const color = d3.scaleOrdinal(d3.schemeCategory10);
+    const img_w = 50;
+    const img_h = 50;
+	  const imgs = [female, male];
 
+	  const force = d3.forceManyBody().strength(-230).distanceMax(400)
+                     .distanceMin(160);
 
-		var simulation = d3.forceSimulation()
+		const simulation = d3.forceSimulation()
 		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
-		    .force("charge", d3.forceManyBody())
+		    .force("charge", force)
 		    .force("center", d3.forceCenter(width / 2, height / 2));
 
-		  var link = svg.append("g")
-		      .attr("class", "links")
+		const link = svg.append("g")
+		    .attr("class", "links")
 		    .selectAll("line")
 		    .data(relationships.links)
 		    .enter().append("line")
-		      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+		      .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
+		      .attr("stroke", function(d) { return d.value === 10? 'maroon' : '#999';});
 
-		  var node = svg.append("g")
-		      .attr("class", "nodes")
-		    .selectAll("circle")
+		const nodes = svg.append("g")
+		    .attr("class", "nodes")
+		    .selectAll("g")
 		    .data(relationships.nodes)
-		    .enter().append("circle")
-		      .attr("r", 20)
-		      .attr("fill", function(d) { return color(d.group); })
-		      .call(d3.drag()
-		          .on("start", dragstarted)
-		          .on("drag", dragged)
-		          .on("end", dragended));
+		    .enter().append("g");
+		    	
+		const node = nodes.append("image")
+	      .attr("width", img_w)
+	      .attr("height", img_h)
+	      .attr("xlink:href", function(d) { return imgs[d.group];})
+	      .call(d3.drag()
+	          .on("start", dragstarted)
+	          .on("drag", dragged)
+	          .on("end", dragended))
 
-		  node.append("title")
-		      .text(function(d) { return d.id; });
+		const nodetext = nodes.append("text")
+		      .attr("class", "nodetext")
+		      .attr("dx", 5)
+          .attr("dy", 5)
+		      .text(function(d) { return d.id;});
+
+		  // node.append("title")
+		  //     .text(function(d) { return d.id; });
 
 		  simulation
 		      .nodes(relationships.nodes)
@@ -50,7 +66,10 @@ export default class Relation extends React.Component {
 
 		  simulation.force("link")
 		      .links(relationships.links)
-		      .distance(180);
+		      .distance(170);
+
+		   node.data()[0].x = width / 2;
+		   node.data()[0].y = height / 2;
 
 		  function ticked() {
 		    link
@@ -59,9 +78,11 @@ export default class Relation extends React.Component {
 		        .attr("x2", function(d) { return d.target.x; })
 		        .attr("y2", function(d) { return d.target.y; });
 
-		    node
-		        .attr("cx", function(d) { return d.x; })
-		        .attr("cy", function(d) { return d.y; });
+		    node.attr("x", function(d) { return d.x - img_w / 2; })
+		        .attr("y", function(d) { return d.y - img_h / 2; });
+		   
+		    nodetext.attr("x", function(d) { return d.x - img_w / 2; })
+		        .attr("y", function(d) { return d.y - img_h / 2; });
 		  }
 
 		function dragstarted(d) {
