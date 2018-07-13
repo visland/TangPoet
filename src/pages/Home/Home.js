@@ -23,10 +23,11 @@ export default class Home extends Component {
       </div>
         <div 
           id="relation"
-          style={{
-            position:'relative',
-            // top:'1200px'
-          }}>
+          // style={{
+          //   position:'relative',
+          //   // top:'1200px'
+          // }}
+          >
           <Relation />
         </div>
       </div>

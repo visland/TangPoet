@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './component/Relation.css';
 import Home from './pages/Home/Home.js';
 import registerServiceWorker from './registerServiceWorker';
 
