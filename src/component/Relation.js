@@ -1,5 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
+import relationships from '../data/miserables.json';
 
 export default class Relation extends React.Component {
 	constructor() {
@@ -8,33 +9,32 @@ export default class Relation extends React.Component {
 	}
 
 	componentDidMount() {
-   var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+   const svg = d3.select("svg");
+   const width = 700;
+   const height = 600;
+   svg.attr('width', width).attr('height', height);
 
-		var color = d3.scaleOrdinal(d3.schemeCategory20);
+		const color = d3.scaleOrdinal(d3.schemeCategory10);
+
 
 		var simulation = d3.forceSimulation()
 		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
 		    .force("charge", d3.forceManyBody())
 		    .force("center", d3.forceCenter(width / 2, height / 2));
 
-		d3.json("miserables.json", function(error, graph) {
-		  if (error) throw error;
-
 		  var link = svg.append("g")
 		      .attr("class", "links")
 		    .selectAll("line")
-		    .data(graph.links)
+		    .data(relationships.links)
 		    .enter().append("line")
 		      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
 
 		  var node = svg.append("g")
 		      .attr("class", "nodes")
 		    .selectAll("circle")
-		    .data(graph.nodes)
+		    .data(relationships.nodes)
 		    .enter().append("circle")
-		      .attr("r", 5)
+		      .attr("r", 20)
 		      .attr("fill", function(d) { return color(d.group); })
 		      .call(d3.drag()
 		          .on("start", dragstarted)
@@ -45,11 +45,12 @@ export default class Relation extends React.Component {
 		      .text(function(d) { return d.id; });
 
 		  simulation
-		      .nodes(graph.nodes)
+		      .nodes(relationships.nodes)
 		      .on("tick", ticked);
 
 		  simulation.force("link")
-		      .links(graph.links);
+		      .links(relationships.links)
+		      .distance(180);
 
 		  function ticked() {
 		    link
@@ -62,7 +63,6 @@ export default class Relation extends React.Component {
 		        .attr("cx", function(d) { return d.x; })
 		        .attr("cy", function(d) { return d.y; });
 		  }
-		});
 
 		function dragstarted(d) {
 		  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -85,7 +85,10 @@ export default class Relation extends React.Component {
 	render() {
 		return (
 			<div className='relation'>
-					<svg className='chart'>
+					<svg 
+						className='chart'
+						width="900"
+						height="700">
 					</svg>
 			</div>
 		)

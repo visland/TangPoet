@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
-import Relation from '../../component/Relation';
+import Relation from '../component/Relation';
 
 export default class Home extends Component {
   componentDidMount(){
   }
-  
+
   render() {
     const bg = {
 
@@ -26,10 +26,11 @@ export default class Home extends Component {
       </div>
         <div 
           id="relation"
-          // style={{
-          //   position:'relative',
-          //   // top:'1200px'
-          // }}
+          style={{
+            position:'relative',
+            top:'20px',
+            left:'300px'
+          }}
           >
           <Relation />
         </div>
