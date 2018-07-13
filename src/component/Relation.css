@@ -1,20 +1,9 @@
-body {
-  font-family: sans-serif
-}
-
 .links line {
-  stroke: grey
+  stroke: #999;
+  stroke-opacity: 0.6;
 }
 
-.flag {
-  background: url('https://dl.dropboxusercontent.com/s/yx2q52k9g420tov/flags.png') no-repeat;
-  background-color: #000;
-  position: absolute;
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
 }
-  
-.tooltip {
-  position: absolute;
-  background-color: lightgrey;
-  padding: 10px;
-}
-  

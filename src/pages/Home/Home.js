@@ -3,6 +3,9 @@ import * as d3 from 'd3';
 import Relation from '../../component/Relation';
 
 export default class Home extends Component {
+  componentDidMount(){
+  }
+  
   render() {
     const bg = {
 
