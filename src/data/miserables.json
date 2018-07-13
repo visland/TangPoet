@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {"id": "薛涛", "group": 0},
+    {"id": "韦皋", "group": 3},
+    {"id": "高崇文", "group": 1},
+    {"id": "武元衡", "group": 1},
+    {"id": "王播", "group": 1},
+    {"id": "段文昌", "group": 1},
+    {"id": "李德裕", "group": 1},
+    {"id": "白居易", "group": 2},
+    {"id": "王建", "group": 2},
+    {"id": "刘禹锡", "group": 2},
+    {"id": "元稹", "group": 3}
+  ],
+  "links": [
+    {"source": "薛涛", "target": "韦皋", "value": 10},
+    {"source": "薛涛", "target": "高崇文", "value": 1},
+    {"source": "薛涛", "target": "武元衡", "value": 1},
+    {"source": "薛涛", "target": "王播", "value": 1},
+    {"source": "薛涛", "target": "段文昌", "value": 1},
+    {"source": "薛涛", "target": "李德裕", "value": 1},
+    {"source": "薛涛", "target": "白居易", "value": 1},
+    {"source": "薛涛", "target": "王建", "value": 1},
+    {"source": "薛涛", "target": "元稹", "value": 10},
+    {"source": "元稹", "target": "白居易", "value": 4},
+    {"source": "元稹", "target": "刘禹锡", "value": 1},
+    {"source": "刘禹锡", "target": "王建", "value": 1},
+    {"source": "刘禹锡", "target": "白居易", "value": 1}
+  ]
+}
