@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
-import relationships from '../data/miserables.json';
+import relationships from '../data/xtRelation.json';
 import female from './img/female.png';
 import male from './img/male.png'
 

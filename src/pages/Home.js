@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import * as d3 from 'd3';
 import Relation from '../component/Relation';
+import FemaleCi from '../component/FemaleCiCloud'
 
 export default class Home extends Component {
   componentDidMount(){
   }
 
   render() {
-    const bg = {
-
-    }
     return (
       <div>
       <div id="title-text" style = {{
@@ -21,18 +18,27 @@ export default class Home extends Component {
         textAlign: 'justify'
         }}>
         <p>
-        社交网络
+        test
         </p>
       </div>
         <div 
           id="relation"
           style={{
-            position:'relative',
+            position:'absolute',
             top:'20px',
-            left:'300px'
           }}
           >
           <Relation />
+        </div>
+        <div 
+          id="female-ci"
+          style={{
+            position:'absolute',
+            top:'200px',
+            left:'400px'
+          }}
+          >
+          <FemaleCi />
         </div>
       </div>
     )
