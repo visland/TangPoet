@@ -2,23 +2,36 @@ import React from 'react';
 import * as d3 from 'd3'
 import Js2WordCloud from 'js2wordcloud'
 import shape from './img/shape.png'
-import list from '../data/femaleCi.json'
+import _FC from '../data/femaleCi.json'
+import _FZ from '../data/femaleZi.json'
+import _TZ from '../data/totalZi.json'
 
-export default class FemaleCiCloud extends React.Component {
+import { Radio } from 'antd';
+const RadioGroup = Radio.Group;
+
+export default class CiCloud extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {value: 0};
+    this.ColorRuler = [
+     '#a88462', '#5d513c','#7c4b00','#845a33','#75664d'
+    ]
+    this.ci_freq = [_FC, [_TZ, _FZ]]
   }
 
   static defaultProps = {
-    width: 1000,
-    height: 625,
+    width: 1300,
+    height: 600,
   }
 
-  componentDidMount() {
-    let ColorRuler = [
-      '#979896','#777876','#585957','#3b3c3b','#202120','#000000'
-    ]
+  onRadioChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
+  }
+
+  renderSingleCloud(list, cnt, container){
+    let ColorRuler = this.ColorRuler
     let min_weight = list.map(item=>item[1]).reduce((x,y)=>x<y?x:y)
     let max_weight = list.map(item=>item[1]).reduce((x,y)=>x>y?x:y)  
     let len = ColorRuler.length - 1
@@ -29,11 +42,10 @@ export default class FemaleCiCloud extends React.Component {
       .clamp(true)
       .domain(domain)
       .range(ColorRuler)
-
     const options = {
-        fontFamily: '隶书',
-        minFontSize: 30, 
-        maxFontSize: 130,    
+        fontFamily: 'BiauKai',
+        minFontSize: 30 / cnt, 
+        maxFontSize: 100 / cnt,    
         tooltip: {
             show: true,
             formatter: function(item) {
@@ -47,10 +59,10 @@ export default class FemaleCiCloud extends React.Component {
         rotateRatio: 0
     }
 
-    let wc = new Js2WordCloud(this.container)
+    let wc = new Js2WordCloud(container)
     wc.showLoading({
-        backgroundColor: '#fff',
-        text: '载入中……',
+        backgroundColor: 'rgba(0,0,0,0)',
+        text: '渲染中……',
         effect: 'spin'
     })
     setTimeout(function() {
@@ -62,9 +74,51 @@ export default class FemaleCiCloud extends React.Component {
     }
   }
 
+  renderCLoud(List){
+    this.container.innerHTML = ""
+    List.forEach(()=>{
+      this.container.appendChild(document.createElement("div"))
+    })
+    this.container.style.display = 'flex'
+    this.container.style.flexDirection = 'row'
+    this.container.style.flexWrap = 'wrap'
+    this.container.style.justifyContent = 'spaceAround'
+    this.container.style.alignItems = 'center'
+    List.forEach(((list,i)=>{
+      let container = this.container.childNodes[i]
+      let scale
+      switch(List.length){
+        case 2:
+          container.style.height = "65%"
+          container.style.width = "50%"
+          scale = 0.7
+          break
+      }
+    this.renderSingleCloud(list, List.length*scale, container)
+    }))
+  }
+
+  componentDidMount() {
+    this.renderSingleCloud(this.ci_freq[0], 1, this.container)
+  }
+
+  componentDidUpdate(){
+    switch(this.state.value){
+      case 0: //词频
+        this.renderSingleCloud(this.ci_freq[0], 1, this.container)
+        break
+
+      case 1: //字频
+        this.renderCLoud(this.ci_freq[1])
+        break
+    }
+
+  }
+
   render() {
     return (
-      <div
+      <div>
+        <div
           className="ci-cloud"
           ref={ref => {
               this.container = ref;
@@ -73,8 +127,22 @@ export default class FemaleCiCloud extends React.Component {
             width: this.props.width,
             height: this.props.height
           }}
-      >
-      </div>      
+        >
+        </div> 
+        <div 
+          className="radio"
+          style = {{
+            position:'relative',
+            left: '450px',
+            fontFamily: 'STKaiti',
+            fontSize: '14px',
+          }}> 
+        <RadioGroup onChange={this.onRadioChange} value={this.state.value}>
+          <Radio value={0}>女诗人词频&nbsp;&nbsp;</Radio>
+          <Radio value={1}>总体字频和女诗人字频&nbsp;&nbsp;</Radio>
+        </RadioGroup>
+        </div>    
+      </div>
     );
   }
 }

@@ -26,6 +26,7 @@ export default class Home extends Component {
           style={{
             position:'absolute',
             top:'20px',
+            left:'300px'
           }}
           >
           <Relation />
@@ -34,8 +35,8 @@ export default class Home extends Component {
           id="female-ci"
           style={{
             position:'absolute',
-            top:'200px',
-            left:'400px'
+            top:'500px',
+            left:'100px'
           }}
           >
           <FemaleCi />
