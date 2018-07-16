@@ -57,8 +57,8 @@ export default class Relation extends React.Component {
           .attr("dy", 5)
 		      .text(function(d) { return d.id;});
 
-		  // node.append("title")
-		  //     .text(function(d) { return d.id; });
+		  node.append("title")
+		      .text(function(d) { return d.id; });
 
 		  simulation
 		      .nodes(relationships.nodes)
