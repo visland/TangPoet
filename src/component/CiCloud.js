@@ -24,7 +24,7 @@ export default class CiCloud extends React.Component {
     width: 1300,
     height: 600,
   }
-
+sx
   onRadioChange = (e) => {
     this.setState({
       value: e.target.value,
@@ -70,11 +70,11 @@ export default class CiCloud extends React.Component {
     let _this = this;
     setTimeout(function() {
       if (!_this.hasLoad) _this.hasLoad = true;
-        wc.hideLoading()
-        wc.setOption(options)
+      wc.hideLoading()
+      wc.setOption(options)
     }, this.hasLoad? 100: 1000),
     window.onresize = ()=>{
-        wc.resize()
+      wc.resize()
     }
   }
 

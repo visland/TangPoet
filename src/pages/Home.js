@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Relation from '../component/Relation';
-import CiCloud from '../component/CiCloud'
+import CiCloud from '../component/CiCloud';
+import Title from '../component/Title'
 
 export default class Home extends Component {
   componentDidMount(){
@@ -15,36 +16,27 @@ export default class Home extends Component {
 
     return (
       <div style = { bg } >
-      <div id="title-text" style = {{
-        position:'absolute',
-        top: '50px',
-        left: '200px',
-        width: '340px', 
-        paddingLeft: '500px',
-        textAlign: 'justify'
-        }}>
-        <p>
-        test
-        </p>
-      </div>
-        <div 
-          id="relation"
-          style={{
+       <div id="title-title" style={{
             position:'absolute',
-            top:'20px',
-            left:'300px'
-          }}
-          >
+            top:'10px',
+            height:"1080px",
+            width:"1920px"
+          }}>
+          <Title />
+        </div>
+
+        <div id="relation" style={{
+            position:'absolute',
+            top: '1220px',
+          }}>
           <Relation />
         </div>
-        <div 
-          id="female-ci"
-          style={{
+
+        <div id="ci-cloud" style={{
             position:'absolute',
-            top:'500px',
-            left:'100px'
-          }}
-          >
+            top:'2220px',
+            left:'250px'
+          }}>
           <CiCloud />
         </div>
       </div>

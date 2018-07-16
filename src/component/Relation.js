@@ -11,10 +11,9 @@ export default class Relation extends React.Component {
 	}
 
 	componentDidMount() {
-    const svg = d3.select("svg");
     const width = 700;
     const height = 600;
-    svg.attr('width', width).attr('height', height);
+    d3.select(".chart").attr('width', width).attr('height', height);
 
     const img_w = 50;
     const img_h = 50;
@@ -28,7 +27,7 @@ export default class Relation extends React.Component {
 		    .force("charge", force)
 		    .force("center", d3.forceCenter(width / 2, height / 2));
 
-		const link = svg.append("g")
+		const link = d3.select(".chart").append("g")
 		    .attr("class", "links")
 		    .selectAll("line")
 		    .data(relationships.links)
@@ -36,7 +35,7 @@ export default class Relation extends React.Component {
 		      .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
 		      .attr("stroke", function(d) { return d.value === 10? 'maroon' : '#999';});
 
-		const nodes = svg.append("g")
+		const nodes = d3.select(".chart").append("g")
 		    .attr("class", "nodes")
 		    .selectAll("g")
 		    .data(relationships.nodes)
@@ -106,10 +105,7 @@ export default class Relation extends React.Component {
 	render() {
 		return (
 			<div className='relation'>
-					<svg 
-						className='chart'
-						width="900"
-						height="700">
+					<svg className='chart'>
 					</svg>
 			</div>
 		)
