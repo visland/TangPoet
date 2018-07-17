@@ -2,7 +2,7 @@ import React from 'react'
 import ChartNote from './ChartNote'
 import Title from './Title'
 import ChartPoetry from '../ChartPoetry/ChartPoetry'
-import './style.css'
+// import './style.less'
 import ChooseFun from './Choose'
 
 export default class Part extends React.Component{
