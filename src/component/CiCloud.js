@@ -45,8 +45,8 @@ sx
       .range(ColorRuler)
     const options = {
         fontFamily: 'W9',
-        minFontSize: 30 / cnt, 
-        maxFontSize: 130 / cnt,    
+        minFontSize: 40 / cnt, 
+        maxFontSize: 140 / cnt,    
         tooltip: {
             show: true,
             formatter: function(item) {
