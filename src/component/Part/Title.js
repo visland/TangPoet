@@ -2,9 +2,9 @@ import React from 'react'
 
 export default class Title extends React.Component {
     render() {
-        const { title, titleid } = this.props
+        const { title, titleid, titleStyle } = this.props
         return (
-            <p id={titleid} className="title">{title}</p>
+            <span id={titleid} className={titleStyle}>{title}</span>
         )
     }
 }

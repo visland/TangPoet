@@ -10,9 +10,7 @@ export default class Home extends Component {
 
   render() {
     const bg = {
-      background: `url(${require("../component/img/background.png")})`,
-      width:'1920px',
-      height:'5400px',
+      background: `url(${require("../component/img/background.png")})`
     }
 
     return (
@@ -33,14 +31,13 @@ export default class Home extends Component {
           <Relation />
         </div>
 
-        <div>
-          <PartOne />
-        </div>
+        <PartOne />
+        
 
         <div id="ci-cloud" style={{
             position:'absolute',
             top:'2220px',
-            left:'250px'
+            // left:'250px'
           }}>
           <CiCloud />
         </div>

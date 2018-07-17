@@ -1,7 +1,7 @@
 import React from 'react'
 import DrawArea from './DrawArea'
 import ToolTip from './Tooltip'
-// import ChooseFun from '../Part/Choose'
+import Flow from './Flow'
 
 
 export default class ChartPoetry extends React.Component{
@@ -10,9 +10,7 @@ export default class ChartPoetry extends React.Component{
         this.state = {
             tooltip: { display: false, data: { key: '', name: '', value: ''}},
             status: "女冠",
-            // symbolinfo: { color: "#92CEF7", IsHelight: false, status: "女冠"},
             flowsdata: this.props.flows
-
         }
         
         this.showToolTip = this.showToolTip.bind(this)
@@ -28,28 +26,36 @@ export default class ChartPoetry extends React.Component{
 
     }
     render(){
-        let Pwidth = 220
-        const { enableStackTooltip, btnstatus } = this.props    
+        let bgWidth = 2746
+        let bgHeight = 1372
+        let scalewValue = 0.45 * 0.89
+        let scalehValue = 0.45 * 0.75
+        let areaWidth = bgWidth * scalewValue / 4 
+        let areHeight = bgHeight * scalehValue
+        
+        const { enableStackTooltip, btnstatus, chartStyle } = this.props    
 
         return(
-        <div>
-            {/* <ChooseFun handleClick={this.handleClick} hoverHelight={this.hoverHelight} /> */}
-
+        <div className={chartStyle}>
             <ToolTip 
                 tooltip={this.state.tooltip} 
                 hideToolTip={this.hideToolTip}
             />
-            <svg width="1000" height="400">
+            <svg>
+                <Flow />
                 {this.period.map((item) =>
                     <DrawArea 
                         key={item.index} 
                         flows={this.choosedata(item.time)} 
-                        Pimg={require("./img/" + item.imgsrc + ".jpg")}
-                        transform={`translate(${(item.index - 1 )* Pwidth}, 0)`} 
+                        Pimg={require("./img/" + item.imgsrc + ".png")}
+                        transform={`translate(${(item.index - 1) * areaWidth}, 0)`} 
                         showToolTip={this.showToolTip}
                         isInteractive={enableStackTooltip}
 
                         btnstatus={btnstatus}
+                        areaWidth={areaWidth}
+                        areHeight={areHeight}
+                        
                     />
                 )}                
             </svg>
@@ -57,7 +63,6 @@ export default class ChartPoetry extends React.Component{
         )
     }
     showToolTip(e){       
-        // const i = e.target.getAttribute('data-index')
         let xWin = e.clientX
         let yWin = e.clientY
         this.setState(
@@ -66,12 +71,9 @@ export default class ChartPoetry extends React.Component{
                 data: {
                     key: e.target.getAttribute('data-index'),
                     name: e.target.getAttribute('data-name'),
-                    // info: d.value,
                     value: e.target.getAttribute('data-value')
                 },
                 pos: {
-                    // x: e.target.getAttribute('x'),
-                    // y: e.target.getAttribute('y'),
                     x: xWin,
                     y: yWin
                 }
@@ -79,6 +81,7 @@ export default class ChartPoetry extends React.Component{
         )
     }
     hideToolTip(){
+        console.log("hide")
         this.setState({tooltip: { display: false, data: { key: '', name: '', value: ''}}});
     }
     choosedata(time) {

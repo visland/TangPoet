@@ -1,11 +1,11 @@
 import React from 'react'
-import '../Part/style.css'
+
+import './style/tooltip.less'
 
 export default class Tooltip extends React.Component{
     render(){
         const { tooltip, hideToolTip } = this.props;
         let data = tooltip.data;
-        // let display = tooltip.display?'block':'none';
 
         let visibility = 'hidden';
         let x = 0;
@@ -15,7 +15,6 @@ export default class Tooltip extends React.Component{
 
         if (tooltip.display === true) {
             let position = tooltip.pos;
-
             x = position.x;
             y = position.y;
             visibility = 'visible';
@@ -26,20 +25,23 @@ export default class Tooltip extends React.Component{
         }
         const style = {
             position: "absolute",
-            top: y - height / 2,
-            left: x - width / 2,
-            // display: display
+            top: y - height / 2, 
+            // top: y - height / 2, 
+            left: x - width ,
+            // left: x - width / 2,
         }
         return(
             <div 
-                width={width} height={height} visibility={visibility}
-                className="tooltip"
+                width={width} height={height} 
+                visibility={visibility}
+                
                 onMouseOut={hideToolTip}  
+                className="tooltip"
                 style={style}      
             >
-                <p>{data.name}</p>
-                <p>{data.info}</p>
-                <p>诗作数量：{data.value}</p>
+                <p className="poetry-name">{data.name}</p>
+                <p className="poetry-info">{data.info}</p>
+                <p className="poetry-value">诗作数量：{data.value}</p>
 
             </div>
         )

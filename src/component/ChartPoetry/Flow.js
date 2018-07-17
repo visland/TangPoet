@@ -2,8 +2,7 @@ import React from 'react'
 
 export default class FlowSymbol extends React.Component {
     render(){
-        // const { symcolor } = this.props
-        // let symcolor = "#EBEEFF"
+        // 花瓣边：#EBEEFF 花瓣：#92CEF7
         return(
             <symbol id="sym01" 
                 viewBox="0 0 1024 1024"
