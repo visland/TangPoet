@@ -85,10 +85,6 @@ export default class ChartPoetry extends React.Component{
         let data = this.state.flowsdata.filter(d => d.time === time)
         return data
     }
-    // handleClick(e) {
-    //     let status = e.target.getAttribute('alt')
-    //     this.setState({status: status})
-    // }
-    
+
 
 }

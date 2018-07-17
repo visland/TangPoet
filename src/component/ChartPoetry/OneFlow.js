@@ -6,7 +6,7 @@ export default class OneFlow extends React.Component{
         const { width, xFlow, yFlow, symbol, showToolTip, index, name, value, flowstate, btnstatus } = this.props
 
         let btnTrans = {
-            symcolor: flowstate === btnstatus ? "#92CEF7" : "#EBEEFF",
+            symcolor: btnstatus === flowstate || btnstatus === "全部" ? "#92CEF7" : "#EBEEFF",
             // 动画与css样式
             isAnimate: flowstate === btnstatus ? true : false
 
