@@ -6,12 +6,16 @@ export default class Tooltip extends React.Component{
     render(){
         const { tooltip, hideToolTip } = this.props;
         let data = tooltip.data;
+        // let position = tooltip.pos;
+        
 
         let visibility = 'hidden';
         let x = 0;
         let y = 0;
         let width = 150;
         let height = 150;
+        // let x = position.x;
+        // let y = position.y;
 
         if (tooltip.display === true) {
             let position = tooltip.pos;
@@ -25,8 +29,8 @@ export default class Tooltip extends React.Component{
         }
         const style = {
             position: "absolute",
-            top: y - height / 2, 
             // top: y - height / 2, 
+            top: y - height / 2, 
             left: x - width ,
             // left: x - width / 2,
         }
@@ -36,8 +40,9 @@ export default class Tooltip extends React.Component{
                 visibility={visibility}
                 
                 onMouseOut={hideToolTip}  
+                style={style}
                 className="tooltip"
-                style={style}      
+                      
             >
                 <p className="poetry-name">{data.name}</p>
                 <p className="poetry-info">{data.info}</p>

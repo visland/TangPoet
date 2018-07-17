@@ -23,25 +23,31 @@ export default class Home extends Component {
           }}>
           <Title />
       </div> */}
+        <PartOne />
+
+        <div id="ci-cloud" style={{
+          position: 'relative',
+          paddingTop: 100,
+          // top: '2220px',
+        }}>
+          <CiCloud />
+        </div>
+        
 
         <div id="relation" style={{
-            position:'absolute',
-            top: '1220px',
+            position:'relative',
+            paddingTop: 100,
+            // top: '1220px',
           }}>
           <Relation />
         </div>
 
-        <PartOne />
+      </div>
+
+        
         
 
-        <div id="ci-cloud" style={{
-            position:'absolute',
-            top:'2220px',
-            // left:'250px'
-          }}>
-          <CiCloud />
-        </div>
-      </div>
+        
     )
   }
 }

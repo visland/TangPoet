@@ -17,6 +17,8 @@ export default class DrawArea extends React.Component{
         const Fwide = Flong
         const a = Math.floor( height / Flong )
 
+        // let breData = 60
+
         return (
             <g 
                 width={width} 
@@ -37,6 +39,7 @@ export default class DrawArea extends React.Component{
 
                         btnstatus={btnstatus}
                         flowstate={d.state}
+                        // isBreath={ d.value > breData ? true : false}
                     />
                 )}
             </g>

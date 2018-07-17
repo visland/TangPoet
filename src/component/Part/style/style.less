@@ -1,6 +1,6 @@
 @btn-width: 25px;
 @margin-left: 5px;
-// { left: 5px; top: 10px; };
+
 @pos: relative;
 @posA: absolute;
 
@@ -10,7 +10,7 @@
 @svg-width: @bg-width * 0.85;
 @svg-height: @bg-height * 0.75;
 
-@svg-left: (@bg-width - @svg-width)/2;
+// @svg-left: (@bg-width - @svg-width)/2;
 @svg-top: (@bg-height - @svg-height)/2;
 
 .part-style{
@@ -40,6 +40,7 @@
             height: 100%;
             margin-left: @margin-left;
             cursor: pointer;
+            transition: all 1s ease-out;
             &:hover { transform: scale(1.5) }
         }
     }
@@ -62,7 +63,17 @@
             left: calc(~"50% - " @svg-width/2);
             top: @svg-top;
             use{
-                cursor: pointer;
+                cursor: pointer;                
+                
+            }
+            .breath-flow{
+                transform-origin: 18% 20%;
+                animation: breath-flow 2s ease infinite;
+                @keyframes breath-flow {
+                    0% { transform: scale(1)}
+                    50% { transform: scale(1.1)}
+                    100% { transform: scale(1)}
+                }
             }
         }
     }
@@ -73,3 +84,5 @@
         position: @posA;
     }
 }
+
+

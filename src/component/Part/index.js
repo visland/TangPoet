@@ -18,15 +18,21 @@ export default class Part extends React.Component{
     componentWillMount(){
         this.flows = [
             { "name": "薛涛", "value": 20, "index": 1, "time": "初唐", "state": "女冠" },
+            { "name": "薛涛", "value": 20, "index": 12, "time": "初唐", "state": "女冠" },
+            { "name": "薛涛", "value": 20, "index": 13, "time": "初唐", "state": "女冠" },
             { "name": "薛涛", "value": 10, "index": 2, "time": "初唐", "state": "女冠" },
             { "name": "薛涛", "value": 30, "index": 3, "time": "初唐", "state": "其他" },
             { "name": "薛涛", "value": 20, "index": 4, "time": "盛唐", "state": "其他" },
-            { "name": "薛涛", "value": 20, "index": 5, "time": "盛唐", "state": "女冠" },
+            { "name": "薛涛", "value": 30, "index": 5, "time": "盛唐", "state": "女冠" },
+            { "name": "薛涛", "value": 10, "index": 14, "time": "盛唐", "state": "女冠" },
+            { "name": "薛涛", "value": 20, "index": 15, "time": "盛唐", "state": "女冠" },
             { "name": "薛涛", "value": 20, "index": 6, "time": "盛唐", "state": "士大夫妻女" },
-            { "name": "薛涛", "value": 20, "index": 7, "time": "中唐", "state": "士大夫妻女" },
+            { "name": "薛涛", "value": 10, "index": 7, "time": "中唐", "state": "士大夫妻女" },
             { "name": "薛涛", "value": 30, "index": 8, "time": "中唐", "state": "女冠" },
             { "name": "薛涛", "value": 10, "index": 9, "time": "中唐", "state": "女冠" },
             { "name": "薛涛", "value": 10, "index": 10, "time": "晚唐", "state": "女冠" },
+            { "name": "薛涛", "value": 10, "index": 16, "time": "晚唐", "state": "女冠" },
+            { "name": "薛涛", "value": 10, "index": 17, "time": "晚唐", "state": "女冠" },
             { "name": "薛涛", "value": 30, "index": 11, "time": "晚唐", "state": "女冠" },
         ]       
         this.statusList = [
