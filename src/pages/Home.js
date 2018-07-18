@@ -55,7 +55,13 @@ export default class Home extends Component {
       <div style = { bg } >
       <input id="xxx" type="text" />
       <input id="yyy" type="text" />
-       <div id="title" style={{
+       <div id="title-title" style={{
+            position:'absolute',
+            height:"1080px",
+            width:"1920px"
+          }}>
+          <Title />
+      </div> 
 
         <div id="relation" style={{
             position:'absolute',
@@ -64,7 +70,10 @@ export default class Home extends Component {
           <Relation />
         </div>
 
-        <div>
+        <div id="relation" style={{
+            position:'absolute',
+            top: '1320px',
+          }}>
           <PartOne />
         </div>
 
