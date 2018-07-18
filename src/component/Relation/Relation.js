@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
-import relationships from '../data/xtRelation.json';
+import relationships from '../../data/xtRelation.json';
 import female from './img/female.png';
 import male from './img/male.png'
 
@@ -11,16 +11,16 @@ export default class Relation extends React.Component {
 	}
 
 	componentDidMount() {
-    const width = 700;
-    const height = 600;
+    const width = 1000;
+    const height = 1000;
     d3.select(".chart").attr('width', width).attr('height', height);
 
     const img_w = 50;
     const img_h = 50;
+    const radius = 30;
 	  const imgs = [female, male];
 
-	  const force = d3.forceManyBody().strength(-230).distanceMax(400)
-                     .distanceMin(160);
+	  const force = d3.forceManyBody().strength(-1800);
 
 		const simulation = d3.forceSimulation()
 		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
@@ -41,6 +41,15 @@ export default class Relation extends React.Component {
 		    .data(relationships.nodes)
 		    .enter().append("g");
 		    	
+		const nodeCircle = nodes.append("circle")
+					.attr("calss", "nodeCircle")
+	  			.attr("r", radius)
+	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : '#999';})
+  				.call(d3.drag()
+          	.on("start", dragstarted)
+          	.on("drag", dragged)
+          	.on("end", dragended))
+
 		const node = nodes.append("image")
 	      .attr("width", img_w)
 	      .attr("height", img_h)
@@ -52,8 +61,9 @@ export default class Relation extends React.Component {
 
 		const nodetext = nodes.append("text")
 		      .attr("class", "nodetext")
-		      .attr("dx", 5)
-          .attr("dy", 5)
+		      .attr("dx", 8)
+          .attr("dy", 50)
+          .attr("font-size", 14)
 		      .text(function(d) { return d.id;});
 
 		  node.append("title")
@@ -65,7 +75,7 @@ export default class Relation extends React.Component {
 
 		  simulation.force("link")
 		      .links(relationships.links)
-		      .distance(170);
+		      .distance(150);
 
 		   node.data()[0].x = width / 2;
 		   node.data()[0].y = height / 2;
@@ -77,11 +87,17 @@ export default class Relation extends React.Component {
 		        .attr("x2", function(d) { return d.target.x; })
 		        .attr("y2", function(d) { return d.target.y; });
 
-		    node.attr("x", function(d) { return d.x - img_w / 2; })
+		    node
+		    		.attr("x", function(d) { return d.x - img_w / 2; })
 		        .attr("y", function(d) { return d.y - img_h / 2; });
 		   
-		    nodetext.attr("x", function(d) { return d.x - img_w / 2; })
+		    nodetext
+		    		.attr("x", function(d) { return d.x - img_w / 2; })
 		        .attr("y", function(d) { return d.y - img_h / 2; });
+
+		    nodeCircle
+		    		.attr("cx", function(d) { return d.x; })
+		        .attr("cy", function(d) { return d.y; });
 		  }
 
 		function dragstarted(d) {
@@ -104,9 +120,8 @@ export default class Relation extends React.Component {
 
 	render() {
 		return (
-			<div className='relation'>
-					<svg className='chart'>
-					</svg>
+			<div>
+					<svg className='chart' />
 			</div>
 		)
 	}

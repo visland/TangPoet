@@ -21,6 +21,7 @@
   ],
   "links": [
     {"source": "薛涛", "target": "牛僧儒", "value": 1},
+    {"source": "薛涛", "target": "刘禹锡", "value": 1},
     {"source": "白居易", "target": "牛僧儒", "value": 1},
     {"source": "薛涛", "target": "令狐楚", "value": 1},
     {"source": "薛涛", "target": "裴度", "value": 1},
