@@ -14,51 +14,51 @@ export default class Home extends Component {
     }
 
     //shows coordiante
-    function mousePosition(ev){
-        if(ev.pageX || ev.pageY){
-            return {x:ev.pageX, y:ev.pageY};
-        }
-        return {
-            x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
-            y:ev.clientY + document.body.scrollTop - document.body.clientTop
-        };
-    }
+    // function mousePosition(ev){
+    //     if(ev.pageX || ev.pageY){
+    //         return {x:ev.pageX, y:ev.pageY};
+    //     }
+    //     return {
+    //         x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+    //         y:ev.clientY + document.body.scrollTop - document.body.clientTop
+    //     };
+    // }
 
-    function mouseMove(ev){
-        ev = ev || window.event;
-        var mousePos = mousePosition(ev);
-        document.getElementById('xxx').value = mousePos.x;
-        document.getElementById('yyy').value = mousePos.y;
-    }
-    document.onmousemove = mouseMove;
-    function mousePosition(ev){
-        if(ev.pageX || ev.pageY){
-            return {x:ev.pageX, y:ev.pageY};
-        }
-        return {
-            x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
-            y:ev.clientY + document.body.scrollTop - document.body.clientTop
-        };
-    }
+    // function mouseMove(ev){
+    //     ev = ev || window.event;
+    //     var mousePos = mousePosition(ev);
+    //     document.getElementById('xxx').value = mousePos.x;
+    //     document.getElementById('yyy').value = mousePos.y;
+    // }
+    // document.onmousemove = mouseMove;
+    // function mousePosition(ev){
+    //     if(ev.pageX || ev.pageY){
+    //         return {x:ev.pageX, y:ev.pageY};
+    //     }
+    //     return {
+    //         x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+    //         y:ev.clientY + document.body.scrollTop - document.body.clientTop
+    //     };
+    // }
      
-    function mouseMove(ev){
-        ev = ev || window.event;
-        var mousePos = mousePosition(ev);
-        document.getElementById('xxx').value = mousePos.x;
-        document.getElementById('yyy').value = mousePos.y;
-    }
-    document.onmousemove = mouseMove;
+    // function mouseMove(ev){
+    //     ev = ev || window.event;
+    //     var mousePos = mousePosition(ev);
+    //     document.getElementById('xxx').value = mousePos.x;
+    //     document.getElementById('yyy').value = mousePos.y;
+    // }
+    // document.onmousemove = mouseMove;
 
     return (
       <div style = { bg } >
-       {/* <div id="title-title" style={{
-            position:'absolute',
+       <div id="title-title" style={{
+            position:'relative',
             top:'10px',
             height:"1080px",
             width:"1920px"
           }}>
           <Title />
-      </div> */}
+      </div>
         <PartOne />
 
         <div id="ci-cloud" style={{
