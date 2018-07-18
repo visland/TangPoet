@@ -1,8 +1,23 @@
 @pos: relative;
+@posA: absolute;
 
-.layout{ position: @pos; }
-#title-title, #ci-cloud, #relation{ .layout; }
+.layout{ position: @pos; padding-top: 100px; width: 90%; left: 5%;}
+#ci-cloud, #relation, .footer{ .layout; }
 
 .bg{
 	background-size:cover;
+	background-image: url("background.png");
+	overflow-x: hidden;
+	width: 100%;
+
+}
+
+.footer{
+
+	.footer-icon{}
+	.copyright{
+		width: 50%;
+		position: @pos;
+		// right: 5%;
+	}
 }
