@@ -10,9 +10,7 @@ export default class Home extends Component {
 
   render() {
     const bg = {
-      background: `url(${require("../component/img/background.png")})`,
-      width:'1920px',
-      height:'5400px',
+      background: `url(${require("../component/img/background.png")})`
     }
 
     //shows coordiante
@@ -53,38 +51,39 @@ export default class Home extends Component {
 
     return (
       <div style = { bg } >
-      <input id="xxx" type="text" />
-      <input id="yyy" type="text" />
-       <div id="title-title" style={{
+       {/* <div id="title-title" style={{
             position:'absolute',
+            top:'10px',
             height:"1080px",
             width:"1920px"
           }}>
           <Title />
-      </div> 
+      </div> */}
+        <PartOne />
+
+        <div id="ci-cloud" style={{
+          position: 'relative',
+          paddingTop: 100,
+          // top: '2220px',
+        }}>
+          <CiCloud />
+        </div>
+        
 
         <div id="relation" style={{
-            position:'absolute',
-            top: '1220px',
+            position:'relative',
+            paddingTop: 100,
+            // top: '1220px',
           }}>
           <Relation />
         </div>
 
-        <div id="relation" style={{
-            position:'absolute',
-            top: '1320px',
-          }}>
-          <PartOne />
-        </div>
-
-        <div id="ci-cloud" style={{
-            position:'absolute',
-            top:'2220px',
-            left:'250px'
-          }}>
-          <CiCloud />
-        </div>
       </div>
+
+        
+        
+
+        
     )
   }
 }

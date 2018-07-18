@@ -2,9 +2,9 @@ import React from 'react'
 
 export default class ChartNote extends React.Component{
     render(){
-        const { chartnote } = this.props
+        const { chartnote, noteStyle } = this.props
         return(
-            <p className="chartnote">{chartnote}</p>
+            <p className={noteStyle}>{chartnote}</p>
         )
     }
 }
