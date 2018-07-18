@@ -15,14 +15,9 @@ export default class Home extends Component {
     }
 
     return (
-      <div style = { bg } >
-       <div id="title-title" style={{
-            top:'10px',
-            height:"1080px",
-            width:"1920px"
-          }}>
-          <LeadIn />
-      </div>
+      <div className="bg"
+      style = { bg } >
+        <LeadIn />
         <PartOne />
 
         <div id="ci-cloud" style={{
@@ -31,7 +26,6 @@ export default class Home extends Component {
           <CiCloud />
         </div>
         
-
         <div id="relation" style={{
             paddingTop: 100,
           }}>
@@ -39,9 +33,6 @@ export default class Home extends Component {
         </div>
 
       </div>
-
-        
-        
 
         
     )

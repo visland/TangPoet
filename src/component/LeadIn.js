@@ -15,8 +15,7 @@ export default class LeadIn extends React.Component {
 								  [[842, 198], [988, 331], [1254, 469],[1583, 853]],
 								  [[16, 620], [161, 873], [364, 980]],
 								  [[1409, 89], [1594, 284],[1839, 590]],
-								  [[449, 103], [872, 258],[1232, 379]]
-									];
+								  [[449, 103], [872, 258],[1232, 379]]];
 	}
 
 	componentDidMount() {
@@ -24,8 +23,8 @@ export default class LeadIn extends React.Component {
 									 .append("image")
 									 .attr("x", 0)
 									 .attr("y", 60)
-									 .attr("height", 528 / 2)
-									 .attr("width", 658 / 2)
+									 .attr("height", 528 / 1.6)
+									 .attr("width", 658 / 1.6)
 									 .attr("xlink:href", tree)
 	}
 
@@ -33,9 +32,10 @@ render() {
 	return (
 		<div>
 				<svg className='subTitle'
-					width='1920px'
-					height='1080px'>
-
+					width='100%'
+					height='100%'
+					viewBox="0 0 1920 1080"
+					preserveAspectRatio="xMinYMin meet">
           <image className='ink'
           	xlinkHref={ ink } 
           	height='700' 
@@ -79,7 +79,7 @@ render() {
           <text className='appendText'>
             <animate attributeName="opacity" 
 	        		from="0" to="1" 
-	        		begin="1s" dur="6s" 
+	        		begin="1s" dur="5s" 
 	        		fill="freeze"
 	        		repeatCount="0" />
             <tspan           	
@@ -104,7 +104,7 @@ render() {
           	</ tspan>
           </text>
 
-					<image xlinkHref={ flower } height='80' width='78'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[0]) }
 							dur="20s" 
@@ -117,7 +117,7 @@ render() {
 	        		repeatCount="0" />
 					</ image>
 
-					<image xlinkHref={ flower } height='80' width='78'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[1]) }
 							dur="20s" 
@@ -130,7 +130,7 @@ render() {
 	        		repeatCount="0" />
 					</ image>
 
-					<image xlinkHref={ flower } height='80' width='78'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[2]) }
 							dur="20s" 
@@ -143,7 +143,7 @@ render() {
 	        		repeatCount="0" />
 					</ image>
 
-					<image xlinkHref={ flower } height='80' width='78'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[3]) }
 							dur="20s" 
@@ -156,7 +156,7 @@ render() {
 	        		repeatCount="0" />
 					</ image>
 
-					<image xlinkHref={ flower } height='80' width='78'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[4]) }
 							dur="20s" 
@@ -169,7 +169,7 @@ render() {
 	        		repeatCount="0" />
 					</ image>
 
-					<image xlinkHref={ flower } height='80' width='78'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[5]) }
 							dur="20s" 
