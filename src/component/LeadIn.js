@@ -19,13 +19,13 @@ export default class LeadIn extends React.Component {
 	}
 
 	componentDidMount() {
-		const drawTree = d3.select(".subTitle")
-									 .append("image")
-									 .attr("x", 0)
-									 .attr("y", 60)
-									 .attr("height", 528 / 1.6)
-									 .attr("width", 658 / 1.6)
-									 .attr("xlink:href", tree)
+		d3.select(".subTitle")
+		 .append("image")
+		 .attr("x", 0)
+		 .attr("y", 60)
+		 .attr("height", 528 / 1.6)
+		 .attr("width", 658 / 1.6)
+		 .attr("xlink:href", tree)
 	}
 
 render() {
