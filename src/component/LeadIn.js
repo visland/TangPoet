@@ -5,7 +5,7 @@ import flower from './img/flower.png'
 import tree from './img/redTree.png'
 import ink from './img/ink.png'
 
-export default class Title extends React.Component {
+export default class LeadIn extends React.Component {
 	constructor() {
 	 	super();
 		this.state = {};

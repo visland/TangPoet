@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Relation from '../component/Relation';
 import CiCloud from '../component/CiCloud';
-import Title from '../component/Title'
+import LeadIn from '../component/LeadIn'
 import PartOne from '../component/Part'
 
 export default class Home extends Component {
@@ -57,14 +57,13 @@ export default class Home extends Component {
             height:"1080px",
             width:"1920px"
           }}>
-          <Title />
+          <LeadIn />
       </div>
         <PartOne />
 
         <div id="ci-cloud" style={{
           position: 'relative',
           paddingTop: 100,
-          // top: '2220px',
         }}>
           <CiCloud />
         </div>
@@ -73,7 +72,6 @@ export default class Home extends Component {
         <div id="relation" style={{
             position:'relative',
             paddingTop: 100,
-            // top: '1220px',
           }}>
           <Relation />
         </div>
