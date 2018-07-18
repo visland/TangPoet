@@ -2,7 +2,7 @@ import React from 'react'
 
 export default class ChooseBtn extends React.Component{
     render(){
-        const { btnpic, wpic, hpic, handleClick, hoverHelight, alt } = this.props
+        const { btnpic, wpic, hpic, handleClick, hoverHelight, alt, chobtnStyle } = this.props
 
         return(
             <img
@@ -11,6 +11,7 @@ export default class ChooseBtn extends React.Component{
                 height={hpic}
                 onClick={handleClick}
                 onMouseOver={hoverHelight}
+                className={chobtnStyle}
             >
 
             </img>

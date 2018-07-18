@@ -1,0 +1,88 @@
+@btn-width: 25px;
+@margin-left: 5px;
+
+@pos: relative;
+@posA: absolute;
+
+@bg-width: 2746px * 0.45;
+@bg-height: 1372px * 0.45;
+
+@svg-width: @bg-width * 0.85;
+@svg-height: @bg-height * 0.75;
+
+// @svg-left: (@bg-width - @svg-width)/2;
+@svg-top: (@bg-height - @svg-height)/2;
+
+.part-style{
+    left: 5%;
+    width: 90%;
+    position: @pos;
+    padding-top: 3%;
+
+    
+    .title-style{
+        width: 30%;
+        left: 12%;
+        position: @posA;
+        font-size: 1.5em;
+    }
+
+    .choose-style{
+        width: 20%;
+        right: 5%;
+        position: @posA;
+        height: @btn-width;
+        z-index: 6;
+
+        .chobtn-style{
+            border-radius: 50%;
+            width: @btn-width;
+            height: 100%;
+            margin-left: @margin-left;
+            cursor: pointer;
+            transition: all 1s ease-out;
+            &:hover { transform: scale(1.5) }
+        }
+    }
+
+    .chart-style{
+        width: 100%;
+        height: 600px;
+        left: 0;
+        position: @pos;
+
+        background-image: url("bg.png");
+        background-size: @bg-width @bg-height;
+        background-repeat: no-repeat;
+        background-position-x: center;
+
+        svg{
+            width: @svg-width;
+            height: @svg-height;
+            position: @pos;
+            left: calc(~"50% - " @svg-width/2);
+            top: @svg-top;
+            use{
+                cursor: pointer;                
+                
+            }
+            .breath-flow{
+                transform-origin: 18% 20%;
+                animation: breath-flow 2s ease infinite;
+                @keyframes breath-flow {
+                    0% { transform: scale(1)}
+                    50% { transform: scale(1.1)}
+                    100% { transform: scale(1)}
+                }
+            }
+        }
+    }
+
+    .note-style{
+        width: 75%;
+        right: 5%;
+        position: @posA;
+    }
+}
+
+

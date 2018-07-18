@@ -1,15 +1,14 @@
 import React from 'react'
 import OneFlow from './OneFlow'
-import Flow from './Flow'
 import * as d3 from 'd3'
 import Period from './Period'
 
 export default class DrawArea extends React.Component{
     render(){
-        const { flows, transform, className, Pimg, showToolTip, btnstatus } = this.props
+        const { flows, transform, Pimg, showToolTip, btnstatus, areaWidth, areHeight } = this.props
         
-        const width = 200
-        const height = 400
+        const width = areaWidth * 0.8
+        const height = areHeight
         
         const MaxY = d3.max(flows, d => d.value)
         const MaxX = MaxY
@@ -18,15 +17,15 @@ export default class DrawArea extends React.Component{
         const Fwide = Flong
         const a = Math.floor( height / Flong )
 
+        // let breData = 60
+
         return (
             <g 
                 width={width} 
                 height={height}
-                className={className}
                 transform={transform}            
             >    
-                <Period Pimg={Pimg}/>
-                <Flow />
+                <Period Pimg={Pimg} />
                 {flows.map((d, i) =>
                     <OneFlow
                         key={i} width={d.value}
@@ -40,6 +39,7 @@ export default class DrawArea extends React.Component{
 
                         btnstatus={btnstatus}
                         flowstate={d.state}
+                        // isBreath={ d.value > breData ? true : false}
                     />
                 )}
             </g>
