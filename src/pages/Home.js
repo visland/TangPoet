@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Relation from '../component/Relation';
 import CiCloud from '../component/CiCloud';
 import Title from '../component/Title'
+import PartOne from '../component/Part'
 
 export default class Home extends Component {
   componentDidMount(){
@@ -55,18 +56,16 @@ export default class Home extends Component {
       <input id="xxx" type="text" />
       <input id="yyy" type="text" />
        <div id="title" style={{
-            position:'absolute',
-            height:"1080px",
-            width:"1920px"
-          }}>
-          <Title />
-        </div>
 
         <div id="relation" style={{
             position:'absolute',
             top: '1220px',
           }}>
           <Relation />
+        </div>
+
+        <div>
+          <PartOne />
         </div>
 
         <div id="ci-cloud" style={{
