@@ -8,7 +8,7 @@ export default class DrawArea extends React.Component{
         const { flows, transform, Pimg, showToolTip, btnstatus, areaWidth, areHeight } = this.props
         
         const width = areaWidth * 0.8
-        const height = areHeight
+        const height = areHeight * 0.9
         
         const MaxY = d3.max(flows, d => d.value)
         const MaxX = MaxY

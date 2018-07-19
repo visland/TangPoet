@@ -25,23 +25,22 @@ export default class ChartPoetry extends React.Component{
         ]
 
     }
-    render(){
-        let bgWidth = 2746
-        let bgHeight = 1372
-        let scalewValue = 0.45 * 0.89
-        let scalehValue = 0.45 * 0.75
-        let areaWidth = bgWidth * scalewValue / 4 
-        let areHeight = bgHeight * scalehValue
-        
-        const { enableStackTooltip, btnstatus, chartStyle } = this.props    
+    render(){    
+        const { enableStackTooltip, btnstatus, chartStyle, chartLayout, svgLayout } = this.props  
+
+        let svgWidth = svgLayout.width,
+            svgHeight = svgLayout.height
+
+        let areaWidth = svgWidth / 4,
+            areHeight = svgHeight
 
         return(
-        <div className={chartStyle}>
+        <div className={chartStyle} style={chartLayout}>
             <ToolTip 
                 tooltip={this.state.tooltip} 
                 hideToolTip={this.hideToolTip}
             />
-            <svg>
+            <svg style={svgLayout}>
                 <Flow />
                 {this.period.map((item) =>
                     <DrawArea 

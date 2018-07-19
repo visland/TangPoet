@@ -3,6 +3,7 @@ import ChartNote from './ChartNote'
 import Title from './Title'
 import ChartPoetry from '../ChartPoetry/ChartPoetry'
 import ChooseFun from './Choose'
+import AllPoetry from '../AllPoetry'
 
 import './style/style.less'
 
@@ -42,29 +43,63 @@ export default class Part extends React.Component{
             { "state": "民间女子", "picsrc": "3", "chartnote": "民间女子" },
             { "state": "其他", "picsrc": "4", "chartnote": "其他" },
         ]
-        this.info = {
-            "title": "唐代女诗人作品数",
-        }
+        this.info =[ 
+            { "index": "1", "title": "唐代所有诗人", "chartnote": "唐代所有诗人" },
+            { "index": "2", "title": "唐代女诗人作品数" },
+        ]
     }
     render(){        
+        let screenHeight = document.documentElement.clientHeight,
+            screenWidth = document.documentElement.clientWidth
+
+        let chartHeight = screenHeight * 0.75,
+            chartWidth = screenWidth * 0.85
+
+        let bgWidth = 2746,
+            bgHeight = 1372,
+            boxWidth = 2355,
+            boxHeight = 1054,
+
+            hboxScale = boxHeight / bgHeight,
+            wboxScale = boxWidth / bgWidth;
+
+        let svgWidth = chartWidth * wboxScale,
+            svgHeight = chartHeight * hboxScale
+        
+        let margin = { left: (chartWidth - svgWidth) / 2, top: (chartHeight - svgHeight) / 2}
+
+        let screenStyle = { height: screenHeight },
+            Layout = { height: chartHeight },
+            svgLayout = { height: svgHeight, width: svgWidth, left: margin.left, top: margin.top} 
+
         return(
-            <div id="part1" className="part-style">
-                <Title title={this.info.title} titleStyle="title-style" />
-                <ChooseFun 
-                    handleClick={this.handleClick} hoverHelight={this.hoverHelight} 
-                    statusList={this.statusList}
-                    chooseStyle="choose-style"
-                    chobtnStyle="chobtn-style"
+            <div id="part1">
+                <div className="part-style" style={screenStyle}>
+                    <Title title={this.info[0].title} titleLayout={svgLayout}/>
+                    <AllPoetry bigChartStyle="chart-style" dotLayout={Layout} svgLayout={svgLayout}/>
+                    <ChartNote chartnote={this.info[0].chartnote} noteStyle="note-style" />
+                </div>
 
-                />
+                <div className="part-style" style={screenStyle}>
+                    <Title title={this.info[1].title} titleLayout={svgLayout}/>
+                    <ChooseFun 
+                        handleClick={this.handleClick} hoverHelight={this.hoverHelight} 
+                        statusList={this.statusList}
+                        chooseStyle="choose-style"
+                        chobtnStyle="chobtn-style"
+                        choLayout={svgLayout}
+                    />
 
-                <ChartPoetry 
-                    flows={this.flows} 
-                    enableStackTooltip="true" 
-                    btnstatus={this.state.status}
-                    chartStyle="chart-style"
-                />
-                <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} noteStyle="note-style" />
+                    <ChartPoetry 
+                        flows={this.flows} 
+                        enableStackTooltip="true" 
+                        btnstatus={this.state.status}
+                        chartStyle="chart-style"
+                        chartLayout={Layout}
+                        svgLayout={svgLayout}
+                    />
+                    <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} noteStyle="note-style" />
+                </div>
             </div>
         )
     }
