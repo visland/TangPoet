@@ -13,6 +13,7 @@ export default class RelationText extends React.Component {
 			.attr("x", 10)
 			.attr("y", 50)
 			.attr("width", 560)
+			.attr("height", 933) 
 			.attr("xlink:href", frame)
 
 		d3.select('.framePic')
@@ -28,6 +29,7 @@ export default class RelationText extends React.Component {
 			.attr("x", 10)
 			.attr("y", 50)
 			.attr("width", 560)
+			.attr("height", 933) 
 			.attr("xlink:href", frame)
 
 		d3.select('.framePic')

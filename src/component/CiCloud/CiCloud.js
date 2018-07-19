@@ -1,11 +1,11 @@
 import React from 'react';
 import * as d3 from 'd3'
-import '../index.css'
+import '../../index.css'
 import Js2WordCloud from 'js2wordcloud'
 import shape from './img/shape.png'
-import _FC from '../data/femaleCi.json'
-import _FZ from '../data/femaleZi.json'
-import _TZ from '../data/totalZi.json'
+import _FC from './data/femaleCi.json'
+import _FZ from './data/femaleZi.json'
+import _TZ from './data/totalZi.json'
 import { Radio } from 'antd';
 const RadioGroup = Radio.Group;
 
@@ -46,7 +46,7 @@ sx
     const options = {
         fontFamily: 'W9',
         minFontSize: 40 / cnt, 
-        maxFontSize: 140 / cnt,    
+        maxFontSize: 120 / cnt,    
         tooltip: {
             show: true,
             formatter: function(item) {
@@ -121,15 +121,20 @@ sx
 
   render() {
     return (
-      <div>
+      <div  style={{
+            width: '100%',
+            height: '100%'
+          }}>
         <div
-          className="ci-cloud"
+          className="ciCloud"
           ref={ref => {
               this.container = ref;
           }}
           style={{
-            width: this.props.width,
-            height: this.props.height
+            width: '90%',
+            height: '90%',            
+            position:'relative',
+            left: '5%',
           }}
         >
         </div> 
@@ -137,9 +142,8 @@ sx
           className="radio"
           style = {{
             position:'relative',
-            left: '450px',
-            fontFamily: 'STKaiti',
-            fontSize: '14px',
+            left: '40%',
+            fontSize: '18px',
           }}> 
         <RadioGroup onChange={this.onRadioChange} value={this.state.value}>
           <Radio value={0}>女诗人词频&nbsp;&nbsp;</Radio>

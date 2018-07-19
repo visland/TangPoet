@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Relation from '../component/Relation/Relation';
-import CiCloud from '../component/CiCloud';
-import LeadIn from '../component/LeadIn'
+import CiCloud from '../component/CiCloud/CiCloud';
+import LeadIn from '../component/LeadIn/LeadIn'
 import PartOne from '../component/Part'
 import Title from '../component/Title'
 import Footer from '../component/Footer'

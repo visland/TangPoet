@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3'
-import '../index.css'
+import './style/LeadIn.css'
 import flower from './img/flower.png'
 import tree from './img/redTree.png'
 import ink from './img/ink.png'

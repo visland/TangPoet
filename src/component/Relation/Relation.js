@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
-import relationships from '../../data/xtRelation.json';
+import relationships from './data/xtRelation.json';
 import ink from './img/ink.png';
 import cloud from './img/cloud.png';
 import c from './img/c.png';
@@ -146,39 +146,45 @@ export default class Relation extends React.Component {
 								preserveAspectRatio="xMinYMin meet">
 					
 					<image 
-						x='1500'
-						y='-60'
+						x='1520'
+						y='-320'
 						width='20%'
+						height='100%'
 						xlinkHref= { ink } />
 
 					<image 
 						x='600'
 						y='160'
 						width='14%'
+						height='14%'
 						xlinkHref= { cloud } />
 
 					<image 
 						x='620'
 						y='660'
 						width='16%'
+						height='16%'
 						xlinkHref= { cloud } />
 
 					<image 
 						x='1400'
 						y='460'
 						width='11%'
+						height='11%'
 						xlinkHref= { cloud } />
 
 					<image 
 						x='520'
 						y='560'
 						width='12%'
+						height='12%'
 						xlinkHref= { c } />
 
 					<image 
 						x='1520'
 						y='860'
 						width='12%'
+						height='12%'
 						xlinkHref= { c } />
 
 
