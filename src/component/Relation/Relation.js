@@ -1,31 +1,39 @@
 import React from 'react';
 import * as d3 from 'd3';
 import relationships from '../../data/xtRelation.json';
+import ink from './img/ink.png';
+import cloud from './img/cloud.png';
+import c from './img/c.png';
 import RelationText from './RelationText';
 import female from './img/female.png';
-import male from './img/male.png'
+import male from './img/male.png';
+import './style/Relation.css'
 
 export default class Relation extends React.Component {
 	constructor() {
 	 	super();
-		this.state = {};
+		this.state = {
+			des: '点击男诗人名字获取关系信息',
+			name: ''
+		};
 	}
 
 	componentDidMount() {
     const width = 1920;
     const height = 1080;
-
+    const center_x = width / 1.8;
+    const center_y = height / 2;
     const img_w = 50;
     const img_h = 50;
     const radius = 30;
 	  const imgs = [female, male];
-
 	  const force = d3.forceManyBody().strength(-2400);
+	  this.setState({name: relationships.nodes[0].id});
 
 		const simulation = d3.forceSimulation()
 		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
 		    .force("charge", force)
-		    .force("center", d3.forceCenter(width / 2, height / 2));
+		    .force("center", d3.forceCenter(center_x, center_y));
 
 		const link = d3.select(".chart").append("g")
 		    .attr("class", "links")
@@ -59,10 +67,11 @@ export default class Relation extends React.Component {
 
 		const nodeText = nodes.append("text")
 		      .attr("class", "nodetext")
-		      .attr("dx", -8)
-          .attr("dy", -10)
+		      .attr("dx", 0)
+          .attr("dy", 8)
           .attr("font-size", 20)
           .attr("fill", 'white')
+          .attr("text-anchor", "middle")
 		      .text(function(d) { return d.id;});
 
 		  nodes.append("title")
@@ -76,12 +85,13 @@ export default class Relation extends React.Component {
 		      .links(relationships.links)
 		      .distance(180);
 
-		   nodeCircle.data()[0].x = width / 2;
-		   nodeCircle.data()[0].y = height / 2;
+		   nodeCircle.data()[0].x = center_x;
+		   nodeCircle.data()[0].y = center_y;
 
 		  /* Interactions. */
 			nodes.on('click', (n) => {
 			    nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
+			    this.setState({des : n.id})
 			})
 
 		  /* Load positions of each element. */
@@ -97,8 +107,8 @@ export default class Relation extends React.Component {
 		    //     .attr("y", function(d) { return d.y - img_h / 2; });
 		   
 		    nodeText
-		    		.attr("x", function(d) { return d.x - radius / 2; })
-		        .attr("y", function(d) { return d.y + radius / 2; });
+		    		.attr("x", function(d) { return d.x; })
+		        .attr("y", function(d) { return d.y; });
 
 		    nodeCircle
 		    		.attr("cx", function(d) { return d.x; })
@@ -125,6 +135,8 @@ export default class Relation extends React.Component {
   }
 
 	render() {
+		const text_y = 400;
+
 		return (
 			<div>
 					<svg className='chart'
@@ -132,8 +144,77 @@ export default class Relation extends React.Component {
 								height='100%'
 								viewBox='0 0 1920 1080'
 								preserveAspectRatio="xMinYMin meet">
-					<RelationText />
-					</ svg>
+					
+					<image 
+						x='1500'
+						y='-60'
+						width='20%'
+						xlinkHref= { ink } />
+
+					<image 
+						x='600'
+						y='160'
+						width='14%'
+						xlinkHref= { cloud } />
+
+					<image 
+						x='620'
+						y='660'
+						width='16%'
+						xlinkHref= { cloud } />
+
+					<image 
+						x='1400'
+						y='460'
+						width='11%'
+						xlinkHref= { cloud } />
+
+					<image 
+						x='520'
+						y='560'
+						width='12%'
+						xlinkHref= { c } />
+
+					<image 
+						x='1520'
+						y='860'
+						width='12%'
+						xlinkHref= { c } />
+
+
+					<RelationText des={ this.state.des }/>
+					
+					<text className='femaleName'
+						x='1700'
+						y='80'>
+						{ this.state.name }
+					</text>
+
+					<text className='description'>
+            <tspan           	
+          		x="1800" 
+          		y= { text_y }>历观唐以雅道奖士类，而闺阁英秀，
+          	</ tspan>
+          	<tspan           	
+          		x="1750" 
+          		y={ text_y }>亦能熏染，锦心绣口，蕙情兰性，足可尚矣。
+          	</ tspan>
+            <tspan           	
+          		x="1700" 
+          		y={ text_y }>中间如李季兰、鱼玄机，
+          	</tspan>
+            <tspan           	
+          		x="1650" 
+          		y={ text_y }>皆跃出方外，修清静之教，陶写幽怀，留连光景，
+          	</tspan>
+          	<tspan           	
+          		x="1600" 
+          		y={ text_y }>逍遥闲暇之功，无非云水之念。
+          	</ tspan>
+          </text>
+
+					
+					</svg>
 			</div>
 		)
 	}
