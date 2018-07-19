@@ -23,10 +23,6 @@ export default class Relation extends React.Component {
     const height = 1080;
     const center_x = width / 1.8;
     const center_y = height / 2;
-    const img_w = 50;
-    const img_h = 50;
-    const radius = 30;
-	  const imgs = [female, male];
 	  const force = d3.forceManyBody().strength(-2400);
 	  this.setState({name: relationships.nodes[0].id});
 

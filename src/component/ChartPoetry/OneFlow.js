@@ -3,7 +3,7 @@ import React from 'react'
 export default class OneFlow extends React.Component{
 
     render(){
-        const { width, xFlow, yFlow, symbol, showToolTip, index, name, value, flowstate, btnstatus } = this.props
+        const { width, xFlow, yFlow, symbol, showToolTip, index, name, value, flowstate, btnstatus, maxX } = this.props
         let breData =20
         let btnTrans = {
             symcolor: btnstatus === flowstate || btnstatus === "全部" ? "#92CEF7" : "#EBEEFF",
@@ -14,6 +14,9 @@ export default class OneFlow extends React.Component{
         }
 
         return(
+            <g
+                // x={xFlow} y={yFlow} 
+            >
                 <use 
                     xlinkHref={symbol}
                     x={xFlow} y={yFlow} 
@@ -25,8 +28,14 @@ export default class OneFlow extends React.Component{
                     stroke="#EBEEFF"
                     strokeWidth="3"
                     fill={btnTrans.symcolor}
-                className={ btnTrans.isBreath ? "breath-flow" : ""}
+                    className={ btnTrans.isBreath ? "breath-flow" : ""}
                 />
+                <text 
+                    x={ xFlow + width - 15} 
+                    y={ yFlow + width * 2 + 15 }
+                >{name}
+                </text>
+            </g>
         )
     }
 }

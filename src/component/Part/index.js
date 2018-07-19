@@ -4,6 +4,7 @@ import Title from './Title'
 import ChartPoetry from '../ChartPoetry/ChartPoetry'
 import ChooseFun from './Choose'
 import AllPoetry from '../AllPoetry'
+import Aside from './Aside'
 
 import './style/style.less'
 
@@ -37,16 +38,21 @@ export default class Part extends React.Component{
             { "name": "薛涛", "value": 30, "index": 11, "time": "晚唐", "state": "女冠" },
         ]       
         this.statusList = [
-            { "state": "全部", "picsrc": "0", "chartnote": "元人辛文房《唐才子传》：历观唐以雅道奖士类，而闺阁英秀，亦能熏染，锦心绣口，蕙情兰性，足可尚矣。" },
-            { "state": "女冠诗人", "picsrc": "1", "chartnote": "女冠诗人" },
-            { "state": "士大夫妻女", "picsrc": "2", "chartnote": "士大夫妻女" },
-            { "state": "民间女子", "picsrc": "3", "chartnote": "民间女子" },
-            { "state": "其他", "picsrc": "4", "chartnote": "其他" },
+            { "state": "全部", "symbol":"#sym01", "picsrc": "0", "chartnote": "元人辛文房《唐才子传》：历观唐以雅道奖士类，而闺阁英秀，亦能熏染，锦心绣口，蕙情兰性，足可尚矣。" },
+            { "state": "女冠", "symbol":"#sym01", "picsrc": "1", "chartnote": "女冠诗人" },
+            { "state": "士大夫妻女", "symbol":"#sym01", "picsrc": "2", "chartnote": "士大夫妻女" },
+            { "state": "民间女子", "symbol":"#sym01", "picsrc": "3", "chartnote": "民间女子" },
+            { "state": "其他", "symbol":"#sym01", "picsrc": "4", "chartnote": "其他" },
         ]
         this.info =[ 
             { "index": "1", "title": "唐代所有诗人", "chartnote": "唐代所有诗人" },
             { "index": "2", "title": "唐代女诗人作品数" },
         ]
+        this.aside = [
+            { "src": "1", "style": { right: "-9%", top: "5%" } },
+            { "src": "1", "style": { left: "-9%", bottom: "10%"}}
+        ]
+        console.log(this.aside[1].style)
     }
     render(){        
         let screenHeight = document.documentElement.clientHeight,
@@ -75,12 +81,14 @@ export default class Part extends React.Component{
         return(
             <div id="part1">
                 <div className="part-style" style={screenStyle}>
+                    <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/>
                     <Title title={this.info[0].title} titleLayout={svgLayout}/>
                     <AllPoetry bigChartStyle="chart-style" dotLayout={Layout} svgLayout={svgLayout}/>
                     <ChartNote chartnote={this.info[0].chartnote} noteStyle="note-style" />
                 </div>
 
                 <div className="part-style" style={screenStyle}>
+                    <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[1].style}/>
                     <Title title={this.info[1].title} titleLayout={svgLayout}/>
                     <ChooseFun 
                         handleClick={this.handleClick} hoverHelight={this.hoverHelight} 
@@ -97,6 +105,8 @@ export default class Part extends React.Component{
                         chartStyle="chart-style"
                         chartLayout={Layout}
                         svgLayout={svgLayout}
+                        statusList={this.statusList}
+
                     />
                     <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} noteStyle="note-style" />
                 </div>

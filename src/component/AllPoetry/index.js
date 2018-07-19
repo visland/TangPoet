@@ -21,25 +21,32 @@ export default class AllPoetry extends React.Component{
             { "name": "one", "index":"14", "value": 20, "sex": "female" },
         ]
         
-        this.radius = 5
-        this.padding = 3
+        this.radius = 7
+        this.padding = 5
+
+        this.color = {
+            "maleC": "rgba(194, 55, 55, 0.959)",
+            "femaleC": "rgba(117, 79, 21, 0.959)"
+        }
+
+        const { svgLayout } = this.props
+        
+        let svgWidth = svgLayout.width
+        let margin = ( this.radius + this.padding )* 2
+
 
         //需要计算 range值
-        this.xScale = d3.scaleLinear().range([10, 500]).domain(d3.extent(this.data, d => d.value));
+        this.xScale = d3.scaleLinear().range([margin, svgWidth - margin * 2]).domain(d3.extent(this.data, d => d.value));
 
-        // 直接计算
-        // this.compute = this.simpos(this.data.sort((a, b) => a.value - b.value))
         const alldata = this.data.map( d => ({ name: d.name, m : this.xScale(d.value), value: d.value, sex: d.sex})).sort((a, b) => a.m - b.m)
-
         this.compute = this.simpos(alldata)
 
-        // console.log(alldata)
-        // console.log(this.compute)
+        this.svgHeight = svgLayout.height
 
 
     }
     componentDidMount(){
-        const svgHeight = 400 
+        const areaHeight = 400 
         d3.select("#allpoetry")
             // .append("g")
             // .attr("transform", "translate(300, 0)")
@@ -48,9 +55,10 @@ export default class AllPoetry extends React.Component{
             .enter()
             .append("circle")
             .attr("class", "poetry")
-            .attr("fill", d => d.sex === "female" ? "red" : "blue")
+            .attr("fill", d => d.sex === "female" ? this.color.femaleC : this.color.maleC)
+            // .attr("stroke", d => d.sex === "female" ? this.color.femaleC : this.color.maleC)
             .attr("cx", d => d.m)
-            .attr("cy", d => svgHeight - d.n)
+            .attr("cy", d => areaHeight - d.n)
             .attr("r", this.radius)
             // .style("opacity", 0)
     }

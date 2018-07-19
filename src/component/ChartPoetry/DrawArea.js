@@ -5,9 +5,9 @@ import Period from './Period'
 
 export default class DrawArea extends React.Component{
     render(){
-        const { flows, transform, Pimg, showToolTip, btnstatus, areaWidth, areHeight } = this.props
+        const { flows, transform, Pimg, showToolTip, btnstatus, areaWidth, areHeight, statusList } = this.props
         
-        const width = areaWidth * 0.8
+        const width = areaWidth * 0.9
         const height = areHeight * 0.9
         
         const MaxY = d3.max(flows, d => d.value)
@@ -32,18 +32,23 @@ export default class DrawArea extends React.Component{
                         index={d.index}
                         name={d.name}
                         value={d.value}
-                        symbol="#sym01"
+                        symbol={this.Filter(statusList, d.state)}
                         xFlow={width - Fwide * (Math.floor((i) / a + 1)) + MaxX - d.value}
                         yFlow={Flong * (i - a * Math.floor((i) / a)) + MaxY - d.value}
                         showToolTip={showToolTip}
 
                         btnstatus={btnstatus}
                         flowstate={d.state}
+                        MaxX={MaxX}
                         // isBreath={ d.value > breData ? true : false}
                     />
+                    
                 )}
             </g>
         )
+    }
+    Filter(data, status, d){
+        for(d of data){ if(d.state === status) { return d.symbol}}
     }
     
 }

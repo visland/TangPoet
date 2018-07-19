@@ -11,15 +11,9 @@
 @svg-hscale: 1054 / 1372 * 100%;
 @svg-wscale: @svg-scale *  @svg-hscale;
 
+// @left-margin: (100% - @svg-wscale) / 2;
+// @top-margin: (100% - @svg-hscale) / 2;
 
-@left-margin: (100% - @svg-wscale) / 2;
-@top-margin: (100% - @svg-hscale) / 2;
-
-// @svg-width: @bg-width * 0.85;
-// @svg-height: @bg-height * 0.75;
-
-// @svg-left: (@bg-width - @svg-width)/2;
-// @svg-top: (@bg-height - @svg-height)/2;
 
 .part-style{
     left: 7.5%;
@@ -29,12 +23,14 @@
     padding-top: 3%;
     margin-bottom: 5%;
 
-    
+
     .title-style{
         width: 30%;
         // left: @left-margin;
         position: @posA;
-        font-size: 1.5em;
+        font-size: 2em;
+        font-family: "W2";
+        top: 2%;
     }
 
     .choose-style{
@@ -61,8 +57,8 @@
         left: 0;
         position: @pos;
 
+
         background-image: url("bg.png");
-        // background-size: @bg-width @bg-height;
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
@@ -75,8 +71,14 @@
             // left: @left-margin;
             // top: @top-margin;
             use{
-                cursor: pointer;                
+                cursor: pointer;     
+                z-index: 3;           
                 
+            }
+            text{ 
+                font-size: 0.8em;
+                font-family: "W2";
+                z-index: 1;
             }
             .breath-flow{
                 transform-origin: 18% 20%;
@@ -94,6 +96,13 @@
         width: 75%;
         right: 5%;
         position: @posA;
+        font-family: 'W1';
+
+    }
+    .aside-style{
+        width: 20%;
+        position: @posA;
+        z-index: 4;
     }
 }
 

@@ -26,7 +26,7 @@ export default class ChartPoetry extends React.Component{
 
     }
     render(){    
-        const { enableStackTooltip, btnstatus, chartStyle, chartLayout, svgLayout } = this.props  
+        const { enableStackTooltip, btnstatus, chartStyle, chartLayout, svgLayout, statusList } = this.props  
 
         let svgWidth = svgLayout.width,
             svgHeight = svgLayout.height
@@ -50,10 +50,11 @@ export default class ChartPoetry extends React.Component{
                         transform={`translate(${(item.index - 1) * areaWidth}, 0)`} 
                         showToolTip={this.showToolTip}
                         isInteractive={enableStackTooltip}
-
+                        // symbol={symbol}
                         btnstatus={btnstatus}
                         areaWidth={areaWidth}
                         areHeight={areHeight}
+                        statusList={statusList}
                         
                     />
                 )}                
