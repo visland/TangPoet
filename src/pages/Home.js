@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Relation from '../component/Relation';
+import Relation from '../component/Relation/Relation';
 import CiCloud from '../component/CiCloud';
 import LeadIn from '../component/LeadIn'
 import PartOne from '../component/Part'

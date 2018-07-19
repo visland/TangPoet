@@ -23,15 +23,6 @@ body {
   user-select:none;
 }
 
-.links line {
-  stroke-opacity: 0.6;
-}
-
-.nodes text{
-  cursor: default;
-  font-family: 'W9';
-}
-
 .titleText {
     font-family: 'W2';
     font-size:100px;
