@@ -4,32 +4,42 @@
 @pos: relative;
 @posA: absolute;
 
-@bg-width: 2746px * 0.45;
-@bg-height: 1372px * 0.45;
+// @bg-width: 2746px * 0.45;
+// @bg-height: 1372px * 0.45;
+// @bg-scale: 2746 / 2355;
+@svg-scale: 2355 / 1054 * 100%;
+@svg-hscale: 1054 / 1372 * 100%;
+@svg-wscale: @svg-scale *  @svg-hscale;
 
-@svg-width: @bg-width * 0.85;
-@svg-height: @bg-height * 0.75;
+
+@left-margin: (100% - @svg-wscale) / 2;
+@top-margin: (100% - @svg-hscale) / 2;
+
+// @svg-width: @bg-width * 0.85;
+// @svg-height: @bg-height * 0.75;
 
 // @svg-left: (@bg-width - @svg-width)/2;
-@svg-top: (@bg-height - @svg-height)/2;
+// @svg-top: (@bg-height - @svg-height)/2;
 
 .part-style{
-    left: 5%;
-    width: 90%;
+    left: 7.5%;
+    width: 85%;   //与part部分的chartWidth保持一致
+    // height 与part部分的chartHeight保持一致
     position: @pos;
     padding-top: 3%;
+    margin-bottom: 5%;
 
     
     .title-style{
         width: 30%;
-        left: 12%;
+        // left: @left-margin;
         position: @posA;
         font-size: 1.5em;
     }
 
     .choose-style{
         width: 20%;
-        right: 5%;
+        // right: @left-margin;
         position: @posA;
         height: @btn-width;
         z-index: 6;
@@ -47,21 +57,23 @@
 
     .chart-style{
         width: 100%;
-        height: 600px;
+        // height: 75%;
         left: 0;
         position: @pos;
 
         background-image: url("bg.png");
-        background-size: @bg-width @bg-height;
+        // background-size: @bg-width @bg-height;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
-        background-position-x: center;
+        background-position: center;
 
         svg{
-            width: @svg-width;
-            height: @svg-height;
+            // width: @svg-wscale;
+            // height: @svg-hscale;
             position: @pos;
-            left: calc(~"50% - " @svg-width/2);
-            top: @svg-top;
+            // left: calc(~"50% - " @svg-width/2);
+            // left: @left-margin;
+            // top: @top-margin;
             use{
                 cursor: pointer;                
                 

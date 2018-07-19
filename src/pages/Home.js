@@ -26,6 +26,7 @@ export default class Home extends Component {
 
         {/* 第一部分 */}
         <Title titleText={this.titleContent[0].title} titleInfo={this.titleContent[0].info}/>
+        {/* <AllPoetry /> */}
         <PartOne />
 
         {/* 第二部分 */}
