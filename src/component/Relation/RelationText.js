@@ -83,7 +83,7 @@ export default class RelationText extends React.Component {
 				
 				<text className='title' x='270' y='510' width='200' height='200'
 					style={{
-						fontSize: '32px',
+						fontSize: '30px',
         		fontFamily:'W1',
         		textAnchor:'middle'
 					}}>
@@ -91,7 +91,7 @@ export default class RelationText extends React.Component {
 
 				<text className='title2' x='270' y='750' width='200' height='200'
 					style={{
-						fontSize: '32px',
+						fontSize: '30px',
         		fontFamily:'W1',
         		textAnchor:'middle'
 					}}>

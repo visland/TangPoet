@@ -15,12 +15,12 @@ export default class Relation extends React.Component {
 		this.state = {
 			maleName: '',
 			name: '',
-			rel: '',
+			rel: '点击男诗人名字获取关系信息',
 			from: '',
 			to:'',
 			fromname:'',
 			toname:'',
-			des:'点击男诗人名字获取关系信息'
+			des:''
 		};
 	}
 
@@ -29,7 +29,7 @@ export default class Relation extends React.Component {
     const height = 1080;
     const center_x = width / 1.8;
     const center_y = height / 2;
-	  const force = d3.forceManyBody().strength(-2400);
+	  const force = d3.forceManyBody().strength(-2200);
 	  this.setState({name: relationships.nodes[0].id});
 
 		const simulation = d3.forceSimulation()
@@ -57,10 +57,10 @@ export default class Relation extends React.Component {
 		    	
 		const nodeCircle = nodes.append("circle")
 					.attr("calss", "nodeCircle")
-	  			.attr("r", function(d) { return d.group === 0? 65 : 40;})
+	  			.attr("r", function(d) { return d.group === 0? 65 : (d.group=== 1? 40 : 30);})
 	  			.attr("stroke", '#e29c45')
 	  			.attr("stroke-width", 5)
-	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : '#a88462';})
+	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : (d.group=== 1? '#a88462' : '#999');})
 
 		// const nodeImg = nodes.append("image")
 	 //      .attr("width", img_w)
@@ -85,7 +85,7 @@ export default class Relation extends React.Component {
 
 		  simulation.force("link")
 		      .links(relationships.links)
-		      .distance(180);
+		      .distance(100);
 
 		   nodeCircle.data()[0].x = center_x;
 		   nodeCircle.data()[0].y = center_y;
