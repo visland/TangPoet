@@ -13,8 +13,14 @@ export default class Relation extends React.Component {
 	constructor() {
 	 	super();
 		this.state = {
-			des: '点击男诗人名字获取关系信息',
-			name: ''
+			maleName: '',
+			name: '',
+			rel: '',
+			from: '',
+			to:'',
+			fromname:'',
+			toname:'',
+			des:'点击男诗人名字获取关系信息'
 		};
 	}
 
@@ -87,7 +93,14 @@ export default class Relation extends React.Component {
 		  /* Interactions. */
 			nodes.on('click', (n) => {
 			    nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
-			    this.setState({des : n.id})
+			    this.setState({
+			    	maleName : n.id, 
+			    	des : n.des,
+			    	from : n.from,
+			    	to : n.to,
+			    	rel : n.rel,
+			    	fromname: n.fromname,
+			    	toname: n.toname});
 			})
 
 		  /* Load positions of each element. */
@@ -183,8 +196,14 @@ export default class Relation extends React.Component {
 						height='12%'
 						xlinkHref= { c } />
 
-
-					<RelationText des={ this.state.des }/>
+					<RelationText 
+							maleName={ this.state.maleName }
+							from={ this.state.from }
+							des={ this.state.des }
+							to={ this.state.to }
+							rel={ this.state.rel }
+							fromname={ this.state.fromname }
+							toname={ this.state.toname }/>
 					
 					<text className='femaleName'
 						x='1700'
@@ -214,7 +233,6 @@ export default class Relation extends React.Component {
           		y={ text_y }>逍遥闲暇之功，无非云水之念。
           	</ tspan>
           </text>
-
 					
 					</svg>
 			</div>
