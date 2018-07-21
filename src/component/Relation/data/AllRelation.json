@@ -1,0 +1,376 @@
+{
+
+"nodes":[
+    {
+        "id": "鱼玄机",
+        "group": 0
+    },
+    {
+        "id": "李冶",
+        "group": 0
+    },
+    {
+        "id": "薛涛",
+        "group": 0
+    },
+    {
+        "id": "刘采春",
+        "group": 0
+    },
+    {
+        "id": "李郢",
+        "group": 1
+    },
+    {
+        "id": "光威裒",
+        "group": 0
+    },
+    {
+        "id": "温庭筠",
+        "group": 1
+    },
+    {
+        "id": "温璋",
+        "group": 1,
+        "position": "京兆尹"
+    },
+    {
+        "id": "高仲武",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "刘长卿",
+        "group": 1
+    },
+    {
+        "id": "陆羽",
+        "group": 1
+    },
+    {
+        "id": "皎然",
+        "group": 1
+    },
+    {
+        "id": "刘禹锡",
+        "group": 1
+    },
+    {
+        "id": "朱放",
+        "group": 1
+    },
+    {
+        "id": "韩揆",
+        "group": 1
+    },
+    {
+        "id": "阎伯钧",
+        "group": 1
+    },
+    {
+        "id": "段文昌",
+        "group": 1
+    },
+    {
+        "id": "张籍",
+        "group": 1
+    },
+    {
+        "id": "杜牧",
+        "group": 1
+    },
+    {
+        "id": "牛僧孺",
+        "group": 1
+    },
+    {
+        "id": "白居易",
+        "group": 1
+    },
+    {
+        "id": "元稹",
+        "group": 1
+    },
+    {
+        "id": "令狐楚",
+        "group": 1
+    },
+    {
+        "id": "裴度",
+        "group": 1
+    },
+    {
+        "id": "严绶",
+        "group": 1
+    },
+    {
+        "id": "吴武陵",
+        "group": 1
+    },
+    {
+        "id": "张祜",
+        "group": 1
+    },
+    {
+        "id": "韦执谊",
+        "group": 1
+    },
+    {
+        "id": "韩愈",
+        "group": 1
+    },
+    {
+        "id": "李贺",
+        "group": 1
+    },
+    {
+        "id": "韦温",
+        "group": 1,
+        "position": "宰相"
+    },
+    {
+        "id": "柳仲郢",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "李商隐",
+        "group": 1
+    },
+    {
+        "id": "皇甫镛",
+        "group": 1
+    },
+    {
+        "id": "关盼盼",
+        "group": 0
+    },
+    {
+        "id": "郑太郡",
+        "group": 0,
+        "position": ""
+    },
+    {
+        "id": "杜甫",
+        "group": 1
+    },
+    {
+        "id": "元秬",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "崔倰",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "裴艾",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "皇甫镈",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "萧俛",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "杜佑",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "王叔文",
+        "group": 1,
+        "position": ""
+    }
+],
+
+    "links":[
+    {
+        "source": "鱼玄机",
+        "target": "李郢"
+    },
+    {
+        "source": "鱼玄机",
+        "target": "光威裒"
+    },
+    {
+        "source": "鱼玄机",
+        "target": "温庭筠"
+    },
+    {
+        "source": "鱼玄机",
+        "target": "温璋"
+    },
+    {
+        "source": "李冶",
+        "target": "高仲武"
+    },
+    {
+        "source": "李冶",
+        "target": "刘长卿"
+    },
+    {
+        "source": "李冶",
+        "target": "陆羽"
+    },
+    {
+        "source": "李冶",
+        "target": "皎然"
+    },
+    {
+        "source": "李冶",
+        "target": "刘禹锡"
+    },
+    {
+        "source": "李冶",
+        "target": "朱放"
+    },
+    {
+        "source": "李冶",
+        "target": "韩揆"
+    },
+    {
+        "source": "李冶",
+        "target": "阎伯钧"
+    },
+    {
+        "source": "薛涛",
+        "target": "段文昌"
+    },
+    {
+        "source": "薛涛",
+        "target": "张籍"
+    },
+    {
+        "source": "薛涛",
+        "target": "杜牧"
+    },
+    {
+        "source": "薛涛",
+        "target": "牛僧孺"
+    },
+    {
+        "source": "薛涛",
+        "target": "白居易"
+    },
+    {
+        "source": "薛涛",
+        "target": "元稹"
+    },
+    {
+        "source": "薛涛",
+        "target": "令狐楚"
+    },
+    {
+        "source": "薛涛",
+        "target": "裴度"
+    },
+    {
+        "source": "薛涛",
+        "target": "严绶"
+    },
+    {
+        "source": "薛涛",
+        "target": "刘禹锡"
+    },
+    {
+        "source": "薛涛",
+        "target": "吴武陵"
+    },
+    {
+        "source": "薛涛",
+        "target": "张祜"
+    },
+    {
+        "source": "刘禹锡",
+        "target": "韦执谊"
+    },
+    {
+        "source": "刘禹锡",
+        "target": "杜佑"
+    },
+    {
+        "source": "刘禹锡",
+        "target": "王叔文"
+    },
+    {
+        "source": "张籍",
+        "target": "韩愈"
+    },
+    {
+        "source": "杜牧",
+        "target": "李贺"
+    },
+    {
+        "source": "杜牧",
+        "target": "牛僧孺"
+    },
+    {
+        "source": "杜牧",
+        "target": "韦温"
+    },
+    {
+        "source": "牛僧孺",
+        "target": "柳仲郢"
+    },
+    {
+        "source": "白居易",
+        "target": "李商隐"
+    },
+    {
+        "source": "白居易",
+        "target": "元稹"
+    },
+    {
+        "source": "白居易",
+        "target": "郑太郡"
+    },
+    {
+        "source": "白居易",
+        "target": "皇甫镛"
+    },
+    {
+        "source": "白居易",
+        "target": "关盼盼"
+    },
+    {
+        "source": "元稹",
+        "target": "杜甫"
+    },
+    {
+        "source": "元稹",
+        "target": "元秬"
+    },
+    {
+        "source": "元稹",
+        "target": "崔倰"
+    },
+    {
+        "source": "元稹",
+        "target": "裴艾"
+    },
+    {
+        "source": "令狐楚",
+        "target": "皇甫镈"
+    },
+    {
+        "source": "令狐楚",
+        "target": "萧俛"
+    },
+    {
+        "source": "白居易",
+        "target": "鱼玄机"
+    },
+    {
+        "source": "元稹",
+        "target": "刘采春"
+    }
+]
+}

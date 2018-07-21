@@ -6,6 +6,7 @@ import shape from './img/shape.png'
 import _FC from './data/femaleCi.json'
 import _FZ from './data/femaleZi.json'
 import _TZ from './data/totalZi.json'
+import _TC from './data/totalCi.json'
 import { Radio } from 'antd';
 const RadioGroup = Radio.Group;
 
@@ -16,7 +17,7 @@ export default class CiCloud extends React.Component {
     this.ColorRuler = [
      '#c39143', '#98623c','#98623c', '#8a3b00','#773c30', '#752100'
     ]
-    this.ci_freq = [_FC, [_TZ, _FZ]]
+    this.ci_freq = [[_TC, _FC], [_TZ, _FZ]]
     this.hasLoad = false;
   }
 
@@ -45,8 +46,8 @@ sx
       .range(ColorRuler)
     const options = {
         fontFamily: 'W9',
-        minFontSize: 40 / cnt, 
-        maxFontSize: 120 / cnt,    
+        minFontSize: 30 / cnt, 
+        maxFontSize: 100 / cnt,    
         tooltip: {
             show: true,
             formatter: function(item) {
@@ -103,13 +104,13 @@ sx
   }
 
   componentDidMount() {
-    this.renderSingleCloud(this.ci_freq[0], 1, this.container)
+    this.renderCLoud(this.ci_freq[0])
   }
 
   componentDidUpdate(){
     switch(this.state.value){
       case 0: //词频
-        this.renderSingleCloud(this.ci_freq[0], 1, this.container)
+        this.renderCLoud(this.ci_freq[0])
         break
 
       case 1: //字频
@@ -125,6 +126,7 @@ sx
             width: '100%',
             height: '100%'
           }}>
+
         <div
           className="ciCloud"
           ref={ref => {
@@ -137,17 +139,41 @@ sx
             left: '5%',
           }}
         >
-        </div> 
+        </div>         
+        <p  style={{
+            width: '20%',
+            float:'left',
+            height: 50,
+            fontSize:30,
+            fontFamily:'W1',
+            color:'maroon',
+            position:'relative',
+            left:'24%',
+            top:'-10%'
+          }}>全部诗人</p>
+        <p  style={{
+            width: '20%',
+            height: 50,
+            fontSize:30,
+            fontFamily:'W1',
+            float:'right',
+            color:'maroon',
+            position:'relative',
+            left:'-14%',
+            top:'-10%'
+          }}>女性诗人</p>
         <div 
           className="radio"
           style = {{
             position:'relative',
-            left: '40%',
+            left: '25%',
             fontSize: '18px',
+            fontFamily:'W1',
+            top:'5%'
           }}> 
         <RadioGroup onChange={this.onRadioChange} value={this.state.value}>
-          <Radio value={0}>女诗人词频&nbsp;&nbsp;</Radio>
-          <Radio value={1}>总体字频和女诗人字频&nbsp;&nbsp;</Radio>
+          <Radio value={0}>词频&nbsp;&nbsp;&nbsp;&nbsp;</Radio>
+          <Radio value={1}>字频&nbsp;&nbsp;</Radio>
         </RadioGroup>
         </div>    
       </div>

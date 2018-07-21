@@ -1,6 +1,14 @@
 {
   "nodes": [
-    {"id": "薛涛", "group": 0},
+    {"id": "薛涛", 
+    "group": 0,
+    "rel":"点击男诗人名字获取关系信息",
+    "des":"",
+    "from":"",
+    "fromname":"",
+    "to":"",
+    "toname":""},
+
     {"id": "韦皋",
     "group": 1,
     "rel":"上下级关系",
@@ -183,6 +191,7 @@
     {"source": "白居易", "target": "张籍", "value": 1},
     {"source": "白居易", "target": "牛僧儒", "value": 1},
     {"source": "白居易", "target": "武元衡", "value": 1},
+    {"source": "杜牧", "target": "张祜", "value": 1},
     {"source": "段文昌", "target": "李德裕", "value": 1}
   ]
 }
