@@ -504,7 +504,12 @@
     },
     {
         "source": "鱼玄机",
-        "target": "韩愈",
+        "target": "薛涛",
+        "value":0
+    },
+        {
+        "source": "鱼玄机",
+        "target": "杜牧",
         "value":0
     },
     {
@@ -513,8 +518,13 @@
         "value":0
     },
         {
-        "source": "鱼玄机",
+        "source": "令狐楚",
         "target": "裴度",
+        "value":0
+    },
+            {
+        "source": "令狐楚",
+        "target": "李冶",
         "value":0
     },
                 {
@@ -524,7 +534,7 @@
     },
                     {
         "source": "李德裕",
-        "target": "元稹",
+        "target": "刘采春",
         "value":0
     },
                         {
@@ -547,6 +557,12 @@
         "target": "杜牧",
         "value":1
     },
+                                        {
+        "source": "张祜",
+        "target": "裴度",
+        "value":0
+    },
+        
                                     {
         "source": "武元衡",
         "target": "白居易",
@@ -572,9 +588,9 @@
         "target": "白居易",
         "value":0
     },
-    {
-        "source": "李贺",
-        "target": "裴度",
+                                    {
+        "source": "王建",
+        "target": "武元衡",
         "value":0
     },
         {

@@ -44,7 +44,7 @@ render() {
           	y="220">
           <animate attributeName="opacity" 
 	        		from="0" to="0.5" 
-	        		begin="5s" dur="3s" 
+	        		begin="3s" dur="3s" 
 	        		fill="freeze"
 	        		repeatCount="0" />
 					</ image>
@@ -52,7 +52,7 @@ render() {
 					<text className='titleText'>
 					  <animate attributeName="opacity" 
           		from="0" to="1" 
-          		begin="6s" dur="3s" 
+          		begin="4s" dur="3s" 
           		fill="freeze"
           		repeatCount="0" />
           	<tspan           	
@@ -70,7 +70,7 @@ render() {
           	y="450">
            <animate attributeName="opacity" 
 	        		from="0" to="1" 
-	        		begin="7s" dur="3s" 
+	        		begin="5s" dur="3s" 
 	        		fill="freeze"
 	        		repeatCount="0" />
           	唐代女诗人群像
