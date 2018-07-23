@@ -8,9 +8,12 @@ export default class DrawArea extends React.Component{
         const { flows, transform, Pimg, showToolTip, btnstatus, areaWidth, areHeight, statusList } = this.props
         
         const width = areaWidth * 0.9
-        const height = areHeight * 0.9
+        const height = areHeight 
         
-        const MaxY = d3.max(flows, d => d.value)
+        //设置花瓣的半径范围
+        this.xScale = d3.scaleLinear().range([8, 25]).domain(d3.extent(flows, d => d.value));
+
+        const MaxY = d3.max(flows, d => this.xScale(d.value))
         const MaxX = MaxY
         const padding = 3
         const Flong = MaxY * 2 + padding
@@ -28,13 +31,13 @@ export default class DrawArea extends React.Component{
                 <Period Pimg={Pimg} />
                 {flows.map((d, i) =>
                     <OneFlow
-                        key={i} width={d.value}
+                        key={i} width={this.xScale(d.value)}
                         index={d.index}
                         name={d.name}
                         value={d.value}
                         symbol={this.Filter(statusList, d.state)}
-                        xFlow={width - Fwide * (Math.floor((i) / a + 1)) + MaxX - d.value}
-                        yFlow={Flong * (i - a * Math.floor((i) / a)) + MaxY - d.value}
+                        xFlow={width - Fwide * (Math.floor((i) / a + 1)) + MaxX - this.xScale(d.value)}
+                        yFlow={Flong * (i - a * Math.floor((i) / a)) + MaxY - this.xScale(d.value)}
                         showToolTip={showToolTip}
 
                         btnstatus={btnstatus}
@@ -48,7 +51,12 @@ export default class DrawArea extends React.Component{
         )
     }
     Filter(data, status, d){
-        for(d of data){ if(d.state === status) { return d.symbol}}
+        for(d of data){ 
+            if(d.state === status) { 
+                return d.symbol
+            } 
+            return "#sym01"
+        }
     }
     
 }

@@ -5,6 +5,8 @@ import ChartPoetry from '../ChartPoetry/ChartPoetry'
 import ChooseFun from './Choose'
 import AllPoetry from '../AllPoetry'
 import Aside from './Aside'
+import FemaleData from './data/femaledata.json'
+import StateList from './data/stateList.json'
 
 import './style/style.less'
 
@@ -18,41 +20,17 @@ export default class Part extends React.Component{
     }
 
     componentWillMount(){
-        this.flows = [
-            { "name": "薛涛", "value": 20, "index": 1, "time": "初唐", "state": "女冠" },
-            { "name": "薛涛", "value": 20, "index": 12, "time": "初唐", "state": "女冠" },
-            { "name": "薛涛", "value": 20, "index": 13, "time": "初唐", "state": "女冠" },
-            { "name": "薛涛", "value": 10, "index": 2, "time": "初唐", "state": "女冠" },
-            { "name": "薛涛", "value": 30, "index": 3, "time": "初唐", "state": "其他" },
-            { "name": "薛涛", "value": 20, "index": 4, "time": "盛唐", "state": "其他" },
-            { "name": "薛涛", "value": 30, "index": 5, "time": "盛唐", "state": "女冠" },
-            { "name": "薛涛", "value": 10, "index": 14, "time": "盛唐", "state": "女冠" },
-            { "name": "薛涛", "value": 20, "index": 15, "time": "盛唐", "state": "女冠" },
-            { "name": "薛涛", "value": 20, "index": 6, "time": "盛唐", "state": "士大夫妻女" },
-            { "name": "薛涛", "value": 10, "index": 7, "time": "中唐", "state": "士大夫妻女" },
-            { "name": "薛涛", "value": 30, "index": 8, "time": "中唐", "state": "女冠" },
-            { "name": "薛涛", "value": 10, "index": 9, "time": "中唐", "state": "女冠" },
-            { "name": "薛涛", "value": 10, "index": 10, "time": "晚唐", "state": "女冠" },
-            { "name": "薛涛", "value": 10, "index": 16, "time": "晚唐", "state": "女冠" },
-            { "name": "薛涛", "value": 10, "index": 17, "time": "晚唐", "state": "女冠" },
-            { "name": "薛涛", "value": 30, "index": 11, "time": "晚唐", "state": "女冠" },
-        ]       
-        this.statusList = [
-            { "state": "全部", "symbol":"#sym01", "picsrc": "0", "chartnote": "元人辛文房《唐才子传》：历观唐以雅道奖士类，而闺阁英秀，亦能熏染，锦心绣口，蕙情兰性，足可尚矣。" },
-            { "state": "女冠", "symbol":"#sym01", "picsrc": "1", "chartnote": "女冠诗人" },
-            { "state": "士大夫妻女", "symbol":"#sym01", "picsrc": "2", "chartnote": "士大夫妻女" },
-            { "state": "民间女子", "symbol":"#sym01", "picsrc": "3", "chartnote": "民间女子" },
-            { "state": "其他", "symbol":"#sym01", "picsrc": "4", "chartnote": "其他" },
-        ]
+        //json数据导入
+        this.flows = FemaleData    
+        this.statusList = StateList
         this.info =[ 
-            { "index": "1", "title": "唐代所有诗人", "chartnote": "唐代所有诗人" },
-            { "index": "2", "title": "唐代女诗人作品数" },
+            { "index": "1", "title": "唐代诗人创作一览", "chartnote": "纵观唐代文学史，男性诗人仍占领着绝对优势，女诗人的所有诗作，数量加起来不及白居易的三分之一，不足总量的千分之一。“女子作诗，其工也，难于男子；闺秀之名，其传也，亦难于才士。”写诗不易，存诗愈难。女性诗人平均每人作诗四首，多数仅有一篇诗作流传下来，其中写诗小能手薛涛一人独做九十三首，为唐代女诗人之首。" },
+            { "index": "2", "title": "不同时期女诗人创作全景图" },
         ]
         this.aside = [
             { "src": "1", "style": { right: "-9%", top: "5%" } },
             { "src": "1", "style": { left: "-9%", bottom: "10%"}}
         ]
-        console.log(this.aside[1].style)
     }
     render(){        
         let screenHeight = document.documentElement.clientHeight,
@@ -114,7 +92,7 @@ export default class Part extends React.Component{
         )
     }
     handleClick(e) {
-        console.log("点击")
+        console.log("点击") 
         let status = e.target.getAttribute('alt')
         this.setState({ 
             status: status

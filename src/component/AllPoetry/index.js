@@ -1,144 +1,77 @@
 import React from 'react'
 import * as d3 from 'd3'
+import AllData from '../Part/data/alldata2.json'
+import OnePoetry from './OnePoetry'
 // import {beeswarm} from "d3-beeswarm";
 
 export default class AllPoetry extends React.Component{
-    componentWillMount(){
-        this.data = [
-            { "name": "one", "index":"1", "value": 20, "sex": "male" },
-            { "name": "one", "index":"2", "value": 1, "sex": "male" },
-            { "name": "one", "index":"3", "value": 1, "sex": "male" },
-            { "name": "one", "index":"4", "value": 1, "sex": "male" },
-            { "name": "one", "index":"5", "value": 20, "sex": "male" },
-            { "name": "one", "index":"6", "value": 20, "sex": "male" },
-            { "name": "one", "index":"7", "value": 20, "sex": "male" },
-            { "name": "one", "index":"8", "value": 5, "sex": "male" },
-            { "name": "one", "index":"9", "value": 5, "sex": "male" },
-            { "name": "one", "index":"10", "value": 5, "sex": "female" },
-            { "name": "one", "index":"11", "value": 20, "sex": "female" },
-            { "name": "one", "index":"12", "value": 20, "sex": "female" },
-            { "name": "one", "index":"13", "value": 20, "sex": "female" },
-            { "name": "one", "index":"14", "value": 20, "sex": "female" },
-        ]
-        
-        this.radius = 7
-        this.padding = 5
 
-        this.color = {
-            "maleC": "rgba(194, 55, 55, 0.959)",
-            "femaleC": "rgba(117, 79, 21, 0.959)"
-        }
+    componentWillMount(){      
+        // console.log(AllData)
+        this.data  = AllData
+        this.radius = 5
+        this.padding = 2
+        
+        this.group = [
+            { "group": "1", "value": 943, "name": "留诗一首" },
+            { "group": "2", "value": 323, "name": "小作两曲" },
+            { "group": "3-5", "value": 294, "name": "留诗一首" },
+            { "group": "5-10", "value": 198, "name": "留诗一首" },
+            { "group": "10-50", "value": 208, "name": "留诗一首" },
+            { "group": "50+", "value": 155, "name": "名留千古" },
+        ]
 
         const { svgLayout } = this.props
         
         let svgWidth = svgLayout.width
-        let margin = ( this.radius + this.padding )* 2
+        let svgHeight = svgLayout.height
 
-
-        //需要计算 range值
-        this.xScale = d3.scaleLinear().range([margin, svgWidth - margin * 2]).domain(d3.extent(this.data, d => d.value));
-
-        const alldata = this.data.map( d => ({ name: d.name, m : this.xScale(d.value), value: d.value, sex: d.sex})).sort((a, b) => a.m - b.m)
-        this.compute = this.simpos(alldata)
-
+        this.margin = ( this.radius + this.padding )* 2
         this.svgHeight = svgLayout.height
+        // this.areaWidth = svgWidth / 6
+        this.areaHeight = svgHeight * 0.8
+        this.oneWide = this.radius * 2 + this.padding
+        let a = Math.floor(this.areaHeight / this.oneWide)
 
-
+        let comData1 = this.group.map(d => ({ group: d.group, name: d.name, b : Math.ceil(d.value / a) }))
+        let comData2 = comData1.map(d => ({ group: d.group, name: d.name, b: d.b, groupWidth: d.b * this.oneWide}))
+        this.groupdata = this.compute(comData2)
+        console.log(this.groupdata)
     }
-    componentDidMount(){
-        const areaHeight = 400 
-        d3.select("#allpoetry")
-            // .append("g")
-            // .attr("transform", "translate(300, 0)")
-            .selectAll("circle")
-            .data(this.compute)
-            .enter()
-            .append("circle")
-            .attr("class", "poetry")
-            .attr("fill", d => d.sex === "female" ? this.color.femaleC : this.color.maleC)
-            // .attr("stroke", d => d.sex === "female" ? this.color.femaleC : this.color.maleC)
-            .attr("cx", d => d.m)
-            .attr("cy", d => areaHeight - d.n)
-            .attr("r", this.radius)
-            // .style("opacity", 0)
+    compute(data){
+        let padding = this.oneWide * 2
+        let transform = this.oneWide;
+        for (let i = 0; i < data.length; i ++){
+            data[i].transform = transform 
+            let a = data[i].groupWidth
+            transform = transform + a + padding
+        }
+        return data
     }
     render(){
         const { bigChartStyle, dotLayout, svgLayout} = this.props
         return (
             <div className={bigChartStyle} style={dotLayout}>
-                {/* <button onClick={this.handleClick}>  测试 </button> */}
-                <svg id="allpoetry" style={svgLayout}></svg>
+                <svg id="allpoetry" style={svgLayout}>
+                    {this.groupdata.map((d, i) => 
+                        <OnePoetry 
+                            key={i}
+                            transform={`translate(${d.transform}, ${this.areaHeight * 0.1})`} 
+                            data={this.choosedata(d.group)}
+                            dotR={this.radius}
+                            numW={d.b}
+                            oneWide={this.oneWide}
+                            height={this.areaHeight}
+                            name={d.name}
+                            width={d.groupWidth}
+                        />
+                    )}
+                </svg>
             </div>
         )
     }
-    handleClick(){
-        console.log("点击")
-        d3.selectAll(".poetry")
-            .transition()
-            .duration(3000)
-            .delay( d => d.x * 200)
-            .style("opacity", 1)
+    choosedata(group) {
+        let data = this.data.filter(d => d.group === group)
+        return data
     }
-    simpos(data) {
-        const epsilon = 1e-3;
-        let head = null, tail = null;
-        let radius = this.radius
-        let padding = this.padding
-        // Place each circle sequentially.
-        for (const b of data) {
-
-            // Remove data from the queue that can’t intersect the new circle b.
-            while (head && head.m < b.m - (radius * 2 + padding)) head = head.next;
-
-            // Choose the minimum non-intersecting tangent.
-            if (intersects(b.m, b.n = 0)) {
-                let a = head;
-                b.n = Infinity;
-                do {
-                    let n = a.n + Math.sqrt((radius * 2 + padding) ** 2 - (a.m - b.m) ** 2);
-                    if (n < b.n && !intersects(b.m, n)) b.n = n;
-
-                    a = a.next;
-                } while (a);
-            };
-            // Add b to the queue.
-            b.next = null;
-            if (head === null) head = tail = b;
-            else tail = tail.next = b;
-        }
-        // Returns true if circle ⟨m,n⟩ intersects with any circle in the queue.
-        function intersects(m, n) {
-            let a = head;
-            while (a) {
-                if ((radius * 2 + padding - epsilon) ** 2 > (a.m - m) ** 2 + (a.n - n) ** 2) {
-                    return true;
-                }
-                a = a.next;
-            }
-            return false;
-        }
-        // for (let b of data){
-        //     b.n = b.n 
-        // }
-        // for (let b of data) {
-        //     let m = b.value
-        //     if (b.n > edge && b.n < edge * 2) {
-        //     m = m + radius * 2 + padding;
-        //         b.n = b.n - edge - padding / 2;
-        //     } else if (b.n > edge * 2 && b.n < edge * 3) {
-        //     m = m + radius * 4 + padding * 2;
-        //         b.n = b.n - edge * 2 - padding;
-        //     } else if (b.n > edge * 3 && b.n < edge * 4) {
-        //     m = m + radius * 6 + padding * 3;
-        //         b.n = b.n - edge * 3 - padding;
-        //     } else if (b.n > edge * 4 && b.n < edge * 5) {
-        //     m =m + radius * 8 + padding * 4;
-        //         b.n = b.n - edge * 4 - padding * 2;
-        //     } else if (b.n > edge * 5 && b.n < edge * 6) {
-        //     m =m + radius * 10 + padding * 5;
-        //         b.n = b.n - edge * 5 - padding * 2;
-        //     }
-        // }
-        return data;
-    };  
 }

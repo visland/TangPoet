@@ -30,11 +30,11 @@ export default class OneFlow extends React.Component{
                     fill={btnTrans.symcolor}
                     className={ btnTrans.isBreath ? "breath-flow" : ""}
                 />
-                <text 
+                {/* <text 
                     x={ xFlow + width - 15} 
                     y={ yFlow + width * 2 + 15 }
                 >{name}
-                </text>
+                </text> */}
             </g>
         )
     }
