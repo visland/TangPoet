@@ -14,11 +14,16 @@
 // @left-margin: (100% - @svg-wscale) / 2;
 // @top-margin: (100% - @svg-hscale) / 2;
 
+@partH: 50%;
+@chartH: 75%;
+
+@fontZW: W1;
 
 .part-style{
     left: 7.5%;
     width: 85%;   //与part部分的chartWidth保持一致
     // height 与part部分的chartHeight保持一致
+    // height: @partH;
     position: @pos;
     padding-top: 3%;
     margin-bottom: 5%;
@@ -53,7 +58,7 @@
 
     .chart-style{
         width: 100%;
-        // height: 75%;
+        // height: @chartH;
         left: 0;
         position: @pos;
 
@@ -64,29 +69,55 @@
         background-position: center;
 
         svg{
-            // width: @svg-wscale;
-            // height: @svg-hscale;
+            text{
+                 text-anchor: middle;
+                //   dominant-baseline: middle; /* 文本垂直居中 */
+
+            }
             position: @pos;
-            // left: calc(~"50% - " @svg-width/2);
-            // left: @left-margin;
-            // top: @top-margin;
-            use{
-                cursor: pointer;     
-                z-index: 3;           
-                
+            .group-style{
+                circle{
+                        cursor: pointer;
+                    }
+                g.tooltip{
+                    visibility: hidden;
+                    font-family: @fontZW;
+                    transition: all 1s ease-out;
+                    opacity: 0.4;
+                    rect{  
+                        fill: #615234;
+                    }
+                    text{
+                        // background-color: aquamarine
+                        font-size: 14px;
+                        fill: antiquewhite;
+                    }
+                }
+                g.poetry-style:hover g.tooltip{ 
+                    visibility: visible; 
+                    opacity: 1;
+                }
+               
             }
-            text{ 
-                font-size: 0.8em;
-                font-family: "W2";
-                z-index: 1;
-            }
-            .breath-flow{
-                transform-origin: 18% 20%;
-                // animation: breath-flow 2s ease infinite;
-                @keyframes breath-flow {
-                    0% { transform: scale(1)}
-                    50% { transform: scale(1.1)}
-                    100% { transform: scale(1)}
+            g.flow-style {
+                use{
+                    cursor: pointer;     
+                    z-index: 3;           
+                    
+                }
+                text{ 
+                    font-size: 0.8em;
+                    font-family: "W2";
+                    z-index: 1;
+                }
+                .breath-flow{
+                    transform-origin: 18% 20%;
+                    // animation: breath-flow 2s ease infinite;
+                    @keyframes breath-flow {
+                        0% { transform: scale(1)}
+                        50% { transform: scale(1.1)}
+                        100% { transform: scale(1)}
+                    }
                 }
             }
         }
@@ -96,7 +127,7 @@
         width: 75%;
         right: 5%;
         position: @posA;
-        font-family: 'W1';
+        font-family: @fontZW;
 
     }
     .aside-style{

@@ -14,7 +14,7 @@ export default class OneFlow extends React.Component{
         }
 
         return(
-            <g
+            <g className="flow-style"
                 // x={xFlow} y={yFlow} 
             >
                 <use 

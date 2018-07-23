@@ -7,6 +7,7 @@ import AllPoetry from '../AllPoetry'
 import Aside from './Aside'
 import FemaleData from './data/femaledata.json'
 import StateList from './data/stateList.json'
+import * as d3 from 'd3'
 
 import './style/style.less'
 
@@ -46,22 +47,40 @@ export default class Part extends React.Component{
 
             hboxScale = boxHeight / bgHeight,
             wboxScale = boxWidth / bgWidth;
-
+        // let hboxScaleP = hboxScale * 100%
         let svgWidth = chartWidth * wboxScale,
             svgHeight = chartHeight * hboxScale
         
-        let margin = { left: (chartWidth - svgWidth) / 2, top: (chartHeight - svgHeight) / 2}
+        const _per = d3.format("100%")
 
+        let margin = { left: (chartWidth - svgWidth) / 2, top: (chartHeight - svgHeight) / 2}
+        let marginP = { left: _per(margin.left / chartWidth), top: _per(margin.top / chartHeight)},
+            heightP = _per(hboxScale),
+            widthP = _per(wboxScale)
+        
         let screenStyle = { height: screenHeight },
             Layout = { height: chartHeight },
-            svgLayout = { height: svgHeight, width: svgWidth, left: margin.left, top: margin.top} 
+            svgLayout = { height: svgHeight, width: svgWidth, heightP: heightP, widthP: widthP, left: marginP.left, top: marginP.top} 
+
+        // let left = (margin.left / chartWidth) * 100%
+        // console.log(hboxScale)
+        // console.log(hboxScaleP)
+        // let marginP = { left : margin.left / chartWidth * 100%, top: }
+
+        let viewbox = `0 0 ${svgWidth} ${svgHeight}`
+        console.log(svgWidth)
+
+        console.log(viewbox)
+
 
         return(
             <div id="part1">
-                <div className="part-style" style={screenStyle}>
+                <div className="part-style" 
+                    style={screenStyle}
+                >
                     <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/>
                     <Title title={this.info[0].title} titleLayout={svgLayout}/>
-                    <AllPoetry bigChartStyle="chart-style" dotLayout={Layout} svgLayout={svgLayout}/>
+                    <AllPoetry bigChartStyle="chart-style" dotLayout={Layout} svgLayout={svgLayout} viewbox={viewbox} preserveAspectRatio="xMinYMin meet"/>
                     <ChartNote chartnote={this.info[0].chartnote} noteStyle="note-style" />
                 </div>
 
@@ -84,7 +103,8 @@ export default class Part extends React.Component{
                         chartLayout={Layout}
                         svgLayout={svgLayout}
                         statusList={this.statusList}
-
+                        viewbox={viewbox}
+                        preserveAspectRatio="xMinYMin meet"
                     />
                     <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} noteStyle="note-style" />
                 </div>
