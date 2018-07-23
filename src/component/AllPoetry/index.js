@@ -1,5 +1,5 @@
 import React from 'react'
-import * as d3 from 'd3'
+// import * as d3 from 'd3'
 import AllData from '../Part/data/alldata2.json'
 import OnePoetry from './OnePoetry'
 // import {beeswarm} from "d3-beeswarm";
