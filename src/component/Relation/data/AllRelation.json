@@ -1,7 +1,7 @@
 {
 
 "nodes":[
-    {
+   {
         "id": "鱼玄机",
         "group": 0
     },
@@ -188,11 +188,43 @@
         "id": "王叔文",
         "group": 1,
         "position": ""
+    },
+    {
+        "id": "权德舆",
+        "group": 1
+    },
+    {
+        "id": "孟郊",
+        "group": 1
+    },
+    {
+        "id": "韦皋",
+        "group": 1
+    },
+    {
+        "id": "高崇文",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "武元衡",
+        "group": 1,
+        "position": ""
+    },
+    {
+        "id": "王播",
+        "group": 1,
+        "position": "宰相"
+    },
+    {
+        "id": "李德裕",
+        "group": 1,
+        "position": ""
     }
 ],
 
     "links":[
-    {
+  {
         "source": "鱼玄机",
         "target": "李郢"
     },
@@ -289,6 +321,30 @@
         "target": "张祜"
     },
     {
+        "source": "薛涛",
+        "target": "韦皋"
+    },
+    {
+        "source": "薛涛",
+        "target": "高崇文"
+    },
+    {
+        "source": "薛涛",
+        "target": "武元衡"
+    },
+    {
+        "source": "薛涛",
+        "target": "王播"
+    },
+    {
+        "source": "薛涛",
+        "target": "李德裕"
+    },
+    {
+        "source": "刘采春",
+        "target": "元稹"
+    },
+    {
         "source": "刘禹锡",
         "target": "韦执谊"
     },
@@ -365,12 +421,12 @@
         "target": "萧俛"
     },
     {
-        "source": "白居易",
-        "target": "鱼玄机"
+        "source": "韩愈",
+        "target": "权德舆"
     },
     {
-        "source": "元稹",
-        "target": "刘采春"
+        "source": "韩愈",
+        "target": "孟郊"
     }
 ]
 }
