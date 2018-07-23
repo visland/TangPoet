@@ -182,16 +182,8 @@
     {"source": "薛涛", "target": "王建", "value": 7},
     {"source": "薛涛", "target": "元稹", "value": 10},
     {"source": "元稹", "target": "白居易", "value": 1},
-    {"source": "元稹", "target": "刘禹锡", "value": 1},
-    {"source": "张籍", "target": "王建", "value": 1},
-    {"source": "刘禹锡", "target": "王建", "value": 1},
     {"source": "刘禹锡", "target": "白居易", "value": 1},
-    {"source": "裴度", "target": "白居易", "value": 1},
-    {"source": "刘禹锡", "target": "裴度", "value": 1},
-    {"source": "刘禹锡", "target": "张籍", "value": 1},
-    {"source": "白居易", "target": "张籍", "value": 1},
-    {"source": "白居易", "target": "武元衡", "value": 1},
-    {"source": "杜牧", "target": "张祜", "value": 1},
+    {"source": "杜牧", "target": "牛僧儒", "value": 1},
     {"source": "段文昌", "target": "李德裕", "value": 1}
   ]
 }

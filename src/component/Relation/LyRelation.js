@@ -25,7 +25,7 @@ export default class LyRelation extends React.Component {
     const height = 1080;
     const center_x = width / 2.2;
     const center_y = height / 2;
-	  const force = d3.forceManyBody().strength(-2200);
+	  const force = d3.forceManyBody().strength(-2600);
 	  this.setState({name: this.props.relationships.nodes[0].id});
 
 		const simulation = d3.forceSimulation()
@@ -53,7 +53,7 @@ export default class LyRelation extends React.Component {
 		    	
 		const nodeCircle = nodes.append("circle")
 					.attr("calss", "nodeCircle")
-	  			.attr("r", function(d) { return d.group === 0? 65 : (d.group=== 1? 40 : 30);})
+	  			.attr("r", function(d) { return d.group === 0? 65 : (d.group=== 1? 50 : 30);})
 	  			.attr("stroke", '#e29c45')
 	  			.attr("stroke-width", 5)
 	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : (d.group=== 1? '#a88462' : '#999');})
@@ -67,7 +67,7 @@ export default class LyRelation extends React.Component {
 		      .attr("class", "nodetext")
 		      .attr("dx", 0)
           .attr("dy", 8)
-          .attr("font-size", 20)
+          .attr("font-size", 23)
           .attr("fill", 'white')
           .attr("text-anchor", "middle")
 		      .text(function(d) { return d.id;});
@@ -81,7 +81,7 @@ export default class LyRelation extends React.Component {
 
 		  simulation.force("link")
 		      .links(this.props.relationships.links)
-		      .distance(100);
+		      .distance(200);
 
 		   nodeCircle.data()[0].x = center_x;
 		   nodeCircle.data()[0].y = center_y;

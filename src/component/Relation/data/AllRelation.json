@@ -30,16 +30,6 @@
         "group": 1
     },
     {
-        "id": "温璋",
-        "group": 1,
-        "position": "京兆尹"
-    },
-    {
-        "id": "高仲武",
-        "group": 1,
-        "position": ""
-    },
-    {
         "id": "刘长卿",
         "group": 1
     },
@@ -185,11 +175,6 @@
         "position": ""
     },
     {
-        "id": "王叔文",
-        "group": 1,
-        "position": ""
-    },
-    {
         "id": "权德舆",
         "group": 1
     },
@@ -220,213 +205,382 @@
         "id": "李德裕",
         "group": 1,
         "position": ""
+    },
+    {
+        "id": "王建",
+        "group": 1
+    },
+     {
+        "id": "柳宗元",
+        "group": 1
     }
 ],
 
     "links":[
-  {
+   {
         "source": "鱼玄机",
-        "target": "李郢"
-    },
-    {
-        "source": "鱼玄机",
-        "target": "光威裒"
+        "target": "李郢",
+        "value":1
     },
     {
         "source": "鱼玄机",
-        "target": "温庭筠"
+        "target": "光威裒",
+        "value":1
     },
     {
         "source": "鱼玄机",
-        "target": "温璋"
+        "target": "温庭筠",
+        "value":1
     },
     {
         "source": "李冶",
-        "target": "高仲武"
+        "target": "刘长卿",
+        "value":1
     },
     {
         "source": "李冶",
-        "target": "刘长卿"
+        "target": "陆羽",
+        "value":1
     },
     {
         "source": "李冶",
-        "target": "陆羽"
+        "target": "皎然",
+        "value":1
     },
     {
         "source": "李冶",
-        "target": "皎然"
+        "target": "刘禹锡",
+        "value":1
     },
     {
         "source": "李冶",
-        "target": "刘禹锡"
+        "target": "朱放",
+        "value":1
     },
     {
         "source": "李冶",
-        "target": "朱放"
+        "target": "韩揆",
+        "value":1
     },
     {
         "source": "李冶",
-        "target": "韩揆"
-    },
-    {
-        "source": "李冶",
-        "target": "阎伯钧"
+        "target": "阎伯钧",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "段文昌"
+        "target": "段文昌",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "张籍"
+        "target": "张籍",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "杜牧"
+        "target": "杜牧",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "牛僧孺"
+        "target": "牛僧孺",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "白居易"
+        "target": "白居易",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "元稹"
+        "target": "王建",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "令狐楚"
+        "target": "元稹",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "裴度"
+        "target": "令狐楚",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "严绶"
+        "target": "裴度",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "刘禹锡"
+        "target": "严绶",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "吴武陵"
+        "target": "刘禹锡",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "张祜"
+        "target": "吴武陵",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "韦皋"
+        "target": "张祜",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "高崇文"
+        "target": "韦皋",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "武元衡"
+        "target": "高崇文",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "王播"
+        "target": "武元衡",
+        "value":1
     },
     {
         "source": "薛涛",
-        "target": "李德裕"
+        "target": "王播",
+        "value":1
+    },
+    {
+        "source": "薛涛",
+        "target": "李德裕",
+        "value":1
     },
     {
         "source": "刘采春",
-        "target": "元稹"
+        "target": "元稹",
+        "value":1
+    },
+    {
+        "source": "温庭筠",
+        "target": "李商隐",
+        "value":1
     },
     {
         "source": "刘禹锡",
-        "target": "韦执谊"
+        "target": "韦执谊",
+        "value":1
     },
     {
         "source": "刘禹锡",
-        "target": "杜佑"
+        "target": "杜佑",
+        "value":1
     },
     {
         "source": "刘禹锡",
-        "target": "王叔文"
+        "target": "柳宗元",
+        "value":1
     },
     {
         "source": "张籍",
-        "target": "韩愈"
+        "target": "韩愈",
+        "value":1
     },
     {
         "source": "杜牧",
-        "target": "李贺"
+        "target": "李贺",
+        "value":1
+    },
+    {
+        "source": "裴度",
+        "target": "张籍",
+        "value":1
     },
     {
         "source": "杜牧",
-        "target": "牛僧孺"
+        "target": "韦温",
+        "value":1
     },
     {
         "source": "杜牧",
-        "target": "韦温"
+        "target": "李商隐",
+        "value":1
     },
     {
         "source": "牛僧孺",
-        "target": "柳仲郢"
+        "target": "柳仲郢",
+        "value":1
+    },
+    {
+        "source": "牛僧孺",
+        "target": "杜牧",
+        "value":1
     },
     {
         "source": "白居易",
-        "target": "李商隐"
+        "target": "李商隐",
+        "value":1
     },
     {
         "source": "白居易",
-        "target": "元稹"
+        "target": "元稹",
+        "value":1
     },
     {
         "source": "白居易",
-        "target": "郑太郡"
+        "target": "郑太郡",
+        "value":1
     },
     {
         "source": "白居易",
-        "target": "皇甫镛"
+        "target": "皇甫镛",
+        "value":1
     },
     {
         "source": "白居易",
-        "target": "关盼盼"
+        "target": "关盼盼",
+        "value":1
     },
     {
         "source": "元稹",
-        "target": "杜甫"
+        "target": "杜甫",
+        "value":1
     },
     {
         "source": "元稹",
-        "target": "元秬"
+        "target": "元秬",
+        "value":1
     },
     {
         "source": "元稹",
-        "target": "崔倰"
+        "target": "崔倰",
+        "value":1
     },
     {
         "source": "元稹",
-        "target": "裴艾"
+        "target": "裴艾",
+        "value":1
+    },
+    {
+        "source": "元稹",
+        "target": "白居易",
+        "value":1
     },
     {
         "source": "令狐楚",
-        "target": "皇甫镈"
+        "target": "皇甫镈",
+        "value":1
     },
     {
         "source": "令狐楚",
-        "target": "萧俛"
+        "target": "萧俛",
+        "value":1
     },
     {
         "source": "韩愈",
-        "target": "权德舆"
+        "target": "权德舆",
+        "value":1
     },
     {
         "source": "韩愈",
-        "target": "孟郊"
+        "target": "孟郊",
+        "value":1
+    },
+    {
+        "source": "韩愈",
+        "target": "裴度",
+        "value":1
+    },
+        {
+        "source": "李德裕",
+        "target": "段文昌",
+        "value":1
+    },
+    {
+        "source": "陆羽",
+        "target": "皎然",
+        "value":1
+    },
+    {
+        "source": "鱼玄机",
+        "target": "韩愈",
+        "value":0
+    },
+    {
+        "source": "李冶",
+        "target": "元稹",
+        "value":0
+    },
+        {
+        "source": "鱼玄机",
+        "target": "裴度",
+        "value":0
+    },
+                {
+        "source": "段文昌",
+        "target": "李冶",
+        "value":0
+    },
+                    {
+        "source": "李德裕",
+        "target": "元稹",
+        "value":0
+    },
+                        {
+        "source": "裴度",
+        "target": "杜牧",
+        "value":0
+    },
+                            {
+        "source": "裴度",
+        "target": "白居易",
+        "value":0
+    },
+                                {
+        "source": "王建",
+        "target": "白居易",
+        "value":1
+    },
+                                    {
+        "source": "张祜",
+        "target": "杜牧",
+        "value":1
+    },
+                                    {
+        "source": "武元衡",
+        "target": "白居易",
+        "value":1
+    },
+                                    {
+        "source": "王建",
+        "target": "元稹",
+        "value":1
+    },
+                                {
+        "source": "裴度",
+        "target": "杜牧",
+        "value":0
+    },
+                                {
+        "source": "韩愈",
+        "target": "薛涛",
+        "value":0
+    },
+                                {
+        "source": "牛僧孺",
+        "target": "白居易",
+        "value":0
+    },
+    {
+        "source": "李贺",
+        "target": "裴度",
+        "value":0
+    },
+        {
+        "source": "李冶",
+        "target": "薛涛",
+        "value":0
     }
 ]
 }

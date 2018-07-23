@@ -28,8 +28,8 @@ export default class Part extends React.Component{
             { "index": "2", "title": "不同时期女诗人创作全景图" },
         ]
         this.aside = [
-            { "src": "1", "style": { right: "-9%", top: "5%" } },
-            { "src": "1", "style": { left: "-9%", bottom: "10%"}}
+            { "src": "1", "style": { right: "-9%", top: "-1%" } },
+            { "src": "2", "style": { left: "-9%", bottom: "20%"}}
         ]
     }
     render(){        
@@ -66,7 +66,7 @@ export default class Part extends React.Component{
                 </div>
 
                 <div className="part-style" style={screenStyle}>
-                    <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[1].style}/>
+                    <Aside asideSrc={require("./style/" + this.aside[1].src + ".png")} asideStyle={this.aside[1].style}/>
                     <Title title={this.info[1].title} titleLayout={svgLayout}/>
                     <ChooseFun 
                         handleClick={this.handleClick} hoverHelight={this.hoverHelight} 
