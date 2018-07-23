@@ -23,7 +23,6 @@ export default class AllPoetry extends React.Component{
 
         const { svgLayout } = this.props
         
-        let svgWidth = svgLayout.width
         let svgHeight = svgLayout.height
 
         this.margin = ( this.radius + this.padding )* 2
@@ -36,7 +35,9 @@ export default class AllPoetry extends React.Component{
         let comData1 = this.group.map(d => ({ group: d.group, name: d.name, b : Math.ceil(d.value / a) }))
         let comData2 = comData1.map(d => ({ group: d.group, name: d.name, b: d.b, groupWidth: d.b * this.oneWide}))
         this.groupdata = this.compute(comData2)
-        console.log(this.groupdata)
+        // console.log(this.groupdata)
+
+        
     }
     compute(data){
         let padding = this.oneWide * 2
@@ -49,10 +50,12 @@ export default class AllPoetry extends React.Component{
         return data
     }
     render(){
-        const { bigChartStyle, dotLayout, svgLayout} = this.props
+        const { bigChartStyle, dotLayout, svgLayout, viewbox} = this.props
+        let Layout = { width: svgLayout.widthP, height: svgLayout.heightP, left: svgLayout.left, top: svgLayout.top }
+        console.log(viewbox)
         return (
             <div className={bigChartStyle} style={dotLayout}>
-                <svg id="allpoetry" style={svgLayout}>
+                <svg id="allpoetry" style={Layout} viewBox={viewbox}>
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}

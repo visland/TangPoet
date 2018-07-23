@@ -14,20 +14,40 @@ export default class OnePoetry extends React.Component{
                 transform={transform}         
             >
                 {data.map((d, i) => 
-                    <circle
-                        key = {i}
-                        className="poetry-style"
-                        cx={oneWide * ( i - Math.floor( i / numW) * numW)}
-                        cy={height - oneWide * Math.floor(i / numW)}
-                        r={dotR}
-                        fill={d.sex === "female" ? color.femaleC : color.maleC}
-                    >
-                    </circle>
+                    <g className="poetry-style">
+                        
+                        <circle
+                            key = {i}
+                            className=""
+                            cx={oneWide * ( i - Math.floor( i / numW) * numW)}
+                            cy={height - oneWide * Math.floor(i / numW)}
+                            r={dotR}
+                            fill={d.sex === "female" ? color.femaleC : color.maleC}
+                        >
+                        </circle>
+                        <g className="tooltip" 
+                            x={oneWide * (i - Math.floor(i / numW) * numW) - 45}
+                            y={height - oneWide * Math.floor(i / numW) + dotR}>
+                            <rect 
+                                height = {oneWide * 4}
+                                width = "90"
+                                rx = "10"
+                                ry = "10"
+                                x={oneWide * (i - Math.floor(i / numW) * numW) - 45}
+                                y={height - oneWide * Math.floor(i / numW) + dotR}></rect>
+                            <text
+                                x={oneWide * (i - Math.floor(i / numW) * numW)}
+                                y={height - oneWide * Math.floor(i / numW) + oneWide * 2}>{d.name}</text>
+                            <text
+                                x={oneWide * (i - Math.floor(i / numW) * numW)}
+                                y={height - oneWide * Math.floor(i / numW) + oneWide * 3.5}>诗作数量：{d.value}</text>
+                            
+                        </g>
+                    </g>
                 )}
                 <text
-                    dx={ width / 2 - 35}
+                    dx={ width / 2}
                     dy={ height + height * 0.08}
-
                 >{name}</text>
             </g>
         )
