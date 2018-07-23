@@ -3,10 +3,21 @@ import * as d3 from 'd3';
 import ink from './img/ink.png';
 import cloud from './img/cloud.png';
 import c from './img/c.png';
+import RelationText from './XtText';
 
-export default class AllRelation extends React.Component {
+export default class XtRelation extends React.Component {
 	constructor() {
 	 	super();
+		this.state = {
+			maleName: '',
+			name: '',
+			rel: '点击男诗人名字获取关系信息',
+			from: '',
+			to:'',
+			fromname:'',
+			toname:'',
+			des:''
+		};
 	}
 
 	componentDidMount() {
@@ -14,23 +25,23 @@ export default class AllRelation extends React.Component {
     const height = 1080;
     const center_x = width / 1.8;
     const center_y = height / 2;
-	const force = d3.forceManyBody().strength(-220);
-	  // this.setState({name: this.props.relationships.nodes[0].id});
+	  const force = d3.forceManyBody().strength(-2200);
+	  this.setState({name: this.props.relationships.nodes[0].id});
 
 		const simulation = d3.forceSimulation()
 		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
 		    .force("charge", force)
 		    .force("center", d3.forceCenter(center_x, center_y));
 
-		const link = d3.select(".all").append("g")
+		const link = d3.select(".chart").append("g")
 		    .attr("class", "links")
 		    .selectAll("line")
 		    .data(this.props.relationships.links)
 		    .enter().append("line")
-		      .attr("stroke-width", function(d) { return 3})
+		      .attr("stroke-width", function(d) { return 2.1 * Math.sqrt(d.value); })
 		      .attr("stroke", function(d) { return d.value === 10? 'maroon' : '#ca6924';});
 
-		const nodes = d3.select(".all").append("g")
+		const nodes = d3.select(".chart").append("g")
 		    .attr("class", "nodes")
 		    .selectAll("g")
 		    .data(this.props.relationships.nodes)
@@ -42,10 +53,10 @@ export default class AllRelation extends React.Component {
 		    	
 		const nodeCircle = nodes.append("circle")
 					.attr("calss", "nodeCircle")
-	  			.attr("r", function(d) { return d.group === 0? 40 : 30;})
+	  			.attr("r", function(d) { return d.group === 0? 65 : (d.group=== 1? 40 : 30);})
 	  			.attr("stroke", '#e29c45')
 	  			.attr("stroke-width", 5)
-	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : '#a88462';})
+	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : (d.group=== 1? '#a88462' : '#999');})
 
 		// const nodeImg = nodes.append("image")
 	 //      .attr("width", img_w)
@@ -70,23 +81,23 @@ export default class AllRelation extends React.Component {
 
 		  simulation.force("link")
 		      .links(this.props.relationships.links)
-		      .distance(120);
+		      .distance(100);
 
-		   // nodeCircle.data()[0].x = center_x;
-		   // nodeCircle.data()[0].y = center_y;
+		   nodeCircle.data()[0].x = center_x;
+		   nodeCircle.data()[0].y = center_y;
 
 		  /* Interactions. */
-			// nodes.on('click', (n) => {
-			//     nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
-			//     this.setState({
-			//     	maleName : n.id, 
-			//     	des : n.des,
-			//     	from : n.from,
-			//     	to : n.to,
-			//     	rel : n.rel,
-			//     	fromname: n.fromname,
-			//     	toname: n.toname});
-			// })
+			nodes.on('click', (n) => {
+			    nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
+			    this.setState({
+			    	maleName : n.id, 
+			    	des : n.des,
+			    	from : n.from,
+			    	to : n.to,
+			    	rel : n.rel,
+			    	fromname: n.fromname,
+			    	toname: n.toname});
+			})
 
 		  /* Load positions of each element. */
 		  function ticked() {
@@ -133,32 +144,18 @@ export default class AllRelation extends React.Component {
 
 		return (
 			<div>
-					<svg className='all'
+					<svg className='chart'
 								width='100%'
 								height='100%'
 								viewBox='0 0 1920 1080'
 								preserveAspectRatio="xMinYMin meet">
-
+					
 					<image 
-						x='20'
-						y='-380'
+						x='1520'
+						y='-320'
 						width='20%'
 						height='100%'
 						xlinkHref= { ink } />
-
-					<image 
-						x='1520'
-						y='860'
-						width='12%'
-						height='12%'
-						xlinkHref= { c } />
-
-					<image 
-						x='300'
-						y='540'
-						width='12%'
-						height='12%'
-						xlinkHref= { c } />
 
 					<image 
 						x='600'
@@ -168,24 +165,71 @@ export default class AllRelation extends React.Component {
 						xlinkHref= { cloud } />
 
 					<image 
-						x='420'
+						x='620'
 						y='660'
 						width='16%'
 						height='16%'
 						xlinkHref= { cloud } />
 
 					<image 
-						x='1300'
+						x='1400'
 						y='460'
 						width='11%'
 						height='11%'
 						xlinkHref= { cloud } />
 
-					<text className='socialTitle'
-						x='200'
+					<image 
+						x='520'
+						y='560'
+						width='12%'
+						height='12%'
+						xlinkHref= { c } />
+
+					<image 
+						x='1520'
+						y='860'
+						width='12%'
+						height='12%'
+						xlinkHref= { c } />
+
+					<RelationText className='xt'
+							maleName={ this.state.maleName }
+							from={ this.state.from }
+							des={ this.state.des }
+							to={ this.state.to }
+							rel={ this.state.rel }
+							fromname={ this.state.fromname }
+							toname={ this.state.toname }/>
+					
+					<text className='femaleName'
+						x='1700'
 						y='80'>
-						唐代女诗人社交图
+						{ this.state.name }
 					</text>
+
+					<text className='description'>
+            <tspan           	
+          		x="1800" 
+          		y= { text_y }>历观唐以雅道奖士类，而闺阁英秀，
+          	</ tspan>
+          	<tspan           	
+          		x="1750" 
+          		y={ text_y }>亦能熏染，锦心绣口，蕙情兰性，足可尚矣。
+          	</ tspan>
+            <tspan           	
+          		x="1700" 
+          		y={ text_y }>中间如李季兰、鱼玄机，
+          	</tspan>
+            <tspan           	
+          		x="1650" 
+          		y={ text_y }>皆跃出方外，修清静之教，陶写幽怀，留连光景，
+          	</tspan>
+          	<tspan           	
+          		x="1600" 
+          		y={ text_y }>逍遥闲暇之功，无非云水之念。
+          	</ tspan>
+          </text>
+					
 					</svg>
 			</div>
 		)

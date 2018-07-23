@@ -3,9 +3,9 @@ import * as d3 from 'd3';
 import ink from './img/ink.png';
 import cloud from './img/cloud.png';
 import c from './img/c.png';
-import RelationText from './RelationText';
+import RelationText from './LyText';
 
-export default class SingleRelation extends React.Component {
+export default class LyRelation extends React.Component {
 	constructor() {
 	 	super();
 		this.state = {
@@ -23,7 +23,7 @@ export default class SingleRelation extends React.Component {
 	componentDidMount() {
     const width = 1920;
     const height = 1080;
-    const center_x = width / 1.8;
+    const center_x = width / 2.2;
     const center_y = height / 2;
 	  const force = d3.forceManyBody().strength(-2200);
 	  this.setState({name: this.props.relationships.nodes[0].id});
@@ -33,7 +33,7 @@ export default class SingleRelation extends React.Component {
 		    .force("charge", force)
 		    .force("center", d3.forceCenter(center_x, center_y));
 
-		const link = d3.select(".chart").append("g")
+		const link = d3.select(".lychart").append("g")
 		    .attr("class", "links")
 		    .selectAll("line")
 		    .data(this.props.relationships.links)
@@ -41,7 +41,7 @@ export default class SingleRelation extends React.Component {
 		      .attr("stroke-width", function(d) { return 2.1 * Math.sqrt(d.value); })
 		      .attr("stroke", function(d) { return d.value === 10? 'maroon' : '#ca6924';});
 
-		const nodes = d3.select(".chart").append("g")
+		const nodes = d3.select(".lychart").append("g")
 		    .attr("class", "nodes")
 		    .selectAll("g")
 		    .data(this.props.relationships.nodes)
@@ -144,55 +144,55 @@ export default class SingleRelation extends React.Component {
 
 		return (
 			<div>
-					<svg className='chart'
+					<svg className='lychart'
 								width='100%'
 								height='100%'
 								viewBox='0 0 1920 1080'
 								preserveAspectRatio="xMinYMin meet">
 					
 					<image 
-						x='1520'
+						x='10'
 						y='-320'
 						width='20%'
 						height='100%'
 						xlinkHref= { ink } />
 
 					<image 
-						x='600'
+						x='1000'
 						y='160'
 						width='14%'
 						height='14%'
 						xlinkHref= { cloud } />
 
 					<image 
-						x='620'
+						x='520'
 						y='660'
 						width='16%'
 						height='16%'
 						xlinkHref= { cloud } />
 
 					<image 
-						x='1400'
+						x='1200'
 						y='460'
 						width='11%'
 						height='11%'
 						xlinkHref= { cloud } />
 
 					<image 
-						x='520'
+						x='420'
 						y='560'
 						width='12%'
 						height='12%'
 						xlinkHref= { c } />
 
 					<image 
-						x='1520'
+						x='80'
 						y='860'
 						width='12%'
 						height='12%'
 						xlinkHref= { c } />
 
-					<RelationText 
+					<RelationText className = 'ly'
 							maleName={ this.state.maleName }
 							from={ this.state.from }
 							des={ this.state.des }
@@ -202,30 +202,30 @@ export default class SingleRelation extends React.Component {
 							toname={ this.state.toname }/>
 					
 					<text className='femaleName'
-						x='1700'
+						x='200'
 						y='80'>
 						{ this.state.name }
 					</text>
 
 					<text className='description'>
             <tspan           	
-          		x="1800" 
+          		x="120" 
           		y= { text_y }>历观唐以雅道奖士类，而闺阁英秀，
           	</ tspan>
           	<tspan           	
-          		x="1750" 
+          		x="160" 
           		y={ text_y }>亦能熏染，锦心绣口，蕙情兰性，足可尚矣。
           	</ tspan>
             <tspan           	
-          		x="1700" 
+          		x="200" 
           		y={ text_y }>中间如李季兰、鱼玄机，
           	</tspan>
             <tspan           	
-          		x="1650" 
+          		x="240" 
           		y={ text_y }>皆跃出方外，修清静之教，陶写幽怀，留连光景，
           	</tspan>
           	<tspan           	
-          		x="1600" 
+          		x="280" 
           		y={ text_y }>逍遥闲暇之功，无非云水之念。
           	</ tspan>
           </text>

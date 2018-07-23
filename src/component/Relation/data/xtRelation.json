@@ -18,7 +18,7 @@
     "to":"铸泻黄金镜始开。初生三五月徘徊。为遭无限尘蒙蔽。不得华堂上玉台。",
     "toname":"十离诗其十：镜离台（薛涛作）"},
 
-    {"id": "高崇文",     
+    {"id": "严绶",     
     "group": 1,
     "rel":"",
     "des":"test",
@@ -172,7 +172,7 @@
     {"source": "薛涛", "target": "吴武陵", "value": 3},
     {"source": "薛涛", "target": "张祜", "value": 3},
     {"source": "薛涛", "target": "韦皋", "value": 10},
-    {"source": "薛涛", "target": "高崇文", "value": 3},
+    {"source": "薛涛", "target": "严绶", "value": 3},
     {"source": "薛涛", "target": "武元衡", "value": 9},
     {"source": "薛涛", "target": "王播", "value": 3},
     {"source": "薛涛", "target": "段文昌", "value": 3},
