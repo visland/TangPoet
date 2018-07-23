@@ -1,6 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3';
-import relationships from './data/xtRelation.json';
+import Xtrelationships from './data/xtRelation.json';
+import Lyrelationships from './data/LyRelation.json';
 import Allrelationships from './data/AllRelation.json';
 import XtRelation from './XtRelation';
 import LyRelation from './LyRelation';
@@ -12,8 +13,8 @@ export default class Relation extends React.Component {
 		return (
 			<div>
 			<AllRelation relationships= {Allrelationships}/>
-			<XtRelation relationships= {relationships }/>
-			<LyRelation relationships= {relationships}/>
+			<XtRelation relationships= { Xtrelationships }/>
+			<LyRelation relationships= { Lyrelationships}/>
 			</div>
 		)
 	}
