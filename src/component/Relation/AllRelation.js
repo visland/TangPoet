@@ -14,7 +14,7 @@ export default class AllRelation extends React.Component {
     const height = 1080;
     const center_x = width / 1.8;
     const center_y = height / 2;
-	const force = d3.forceManyBody().strength(-600);
+	const force = d3.forceManyBody().strength(-480);
 	  // this.setState({name: this.props.relationships.nodes[0].id});
 
 		const simulation = d3.forceSimulation()
@@ -27,7 +27,7 @@ export default class AllRelation extends React.Component {
 		    .selectAll("line")
 		    .data(this.props.relationships.links)
 		    .enter().append("line")
-		      .attr("stroke-width", function(d) { return 4})
+		      .attr("stroke-width", function(d) { return 3.2})
 		      .attr("opacity", function(d) { return d.value})
 		      .attr("stroke", function(d) { return d.value === 10? 'maroon' : '#ca6924';});
 
@@ -43,21 +43,16 @@ export default class AllRelation extends React.Component {
 		    	
 		const nodeCircle = nodes.append("circle")
 					.attr("calss", "nodeCircle")
-	  			.attr("r", function(d) { return d.group === 0? 40 : 32;})
+	  			.attr("r", function(d) { return d.group === 0? 35 : 28;})
 	  			.attr("stroke", '#e29c45')
-	  			.attr("stroke-width", 4)
+	  			.attr("stroke-width", 3)
 	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : '#a88462';})
-
-		// const nodeImg = nodes.append("image")
-	 //      .attr("width", img_w)
-	 //      .attr("height", img_h)
-	 //      .attr("xlink:href", function(d) { return imgs[d.group];})
 
 		const nodeText = nodes.append("text")
 		      .attr("class", "nodetext")
 		      .attr("dx", 0)
           .attr("dy", 8)
-          .attr("font-size", 19)
+          .attr("font-size", 17)
           .attr("fill", 'white')
           .attr("text-anchor", "middle")
 		      .text(function(d) { return d.id;});
@@ -71,16 +66,16 @@ export default class AllRelation extends React.Component {
 
 		  simulation.force("link")
 		      .links(this.props.relationships.links)
-		      .distance(90);
+		      .distance(70);
 
 		   nodeCircle.data()[0].x = 1650;
-		   nodeCircle.data()[0].y = 700;
+		   nodeCircle.data()[0].y = 400;
 
 		   // nodeCircle.data()[1].x = 1500;
 		   // nodeCircle.data()[1].y = 750;
 
 		   nodeCircle.data()[2].x = 1000;
-		   nodeCircle.data()[2].y = 400;
+		   nodeCircle.data()[2].y = 100;
 		  /* Interactions. */
 			// nodes.on('click', (n) => {
 			//     nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
