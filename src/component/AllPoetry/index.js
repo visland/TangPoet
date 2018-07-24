@@ -59,7 +59,7 @@ export default class AllPoetry extends React.Component{
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, ${this.areaHeight * 0.01})`} 
+                            transform={`translate(${d.transform}, -5)`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}

@@ -46,7 +46,7 @@ export default class OnePoetry extends React.Component{
                 )}
                 <text
                     dx={ width / 2}
-                    dy={ height + height * 0.08}
+                    dy={ height + height * 0.06}
                 >{name}</text>
             </g>
         )
