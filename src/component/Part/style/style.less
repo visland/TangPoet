@@ -27,6 +27,7 @@
     position: @pos;
     padding-top: 3%;
     margin-bottom: 5%;
+    // color: #615234
 
 
     .title-style{
@@ -71,8 +72,8 @@
         svg{
             text{
                  text-anchor: middle;
-                //   dominant-baseline: middle; /* 文本垂直居中 */
-
+                 font-family: 'W1';
+                dominant-baseline: middle; /* 文本垂直居中 */
             }
             position: @pos;
             .group-style{
@@ -99,16 +100,20 @@
                 }
                
             }
-            g.flow-style {
+            g.flow-style {                
+                circle{
+                    fill: #fff9ee;
+                    opacity: 0;
+                }
                 use{
                     cursor: pointer;     
-                    z-index: 3;           
-                    
+                    // z-index: 3;    
                 }
                 text{ 
-                    font-size: 0.8em;
+                    font-size: 12px;
                     font-family: "W2";
-                    z-index: 1;
+                    // opacity: 0;
+                    fill: #645e52
                 }
                 .breath-flow{
                     transform-origin: 18% 20%;
@@ -125,7 +130,8 @@
 
     .note-style{
         width: 75%;
-        right: 5%;
+        right: 8%;
+        bottom: 13%;
         position: @posA;
         font-family: @fontZW;
 

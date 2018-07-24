@@ -12,12 +12,9 @@ export default class ChooseFun extends React.Component{
                     <ChooseBtn 
                         key={i}
                         alt={d.state}
-                        // wpic={wpic}
-                        // hpic={hpic}
-                        btnpic={require("../ChartPoetry/img/" + d.picsrc + ".jpg")}
+                        btnpic={require("../ChartPoetry/img/" + d.picsrc + ".svg")}
                         handleClick={handleClick}
                         hoverHelight={hoverHelight}
-
                         chobtnStyle={chobtnStyle}
                     />
                 )}

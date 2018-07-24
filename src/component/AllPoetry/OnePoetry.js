@@ -14,10 +14,9 @@ export default class OnePoetry extends React.Component{
                 transform={transform}         
             >
                 {data.map((d, i) => 
-                    <g className="poetry-style">
-                        
+                    <g className="poetry-style" key={i}>           
                         <circle
-                            key = {i}
+                            
                             className=""
                             cx={oneWide * ( i - Math.floor( i / numW) * numW)}
                             cy={height - oneWide * Math.floor(i / numW)}
