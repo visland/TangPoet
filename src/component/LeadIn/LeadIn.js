@@ -40,7 +40,7 @@ render() {
           	xlinkHref={ ink } 
           	height='700' 
           	width='700'
-          	x="520"
+          	x="620"
           	y="220">
           <animate attributeName="opacity" 
 	        		from="0" to="0.5" 
@@ -56,17 +56,17 @@ render() {
           		fill="freeze"
           		repeatCount="0" />
           	<tspan           	
-          		x="980" 
+          		x="1040" 
           		y="80">我有柔情似水
           	</ tspan>
           	<tspan           	
-          		x="850" 
+          		x="910" 
           		y="250">亦有豪情万丈
           		</ tspan>
           </text>
 
           <text className='subtitleText' 
-          	x="720" 
+          	x="780" 
           	y="450">
            <animate attributeName="opacity" 
 	        		from="0" to="1" 
