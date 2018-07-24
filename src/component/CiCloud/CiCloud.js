@@ -7,8 +7,9 @@ import _FC from './data/femaleCi.json'
 import _FZ from './data/femaleZi.json'
 import _TZ from './data/totalZi.json'
 import _TC from './data/totalCi.json'
-import { Radio } from 'antd';
-const RadioGroup = Radio.Group;
+import Radio from 'antd/lib/radio';
+import 'antd/lib/radio/style/css';
+import './CiCloud.less';
 
 export default class CiCloud extends React.Component {
   constructor() {
@@ -25,7 +26,7 @@ export default class CiCloud extends React.Component {
     width: 1300,
     height: 600,
   }
-sx
+  
   onRadioChange = (e) => {
     this.setState({
       value: e.target.value,
@@ -117,16 +118,14 @@ sx
         this.renderCLoud(this.ci_freq[1])
         break
     }
-
   }
 
   render() {
     return (
-      <div  style={{
+      <div style={{
             width: '100%',
             height: '100%'
           }}>
-
         <div
           className="ciCloud"
           ref={ref => {
@@ -137,10 +136,9 @@ sx
             height: '90%',            
             position:'relative',
             left: '5%',
-          }}
-        >
-        </div>         
-        <p  style={{
+          }}>
+        </div>
+        <p style={{
             width: '20%',
             float:'left',
             height: 50,
@@ -171,10 +169,14 @@ sx
             fontFamily:'W1',
             top:'5%'
           }}> 
-        <RadioGroup onChange={this.onRadioChange} value={this.state.value}>
-          <Radio value={0}>词频&nbsp;&nbsp;&nbsp;&nbsp;</Radio>
-          <Radio value={1}>字频&nbsp;&nbsp;</Radio>
-        </RadioGroup>
+        <Radio.Group style={{
+          backgroundColor: 'transparent',
+          fontFamily:'W9'
+        }}
+        onChange={this.onRadioChange} value={this.state.value} buttonStyle="solid">
+          <Radio.Button value={0}>词频</Radio.Button>
+          <Radio.Button value={1}>字频</Radio.Button>
+        </Radio.Group>
         </div>    
       </div>
     );
