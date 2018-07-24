@@ -10,7 +10,7 @@ export default class AllPoetry extends React.Component{
         // console.log(AllData)
         this.data  = AllData
         this.radius = 5
-        this.padding = 2
+        this.padding = 3
         
         this.group = [
             { "group": "1", "value": 943, "name": "留诗一首" },
@@ -28,7 +28,7 @@ export default class AllPoetry extends React.Component{
         this.margin = ( this.radius + this.padding )* 2
         this.svgHeight = svgLayout.height
         // this.areaWidth = svgWidth / 6
-        this.areaHeight = svgHeight * 0.8
+        this.areaHeight = svgHeight * 0.9
         this.oneWide = this.radius * 2 + this.padding
         let a = Math.floor(this.areaHeight / this.oneWide)
 
@@ -59,7 +59,7 @@ export default class AllPoetry extends React.Component{
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, ${this.areaHeight * 0.1})`} 
+                            transform={`translate(${d.transform}, ${this.areaHeight * 0.01})`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}

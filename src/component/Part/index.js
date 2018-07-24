@@ -49,11 +49,11 @@ export default class Part extends React.Component{
             wboxScale = boxWidth / bgWidth;
         // let hboxScaleP = hboxScale * 100%
         let svgWidth = chartWidth * wboxScale,
-            svgHeight = chartHeight * hboxScale
+            svgHeight = chartHeight * hboxScale 
         
         const _per = d3.format("100%")
 
-        let margin = { left: (chartWidth - svgWidth) / 2, top: (chartHeight - svgHeight) / 2}
+        let margin = { left: (chartWidth - svgWidth) / 2, top: (chartHeight - svgHeight) / 2 * 1.1}
         let marginP = { left: _per(margin.left / chartWidth), top: _per(margin.top / chartHeight)},
             heightP = _per(hboxScale),
             widthP = _per(wboxScale)
@@ -62,16 +62,7 @@ export default class Part extends React.Component{
             Layout = { height: chartHeight },
             svgLayout = { height: svgHeight, width: svgWidth, heightP: heightP, widthP: widthP, left: marginP.left, top: marginP.top} 
 
-        // let left = (margin.left / chartWidth) * 100%
-        // console.log(hboxScale)
-        // console.log(hboxScaleP)
-        // let marginP = { left : margin.left / chartWidth * 100%, top: }
-
         let viewbox = `0 0 ${svgWidth} ${svgHeight}`
-        console.log(svgWidth)
-
-        console.log(viewbox)
-
 
         return(
             <div id="part1">
@@ -81,7 +72,7 @@ export default class Part extends React.Component{
                     <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/>
                     <Title title={this.info[0].title} titleLayout={svgLayout}/>
                     <AllPoetry bigChartStyle="chart-style" dotLayout={Layout} svgLayout={svgLayout} viewbox={viewbox} preserveAspectRatio="xMinYMin meet"/>
-                    <ChartNote chartnote={this.info[0].chartnote} noteStyle="note-style" />
+                    <ChartNote chartnote={this.info[0].chartnote} />
                 </div>
 
                 <div className="part-style" style={screenStyle}>
@@ -106,7 +97,7 @@ export default class Part extends React.Component{
                         viewbox={viewbox}
                         preserveAspectRatio="xMinYMin meet"
                     />
-                    <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} noteStyle="note-style" />
+                    <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} />
                 </div>
             </div>
         )
