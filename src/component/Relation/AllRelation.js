@@ -1,5 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
+import './style/Relation.css'
 import ink from './img/ink.png';
 import cloud from './img/cloud.png';
 import c from './img/c.png';
@@ -76,18 +77,6 @@ export default class AllRelation extends React.Component {
 
 		   nodeCircle.data()[2].x = 1000;
 		   nodeCircle.data()[2].y = 100;
-		  /* Interactions. */
-			// nodes.on('click', (n) => {
-			//     nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
-			//     this.setState({
-			//     	maleName : n.id, 
-			//     	des : n.des,
-			//     	from : n.from,
-			//     	to : n.to,
-			//     	rel : n.rel,
-			//     	fromname: n.fromname,
-			//     	toname: n.toname});
-			// })
 
 		  /* Load positions of each element. */
 		  function ticked() {
@@ -96,10 +85,6 @@ export default class AllRelation extends React.Component {
 		        .attr("y1", function(d) { return d.source.y; })
 		        .attr("x2", function(d) { return d.target.x; })
 		        .attr("y2", function(d) { return d.target.y; });
-
-		    // nodeImg
-		    // 		.attr("x", function(d) { return d.x - img_w / 2; })
-		    //     .attr("y", function(d) { return d.y - img_h / 2; });
 		   
 		    nodeText
 		    		.attr("x", function(d) { return d.x; })
@@ -139,6 +124,27 @@ export default class AllRelation extends React.Component {
 								height='100%'
 								viewBox='0 0 1920 1080'
 								preserveAspectRatio="xMinYMin meet">
+					<circle cx='1800' cy='80' r='20'
+						style={{
+							stroke:'#e29c45',
+							strokeWidth: '3',
+							fill:'#a88462'
+						}}/>
+
+					<circle cx='1850' cy='80' r='23'
+						style={{
+							stroke:'#e29c45',
+							strokeWidth: '3',
+							fill:'maroon'
+						}}/>
+					
+					<text className='noteText'
+						x='1800'
+						y='110'>男性诗人</text>
+					
+					<text className='noteText'
+						x='1850'
+						y='110'>女性诗人</text>
 
 					<image 
 						x='20'

@@ -73,7 +73,7 @@ export default class RelationText extends React.Component {
 			<g className='frame'>
 				<image></image>
 				<text className='male'></text>
-				<text className='relation' x='1450' y='240' width='200' height='100'
+				<text className='relation' x='1450' y='230' width='200' height='100'
 					style={{
 						fontSize: '25px',
         		fontFamily:'W1',
@@ -100,7 +100,7 @@ export default class RelationText extends React.Component {
 				<svg>
   				<foreignObject width="420" height="600" x='1450' y='240'>
 	        	<p style={{
-	        		fontSize: '24px',
+	        		fontSize: '23px',
 	        		fontFamily:'W1'
 	        	}}>
 	        		{ this.props.des }

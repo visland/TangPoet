@@ -8,7 +8,7 @@
 
 .femaleName {
   font-family: 'W2'; 
-	font-size:120px;
+	font-size:70px;
 	-webkit-writing-mode: vertical-rl;
 	writing-mode: vertical-rl;
 }
@@ -27,4 +27,11 @@
   font-size:70px;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
+}
+
+.noteText {
+  font-family: 'W1'; 
+	font-size:28px;
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
 }

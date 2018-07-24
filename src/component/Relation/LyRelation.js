@@ -202,9 +202,9 @@ export default class LyRelation extends React.Component {
 							toname={ this.state.toname }/>
 					
 					<text className='femaleName'
-						x='200'
+						x='130'
 						y='80'>
-						{ this.state.name }
+						{ this.state.name }社交图
 					</text>
 
 					<text className='description'>
