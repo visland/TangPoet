@@ -1,8 +1,9 @@
 import React from 'react'
-// import * as d3 from 'd3'
+import * as d3 from 'd3'
 import AllData from '../Part/data/alldata2.json'
 import OnePoetry from './OnePoetry'
 // import {beeswarm} from "d3-beeswarm";
+
 
 export default class AllPoetry extends React.Component{
 
@@ -75,6 +76,33 @@ export default class AllPoetry extends React.Component{
     }
     choosedata(group) {
         let data = this.data.filter(d => d.group === group)
-        return data
+        return data 
+    }
+    componentDidMount(){
+      // let person = d3.selectAll(".poetry-style").select("[data-name='白居易']")
+        
+        // let e = document.getElementById("白居易")
+        // // let  = e.clientWidth
+        // let top = e.clientWidth
+        // let left = e.clientHeight
+        // // var x = 0, y =0
+        // // while (e != null) {
+        // //     x += e.offsetLeft;
+        // //     y += e.offsetTop;
+        // //     e = e.offsetParent;
+        // // }
+       
+        // let msgv = d3.select(".bg").append("div").attr("id", "msgv")
+        //     .append("div").style("width", 100).style("height", 100)
+        //     .text("白居易").style("position", "absolute")
+        //     .style("left", `${left}px`).style("top", `${top}px`)
+
+        // console.log(e)
+        // // console.log(a)
+        // console.log(msgv)
+        // console.log(top)
+        // console.log(left)
+        // // console.log(y)
+
     }
 }

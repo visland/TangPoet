@@ -73,7 +73,7 @@
             text{
                  text-anchor: middle;
                  font-family: 'W1';
-                dominant-baseline: middle; /* 文本垂直居中 */
+                // dominant-baseline: middle; /* 文本垂直居中 */
             }
             position: @pos;
             .group-style{
@@ -84,9 +84,11 @@
                     visibility: hidden;
                     font-family: @fontZW;
                     transition: all 1s ease-out;
-                    opacity: 0.4;
-                    rect{  
-                        fill: #615234;
+                    // opacity: 0.4;
+                    rect, circle{  
+                        fill: #dbc08d;
+                        stroke: #645e52; 
+                        stroke-width: 2px;
                     }
                     text{
                         // background-color: aquamarine
@@ -96,7 +98,7 @@
                 }
                 g.poetry-style:hover g.tooltip{ 
                     visibility: visible; 
-                    opacity: 1;
+                    // opacity: 1;
                 }
                
             }
@@ -111,8 +113,7 @@
                 }
                 text{ 
                     font-size: 12px;
-                    font-family: "W2";
-                    // opacity: 0;
+                    font-family: "W1";
                     fill: #645e52
                 }
                 .breath-flow{
@@ -129,9 +130,9 @@
     }
 
     .note-style{
-        width: 80%;
-        right: 6%;
-        top: 75%;
+        width: 76%;
+        right: 8%;
+        top: 76%;
         position: @posA;
         font-family: @fontZW;
         font-size:1.29em;

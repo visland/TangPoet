@@ -21,11 +21,7 @@ export default class DrawArea extends React.Component{
         const a = Math.floor( areHeight / Flong )
         // console.log(a)
         let b = Math.ceil( flows.length / a)
-        // console.log(b)
         const width = (b + 1)  * Fwide
-        // console.log(flows.length)
-
-        // let breData = 60
 
         return (
             <g 
@@ -49,10 +45,9 @@ export default class DrawArea extends React.Component{
 
                         btnstatus={btnstatus}
                         flowstate={d.data.state}
-                        // MaxX={MaxX}
                         // isBreath={ d.value > breData ? true : false}
                     />
-                    
+                
                 )}
             </g>
         )
@@ -62,14 +57,8 @@ export default class DrawArea extends React.Component{
         for(d of data){ 
             if(d.state === status) { 
                 return a = d.symbol;
-                // console.log()
             } 
-            // return "#sym01"
-            // console.log(d.symbol)
         }
-        // console.log(a)
         if( a === ""){ return a = "#sym01"; }
-        // console.log(a)
     }
-    
 }

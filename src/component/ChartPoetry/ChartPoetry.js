@@ -109,7 +109,7 @@ export default class ChartPoetry extends React.Component{
                     y: yWin
                 }
             }}
-        )
+        ) 
     }
     hideToolTip(){
         this.setState({tooltip: { display: false, data: { key: '', name: '', value: ''}}});
@@ -119,6 +119,5 @@ export default class ChartPoetry extends React.Component{
         let data = this.flowdata.filter(d => d.data.time === time)
         return data
     }
-
 
 }
