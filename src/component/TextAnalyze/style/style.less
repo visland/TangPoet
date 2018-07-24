@@ -1,0 +1,51 @@
+@pos: relative;
+.posA{position: absolute}
+.Analyze-style{
+
+    width: 90%;
+    position: @pos;
+    left: 5%;
+    height: 500px;
+
+    .cloud-pic{
+        .posA;
+        left: 5%;
+        top: 10%;
+        width: 20%;
+        // background-color: bisque;
+
+        // background-image: url()
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .Info-style{
+        .posA;
+        right: 8%;
+        top: 15%;
+        width: 50%;
+        font-family: 'W1';
+
+        .poem{
+            width: 60%;
+            position: @pos;
+            left: 20%;
+            font-size: 1.6em;
+            text-align: center;
+            &_1{
+                font-size: 2em;
+            }
+            &_2{
+
+            }
+
+        }
+        .info{
+            font-size: 1.4em;
+            line-height: 1.4em;
+            margin-top: 8%;
+        }
+    }
+}
