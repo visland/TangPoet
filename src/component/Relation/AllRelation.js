@@ -28,9 +28,9 @@ export default class AllRelation extends React.Component {
 		    .selectAll("line")
 		    .data(this.props.relationships.links)
 		    .enter().append("line")
-		      .attr("stroke-width", function(d) { return 3.2})
+		      .attr("stroke-width", function(d) { return d.value === 10? 4 : (d.value === 5? 2 : 1);})
 		      .attr("opacity", function(d) { return d.value})
-		      .attr("stroke", function(d) { return d.value === 10? 'maroon' : '#ca6924';});
+		      .attr("stroke", function(d) { return d.value === 10? '#98623c' : '#ca6924';});
 
 		const nodes = d3.select(".all").append("g")
 		    .attr("class", "nodes")

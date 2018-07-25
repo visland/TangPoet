@@ -11,7 +11,7 @@ export default class XtRelation extends React.Component {
 		this.state = {
 			maleName: '',
 			name: '',
-			rel: '点击男诗人名字获取关系信息',
+			rel: '点击诗人名字获取关系信息',
 			from: '',
 			to:'',
 			fromname:'',
@@ -140,7 +140,7 @@ export default class XtRelation extends React.Component {
 	}
 	
 	render() {
-		const text_y = 400;
+		const text_y = 350;
 
 		return (
 			<div>
@@ -204,29 +204,25 @@ export default class XtRelation extends React.Component {
 					<text className='femaleName'
 						x='1760'
 						y='80'>
-						{ this.state.name }社交图
+						{ this.state.name }社交关系图
 					</text>
 
 					<text className='description'>
             <tspan           	
-          		x="1800" 
-          		y= { text_y }>历观唐以雅道奖士类，而闺阁英秀，
-          	</ tspan>
-          	<tspan           	
-          		x="1750" 
-          		y={ text_y }>亦能熏染，锦心绣口，蕙情兰性，足可尚矣。
-          	</ tspan>
-            <tspan           	
           		x="1700" 
-          		y={ text_y }>中间如李季兰、鱼玄机，
+          		y={ text_y }>字洪度，长安人，因父亲被贬谪流落蜀中，十六岁入乐籍。
           	</tspan>
             <tspan           	
-          		x="1650" 
-          		y={ text_y }>皆跃出方外，修清静之教，陶写幽怀，留连光景，
+          		x="1660" 
+          		y={ text_y }>常出入幕府赋诗侑酒，更参与案牍工作，被称为“女校书”。
           	</tspan>
           	<tspan           	
-          		x="1600" 
-          		y={ text_y }>逍遥闲暇之功，无非云水之念。
+          		x="1620" 
+          		y={ text_y }>后脱去乐籍，暮年屏居浣花溪，着女冠服（道袍）。
+          	</ tspan>
+						<tspan           	
+          		x="545" 
+          		y={ 80 }>连线越粗，关系越紧密。深红色连线代表相传有过恋爱关系。
           	</ tspan>
           </text>
 					
