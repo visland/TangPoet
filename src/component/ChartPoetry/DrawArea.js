@@ -1,35 +1,22 @@
 import React from 'react'
 import OneFlow from './OneFlow'
-import * as d3 from 'd3'
+// import * as d3 from 'd3'
 import Period from './Period'
 
 export default class DrawArea extends React.Component{
     render(){
-        const { flows, transform, Pimg, showToolTip, btnstatus, areaWidth, areHeight, statusList, MaxY, Flong } = this.props
+        const { flows, transform, Pimg, btnstatus, areHeight, statusList, MaxY, Flong } = this.props
         
-        // let width = areaWidth * 0.9,
-        // let height = areHeight  
-        // console.log(flows.length)
-        //设置花瓣的半径范围
-        this.xScale = d3.scaleLinear().range([12, 28]).domain(d3.extent(flows, d => d.value));
-
-        // const MaxY = d3.max(flows, d => this.xScale(d.value))
         const MaxX = MaxY
-        // const padding = 3
-        // const Flong = MaxY * 2 + padding
         const Fwide = Flong
         const a = Math.floor( areHeight / Flong )
-        // console.log(a)
         let b = Math.ceil( flows.length / a)
         const width = (b + 1)  * Fwide
 
         return (
             <g 
                 width={width} 
-                // height={height}
-                transform={transform}     
-                // transform={`translate(${width}, 0)`} 
-       
+                transform={transform}            
             >    
                 <Period Pimg={Pimg} />
                 {flows.map((d, i) =>
@@ -41,13 +28,10 @@ export default class DrawArea extends React.Component{
                         symbol={this.Filter(statusList, d.data.state)}
                         xFlow={width - Fwide * (Math.floor((i) / a + 1)) + MaxX - d.value}
                         yFlow={Flong * (i - a * Math.floor((i) / a)) + MaxY - d.value + MaxY}
-                        // showToolTip={showToolTip}
 
                         btnstatus={btnstatus}
                         flowstate={d.data.state}
-                        // isBreath={ d.value > breData ? true : false}
                     />
-                
                 )}
             </g>
         )
@@ -59,6 +43,6 @@ export default class DrawArea extends React.Component{
                 return a = d.symbol;
             } 
         }
-        if( a === ""){ return a = "#sym01"; }
+        if( a === ""){ return a = "#sym06"; }
     }
 }

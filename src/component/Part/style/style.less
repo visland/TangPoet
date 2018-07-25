@@ -21,55 +21,59 @@
 
 .part-style{
     left: 7.5%;
-    width: 85%;   //与part部分的chartWidth保持一致
-    // height 与part部分的chartHeight保持一致
-    // height: @partH;
+    width: 85%; 
     position: @pos;
-    padding-top: 3%;
+    padding-top: 5%;
     margin-bottom: 5%;
-    // color: #615234
-
 
     .title-style{
         width: 50%;
-        // left: @left-margin;
-        position: @posA;
+        margin: 0 0 -4% 8%; 
         font-size: 2.9em;
         font-family: "W2";
-        top: 2%;
+        color: black;
+        
     }
 
     .choose-style{
-        width: 20%;
-        // right: @left-margin;
+        width: 30%;
+        right: 8%;
         position: @posA;
-        height: @btn-width;
+        height: 40px;
         z-index: 6;
-
         .chobtn-style{
-            border-radius: 50%;
-            width: @btn-width;
+            width: 50px;
             height: 100%;
-            margin-left: @margin-left;
             cursor: pointer;
             transition: all 1s ease-out;
-            &:hover { transform: scale(1.5) }
+            float: left;
+            margin-right: 10px;
+            &:hover { transform: scale(1.3) }     
+            color: #e9706e;
+            font-family: 'W1';
+            p{
+                text-align: center;
+                overflow: hidden;
+                img{ width: 100%;
+                    filter: drop-shadow(40px 0 #e9706e);
+                    position: relative;
+                    left: -30px;
+                    border-right: 20px solid transparent; }
+                line-height: 1em;
+                margin: 0px 0px 3px;
+                font-size: 12px;
+            }
+
         }
     }
 
     .chart-style{
         width: 100%;
-        // height: @chartH;
         left: 0;
         position: @pos;
-
-
-        background-image: url("bg.png");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-
         svg{
+            width: 100%;
+            height: 100%;
             text{
                  text-anchor: middle;
                  font-family: 'W1';
@@ -77,44 +81,29 @@
             }
             position: @pos;
             .group-style{
-                circle{
-                        cursor: pointer;
-                    }
-                g.tooltip{
-                    visibility: hidden;
-                    font-family: @fontZW;
-                    transition: all 1s ease-out;
-                    // opacity: 0.4;
-                    rect, circle{  
-                        fill: #dbc08d;
-                        stroke: #645e52; 
-                        stroke-width: 2px;
-                    }
-                    text{
-                        // background-color: aquamarine
-                        font-size: 14px;
-                        fill: antiquewhite;
-                    }
-                }
-                g.poetry-style:hover g.tooltip{ 
-                    visibility: visible; 
-                    // opacity: 1;
-                }
-               
+                circle{cursor: pointer;}
             }
             g.flow-style {                
-                circle{
-                    fill: #fff9ee;
-                    opacity: 0;
+                circle.backgroud{
+                    fill-opacity: 0;
+                    fill: rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                    stroke-width: 0.8px;
                 }
                 use{
                     cursor: pointer;     
-                    // z-index: 3;    
                 }
-                text{ 
-                    font-size: 12px;
+                text.number{ 
+                    font-size: 15px;
                     font-family: "W1";
-                    fill: #645e52
+                    opacity: 0;
+                    // fill: #645e52;
+                }
+                text.name{ 
+                    font-size: 12px;
+                    font-family: "W9";
+                    opacity: 0;
+                    // fill: #645e52;
                 }
                 .breath-flow{
                     transform-origin: 18% 20%;
@@ -130,13 +119,12 @@
     }
 
     .note-style{
-        width: 76%;
-        right: 8%;
-        top: 76%;
-        position: @posA;
-        font-family: @fontZW;
-        font-size:1.29em;
-
+        width: 75%;
+        margin: -2% 0 0 15%;
+        font-family: W9;
+        font-size: 1.2em;
+        text-align: justify;
+        color: #443832;
     }
     .aside-style{
         width: 20%;

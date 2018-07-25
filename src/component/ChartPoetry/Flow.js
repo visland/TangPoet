@@ -5,6 +5,19 @@ export default class FlowSymbol extends React.Component {
         // 花瓣边：#EBEEFF 花瓣：#92CEF7
         return(
             <g>
+                <filter id="shadow-less">
+                    <feColorMatrix type="matrix" values="0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0 0.3 0"></feColorMatrix>
+                    <feGaussianBlur stdDeviation="1.5" result="coloredBlur"></feGaussianBlur>
+                    <feMerge><feMergeNode in="coloredBlur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                </filter>
+                <filter id="shadow">
+                    <feColorMatrix type="matrix" values="0 0 0 0   0 0 0 0 0   0 0 0 0 0   0 0 0 0 0.3 0"></feColorMatrix>
+                    <feGaussianBlur stdDeviation="2" result="coloredBlur"></feGaussianBlur>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                </filter>
             <symbol id="sym01" 
                 viewBox="0 0 1024 1024"
             >

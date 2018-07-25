@@ -4,14 +4,12 @@ export default class ChooseBtn extends React.Component{
     render(){
         const { btnpic, handleClick, hoverHelight, alt, chobtnStyle } = this.props
         return(
-            <img
-                src={ btnpic } alt={ alt }
+            <div className={chobtnStyle} 
                 onClick={handleClick}
-                onMouseOver={hoverHelight}
-                className={chobtnStyle}
-            >
-
-            </img>
+                onMouseOver={hoverHelight}>
+                <p><img src={ btnpic } alt={ alt }></img></p>
+                <p>{alt}</p>
+            </div>
         )
     }
 }

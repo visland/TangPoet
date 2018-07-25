@@ -1,8 +1,8 @@
 import React from 'react'
 import DrawArea from './DrawArea'
-import ToolTip from './Tooltip'
 import Flow from './Flow'
 import * as d3 from 'd3'
+import bgimg from '../Part/style/bg.png'
 
 
 export default class ChartPoetry extends React.Component{
@@ -13,9 +13,6 @@ export default class ChartPoetry extends React.Component{
             status: "女冠",
             flowsdata: this.props.flows
         }
-        
-        this.showToolTip = this.showToolTip.bind(this)
-        this.hideToolTip = this.hideToolTip.bind(this)
     }
     componentWillMount(){
         this.period = [
@@ -36,86 +33,62 @@ export default class ChartPoetry extends React.Component{
         return data
     }
     render(){    
-        const {  btnstatus, chartStyle, chartLayout, svgLayout, statusList, viewbox } = this.props  
+        const {  btnstatus, statusList, viewbox, gstyle} = this.props  
+        let boxWidth = 2355,
+            boxHeight = 1054
 
-        let svgWidth = svgLayout.width,
-            svgHeight = svgLayout.height
+        let svgWidth = boxWidth * 0.5,
+            svgHeight = boxHeight * 0.5
 
         let areaWidth = svgWidth / 4,
-            areHeight = svgHeight * 0.8
+            areHeight = svgHeight * 0.85
 
+        
+        const flowsdata = this.state.flowsdata
 
-        let flowsdata = this.state.flowsdata
-        this.xScale = d3.scaleLinear().range([12, 28]).domain(d3.extent(flowsdata, d => d.value));
+        const xScale = d3.scaleLinear().range([18, 32]).domain(d3.extent(flowsdata, d => d.value));
 
-        const MaxY = d3.max(flowsdata, d => this.xScale(d.value)),
-            padding = 3
+        const MaxY = d3.max(flowsdata, d => xScale(d.value)),  padding = 3
 
-        let Flong = MaxY * 2 + padding,
-            Fwide = Flong
+        let Flong = MaxY * 2 + padding,  Fwide = Flong
         
         let a = Math.floor( areHeight / Flong )
         let compD1 = this.period.map(d => ({ data: d, rowN: Math.ceil( d.value / a ) + 1})),
-            compD2 = compD1.map( d => ({data: d.data, width: d.rowN * Fwide + MaxY}))
+            compD2 = compD1.map( d => ({data: d.data, width: d.rowN * Fwide}))
+
+        let marginTop =  (areHeight -  Flong * a) / 2 
 
         this.periodD = this.compute(compD2)
-        this.flowdata = this.state.flowsdata.map(d => ({ data: d, value: this.xScale(d.value) }))
-
-        let Layout = { width: svgLayout.widthP, height: svgLayout.heightP, left: svgLayout.left, top: svgLayout.top  }
+        this.flowdata = this.state.flowsdata.map(d => ({ data: d, value: xScale(d.value) }))        
 
         return(
-        <div className={chartStyle} style={chartLayout}>
-            <ToolTip 
-                tooltip={this.state.tooltip} 
-                hideToolTip={this.hideToolTip}
-            />
-            <svg style={Layout} viewBox={viewbox}>
-                <Flow />
-                {this.periodD.map((item, i) =>
-                    <DrawArea 
-                        key={i} 
-                        flows={this.choosedata(item.data.time)} 
-                        Pimg={require("./img/" + item.data.imgsrc + ".png")}
-                        transform={`translate(${item.transform }, 0)`} 
-                        // showToolTip={this.showToolTip}
-                        // isInteractive={enableStackTooltip}
-                        btnstatus={btnstatus}
-                        areaWidth={areaWidth}
-                        areHeight={areHeight}
-                        statusList={statusList}
-                        MaxY={MaxY}
-                        Flong={Flong}
-                        width={item.width}
-                        
-                    />
-                )}                
+        <div className="chart-style">
+            <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
+                <image xlinkHref={bgimg} width="100%" height="100%"></image>
+                <g style={gstyle}>
+                    <Flow />
+                    {this.periodD.map((item, i) =>
+                        <DrawArea 
+                            key={i} 
+                            flows={this.choosedata(item.data.time)} 
+                            Pimg={require("./img/" + item.data.imgsrc + ".png")}
+                            transform={`translate(${item.transform}, ${marginTop})`} 
+        
+                            btnstatus={btnstatus}
+                            areaWidth={areaWidth}
+                            areHeight={areHeight}
+                            statusList={statusList}
+                            MaxY={MaxY}
+                            Flong={Flong}
+                            width={item.width}  
+                        />
+                    )}                
+                </g>
             </svg>
         </div>
         )
     }
-    showToolTip(e){       
-        let xWin = e.clientX
-        let yWin = e.clientY
-        this.setState(
-            {tooltip: {
-                display: true,
-                data: {
-                    key: e.target.getAttribute('data-index'),
-                    name: e.target.getAttribute('data-name'),
-                    value: e.target.getAttribute('data-value')
-                },
-                pos: {
-                    x: xWin,
-                    y: yWin
-                }
-            }}
-        ) 
-    }
-    hideToolTip(){
-        this.setState({tooltip: { display: false, data: { key: '', name: '', value: ''}}});
-    }
     choosedata(time) {
-        // console.log("data", this.flowdata)
         let data = this.flowdata.filter(d => d.data.time === time)
         return data
     }
