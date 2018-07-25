@@ -91,6 +91,9 @@ export default class Part extends React.Component{
     handleClick(e) {
         console.log("点击") 
         let status = e.target.getAttribute('alt')
+        console.log(status) 
+        console.log(e.target) 
+
         this.setState({ 
             status: status
         })

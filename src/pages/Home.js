@@ -6,6 +6,7 @@ import PartOne from '../component/Part'
 import Title from '../component/Title'
 import Footer from '../component/Footer'
 import TextAnalyze from '../component/TextAnalyze/TextAnalyze'
+import ChartTitle from '../component/Part/Title'
 
 import './style/style.less'
 
@@ -33,9 +34,12 @@ export default class Home extends Component {
         {/* 第二部分 */}
         <Title titleText={this.titleContent[1].title} titleInfo={this.titleContent[1].info}/>
         <div id="ci-cloud">
+          <ChartTitle title="诗人诗作字频词频图"/>
           <CiCloud />
         </div>
+        <ChartTitle title="诗人诗作字频词频图" />
         <TextAnalyze />
+        
 
         
         {/* 第三部分 */}
