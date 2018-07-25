@@ -11,7 +11,7 @@ export default class LyRelation extends React.Component {
 		this.state = {
 			maleName: '',
 			name: '',
-			rel: '点击男诗人名字获取关系信息',
+			rel: '点击诗人名字获取关系信息',
 			from: '',
 			to:'',
 			fromname:'',
@@ -140,7 +140,7 @@ export default class LyRelation extends React.Component {
 	}
 	
 	render() {
-		const text_y = 400;
+		const text_y = 370;
 
 		return (
 			<div>
@@ -204,29 +204,29 @@ export default class LyRelation extends React.Component {
 					<text className='femaleName'
 						x='130'
 						y='80'>
-						{ this.state.name }社交图
+						{ this.state.name }社交关系图
 					</text>
 
 					<text className='description'>
-            <tspan           	
-          		x="120" 
-          		y= { text_y }>历观唐以雅道奖士类，而闺阁英秀，
-          	</ tspan>
           	<tspan           	
-          		x="160" 
-          		y={ text_y }>亦能熏染，锦心绣口，蕙情兰性，足可尚矣。
+          		x="190" 
+          		y={ text_y }>“美姿容，神情萧散。专心翰墨，善弹琴，尤工格律”。
           	</ tspan>
             <tspan           	
-          		x="200" 
-          		y={ text_y }>中间如李季兰、鱼玄机，
+          		x="230" 
+          		y={ text_y }>刘长卿赞其为“诗中女豪”。《唐才子传》评价其为：
           	</tspan>
             <tspan           	
-          		x="240" 
-          		y={ text_y }>皆跃出方外，修清静之教，陶写幽怀，留连光景，
+          		x="270" 
+          		y={ text_y }>被认为是“唐代四大女诗人”中诗文最了得的，
           	</tspan>
           	<tspan           	
-          		x="280" 
-          		y={ text_y }>逍遥闲暇之功，无非云水之念。
+          		x="310" 
+          		y={ text_y }>李冶，字季兰，乌程人（今浙江吴兴），后为女道士，
+          	</ tspan>
+						<tspan           	
+          		x="1385" 
+          		y={ 80 }>连线越粗，关系越紧密。深红色连线代表相传有过恋爱关系。
           	</ tspan>
           </text>
 					
