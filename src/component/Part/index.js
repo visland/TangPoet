@@ -15,7 +15,7 @@ export default class Part extends React.Component{
     constructor(props){
         super(props);
         this.state = { 
-            status: '全部', 
+            status: '所有诗人', 
         }
         this.handleClick = this.handleClick.bind(this)
     }
@@ -34,68 +34,54 @@ export default class Part extends React.Component{
         ]
     }
     render(){        
-        let screenHeight = document.documentElement.clientHeight,
-            screenWidth = document.documentElement.clientWidth
-
-        let chartHeight = screenHeight * 0.75,
-            chartWidth = screenWidth * 0.85
-
         let bgWidth = 2746,
             bgHeight = 1372,
             boxWidth = 2355,
-            boxHeight = 1054,
+            boxHeight = 1054
 
-            hboxScale = boxHeight / bgHeight,
-            wboxScale = boxWidth / bgWidth;
-        // let hboxScaleP = hboxScale * 100%
-        let svgWidth = chartWidth * wboxScale,
-            svgHeight = chartHeight * hboxScale 
-        
-        const _per = d3.format("100%")
+        let svgWidth = boxWidth * 0.5,
+            svgHeight = boxHeight * 0.5,
+            chartWidth = bgWidth * 0.5,
+            chartHeight = bgHeight * 0.5
 
-        let margin = { left: (chartWidth - svgWidth) / 2, top: (chartHeight - svgHeight) / 2 * 1.1}
-        let marginP = { left: _per(margin.left / chartWidth), top: _per(margin.top / chartHeight)},
-            heightP = _per(hboxScale),
-            widthP = _per(wboxScale)
-        
-        let screenStyle = { height: screenHeight },
-            Layout = { height: chartHeight },
-            svgLayout = { height: svgHeight, width: svgWidth, heightP: heightP, widthP: widthP, left: marginP.left, top: marginP.top} 
+        let _per = d3.format("%")
+        let mleft = _per((chartWidth - svgWidth) / 2 / chartWidth),
+            mtop = _per((chartHeight - svgHeight) / 2 / chartHeight)
 
-        let viewbox = `0 0 ${svgWidth} ${svgHeight}`
+        let layout2 = { left: mleft, top: mtop }
+
+        let viewbox = `0 0 ${chartWidth} ${chartHeight}`,
+            gstyle = { transform: `translate(${layout2.left}, ${layout2.top})` }        
 
         return(
             <div id="part1">
                 <div className="part-style" 
-                    style={screenStyle}
+                    // style={screenStyle}
                 >
                     <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/>
-                    <Title title={this.info[0].title} titleLayout={svgLayout}/>
-                    <AllPoetry bigChartStyle="chart-style" dotLayout={Layout} svgLayout={svgLayout} viewbox={viewbox} preserveAspectRatio="xMinYMin meet"/>
+                    <Title title={this.info[0].title} />
+                    <AllPoetry viewbox={viewbox} gstyle={gstyle} svgHeight={svgHeight}/>
                     <ChartNote chartnote={this.info[0].chartnote} />
                 </div>
 
-                <div className="part-style" style={screenStyle}>
+                <div className="part-style" 
+                // style={screenStyle}
+                >
                     <Aside asideSrc={require("./style/" + this.aside[1].src + ".png")} asideStyle={this.aside[1].style}/>
-                    <Title title={this.info[1].title} titleLayout={svgLayout}/>
+                    <Title title={this.info[1].title}/>
                     <ChooseFun 
                         handleClick={this.handleClick} hoverHelight={this.hoverHelight} 
                         statusList={this.statusList}
                         chooseStyle="choose-style"
                         chobtnStyle="chobtn-style"
-                        choLayout={svgLayout}
                     />
 
                     <ChartPoetry 
                         flows={this.flows} 
-                        enableStackTooltip="true" 
                         btnstatus={this.state.status}
-                        chartStyle="chart-style"
-                        chartLayout={Layout}
-                        svgLayout={svgLayout}
                         statusList={this.statusList}
                         viewbox={viewbox}
-                        preserveAspectRatio="xMinYMin meet"
+                        gstyle={gstyle}
                     />
                     <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} />
                 </div>

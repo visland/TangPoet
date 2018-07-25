@@ -3,11 +3,10 @@ import ChooseBtn from './ChooseBtn'
 
 export default class ChooseFun extends React.Component{
     render(){
-        const { handleClick, hoverHelight, statusList, chooseStyle, chobtnStyle, choLayout  } = this.props
-        const Layout = { right : choLayout.left}
+        const { handleClick, hoverHelight, statusList, chooseStyle, chobtnStyle  } = this.props
 
         return(
-            <div className={chooseStyle} style={Layout}> 
+            <div className={chooseStyle} > 
                 {statusList.map( (d, i) => 
                     <ChooseBtn 
                         key={i}

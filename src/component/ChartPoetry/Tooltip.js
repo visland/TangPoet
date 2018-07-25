@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './style/tooltip.less'
+// import './style/tooltip.less'
 
 export default class Tooltip extends React.Component{
     render(){

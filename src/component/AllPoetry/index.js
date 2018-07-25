@@ -3,33 +3,30 @@ import * as d3 from 'd3'
 import AllData from '../Part/data/alldata2.json'
 import OnePoetry from './OnePoetry'
 // import {beeswarm} from "d3-beeswarm";
+import '../Part/style/tooltip.less'
+import bgimg from '../Part/style/bg.png'
 
 
 export default class AllPoetry extends React.Component{
 
     componentWillMount(){      
-        // console.log(AllData)
         this.data  = AllData
         this.radius = 5
-        this.padding = 3
-        
+        this.padding = 4     
         this.group = [
             { "group": "1", "value": 943, "name": "留诗一首" },
             { "group": "2", "value": 323, "name": "小作两曲" },
-            { "group": "3-5", "value": 294, "name": "留诗一首" },
-            { "group": "5-10", "value": 198, "name": "留诗一首" },
-            { "group": "10-50", "value": 208, "name": "留诗一首" },
-            { "group": "50+", "value": 155, "name": "名留千古" },
+            { "group": "3-5", "value": 294, "name": "三至五首" },
+            { "group": "5-10", "value": 198, "name": "五至十首" },
+            { "group": "10-50", "value": 208, "name": "作诗怡情" },
+            { "group": "50+", "value": 155, "name": "高产诗人" },
         ]
 
-        const { svgLayout } = this.props
+        const { svgHeight } = this.props
         
-        let svgHeight = svgLayout.height
-
         this.margin = ( this.radius + this.padding )* 2
-        this.svgHeight = svgLayout.height
-        // this.areaWidth = svgWidth / 6
-        this.areaHeight = svgHeight * 0.9
+        // this.svgHeight = svgLayout.height
+        this.areaHeight = svgHeight * 0.85
         this.oneWide = this.radius * 2 + this.padding
         let a = Math.floor(this.areaHeight / this.oneWide)
 
@@ -42,7 +39,7 @@ export default class AllPoetry extends React.Component{
     }
     compute(data){
         let padding = this.oneWide * 2
-        let transform = this.oneWide;
+        let transform = this.oneWide + this.padding;
         for (let i = 0; i < data.length; i ++){
             data[i].transform = transform 
             let a = data[i].groupWidth
@@ -51,16 +48,17 @@ export default class AllPoetry extends React.Component{
         return data
     }
     render(){
-        const { bigChartStyle, dotLayout, svgLayout, viewbox} = this.props
-        let Layout = { width: svgLayout.widthP, height: svgLayout.heightP, left: svgLayout.left, top: svgLayout.top }
-        console.log(viewbox)
+        const { viewbox, gstyle, svgHeight} = this.props
+
         return (
-            <div className={bigChartStyle} style={dotLayout}>
-                <svg id="allpoetry" style={Layout} viewBox={viewbox}>
+            <div className="chart-style">
+                <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
+                    <image xlinkHref={bgimg} width="100%" height="100%"></image>
+                    <g style={gstyle}>
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, -5)`} 
+                            transform={`translate(${d.transform}, ${svgHeight * 0.04})`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}
@@ -70,6 +68,7 @@ export default class AllPoetry extends React.Component{
                             width={d.groupWidth}
                         />
                     )}
+                    </g>
                 </svg>
             </div>
         )
@@ -79,30 +78,37 @@ export default class AllPoetry extends React.Component{
         return data 
     }
     componentDidMount(){
-      // let person = d3.selectAll(".poetry-style").select("[data-name='白居易']")
-        
-        // let e = document.getElementById("白居易")
-        // // let  = e.clientWidth
-        // let top = e.clientWidth
-        // let left = e.clientHeight
-        // // var x = 0, y =0
-        // // while (e != null) {
-        // //     x += e.offsetLeft;
-        // //     y += e.offsetTop;
-        // //     e = e.offsetParent;
-        // // }
-       
-        // let msgv = d3.select(".bg").append("div").attr("id", "msgv")
-        //     .append("div").style("width", 100).style("height", 100)
-        //     .text("白居易").style("position", "absolute")
-        //     .style("left", `${left}px`).style("top", `${top}px`)
+    
+        let tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("position", "absolute")
 
-        // console.log(e)
-        // // console.log(a)
-        // console.log(msgv)
-        // console.log(top)
-        // console.log(left)
-        // // console.log(y)
+        let Name = tooltip.append("div"),
+            Info = tooltip.append("div")
+        Name.append("p"); Info.append("p")
 
+        d3.selectAll(".poetry-style circle")
+            .on("mouseover", function (d) {
+                tooltip
+                    .attr('visibility', 'visible')
+                tooltip
+                    .style("left", (d3.event.pageX - 25) + "px")
+                    .style("top", (d3.event.pageY - 25) + "px");
+
+                    let sex = d3.event.target.getAttribute("data-sex"),
+                    sexClass = sex === "male" ? "male" : "female"
+
+                Name.attr("class", `${sexClass} poetry-name`).select("p").html(d3.event.target.id)
+                Info.attr("class", `${sexClass} poetry-info`).select("p").html("作诗" + d3.event.target.getAttribute("data-value") + "首")
+
+            })
+
+            .on("mouseout", function (d) {
+                tooltip
+                    .attr('visibility', 'hidden')
+                    .selectAll("div").attr("class", "")
+                Name.select("p").html("")
+                Info.select("p").html("")
+            })
     }
 }
