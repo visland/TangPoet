@@ -7,6 +7,5 @@ export default class Title extends React.Component {
         return (
             <p id={titleid} className="title-style">{title}</p>
         )
-        
     }
 }

@@ -147,7 +147,8 @@ export default class CiCloud extends React.Component {
             color:'maroon',
             position:'relative',
             left:'24%',
-            top:'-10%'
+            top:'-10%',
+            bottom:'20%'
           }}>全部诗人</p>
         <p  style={{
             width: '20%',
@@ -158,20 +159,22 @@ export default class CiCloud extends React.Component {
             color:'maroon',
             position:'relative',
             left:'-14%',
-            top:'-10%'
+            top:'-10%',
+            bottom:'20%'
           }}>女性诗人</p>
         <div 
           className="radio"
           style = {{
             position:'relative',
-            left: '25%',
+            left: '24%',
             fontSize: '18px',
             fontFamily:'W1',
-            top:'5%'
+            top:'5%',
+            bottom:'10%'
           }}> 
         <Radio.Group style={{
           backgroundColor: 'transparent',
-          fontFamily:'W9'
+          fontFamily:'W9',
         }}
         onChange={this.onRadioChange} value={this.state.value} buttonStyle="solid">
           <Radio.Button value={0}>词频</Radio.Button>

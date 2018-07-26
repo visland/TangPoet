@@ -145,6 +145,24 @@ export default class AllRelation extends React.Component {
 					<text className='noteText'
 						x='1850'
 						y='110'>女性诗人</text>
+					
+					<line x1='1830' y1='290' x2='1860' y2='250' style={{
+						stroke : '#98623c',
+						strokeWidth: '4'
+					}} />
+					
+					<text className='noteText'
+						x='1800'
+						y='310'>男诗人之间的社交关系</text>
+					
+					<line x1='1780' y1='290' x2='1810' y2='250' style={{
+						stroke : '#ca6924',
+						strokeWidth: '2'
+					}} />
+					
+					<text className='noteText'
+						x='1850'
+						y='310'>女诗人直接参与的社交关系</text>
 
 					<image 
 						x='20'

@@ -1,38 +1,33 @@
 import React from 'react'
-import '../pages/style/style.less'
+import './style/style.less'
+import zju from './style/zju.png'
+import xhw from './style/xhw.png'
 
 export default class Footer extends React.Component{
     render(){
         return (
             <div className="footer">
                 <div className="footer-icon">
-                    {/* < img src={data_news} /> */}
-                    
-                    {/* < img src={zju_vag} /> */}
+                    < img src={ xhw } />  
+                    <p>&nbsp;</p>   
+                    < img src={zju } width='10%' syle={{
+                        position:'relative',
+                        left:'20%'
+                    }}/>
                 </div>
-
                 <div className="copyright">
                     <p>
-                        监制：陈为，马秩群
-                    </p >
-                    {/* <p>
-                        统筹：马倩，张玮，潘如晟
-                    </p > */}
+                        监制：陈为 马秩群
+                    </p>
                     <p>
                         技术指导：潘如晟
                     </p >
-                    {/* <p>
-                        诗词指导：姚逸超
-                    </p > */}
                     <p>
                         文案：熊玉兰
                     </p >
                     <p>
                         设计：朱筱涵
                     </p >
-                    {/* <p>
-                        朗诵：刘子华
-                    </p > */}
                     <p>
                         数据分析：周于思
                     </p >
