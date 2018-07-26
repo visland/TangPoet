@@ -1,5 +1,4 @@
 import React from 'react'
-// import Bimg from '../ChartPoetry/img/1.png'
 // import * as d3 from 'd3'
 
 export default class OnePoetry extends React.Component{
@@ -11,10 +10,12 @@ export default class OnePoetry extends React.Component{
             "male": "rgba(117, 79, 21, 0.959)"
         }
         return(
-            <g
-                className="group-style"
-                transform={transform}         
-            >
+            <g className="group-style" transform={transform}>
+                {/* <g dx={ width / 2} dy={ height * 0.06 }>
+                    <text >{allnum}位诗人作诗1首</text>
+                    <text >{mnum}位男诗人</text>
+                    <text >{fnum}位女诗人</text>
+                </g> */}
                 {data.map((d, i) => 
                     <g className="poetry-style" key={i}>           
                         <circle
