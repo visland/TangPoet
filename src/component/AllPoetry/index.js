@@ -2,7 +2,6 @@ import React from 'react'
 import * as d3 from 'd3'
 import AllData from '../Part/data/alldata2.json'
 import OnePoetry from './OnePoetry'
-// import {beeswarm} from "d3-beeswarm";
 import '../Part/style/tooltip.less'
 import bgimg from '../Part/style/bg.png'
 
@@ -25,7 +24,6 @@ export default class AllPoetry extends React.Component{
         const { svgHeight } = this.props
         
         this.margin = ( this.radius + this.padding )* 2
-        // this.svgHeight = svgLayout.height
         this.areaHeight = svgHeight * 0.85
         this.oneWide = this.radius * 2 + this.padding
         let a = Math.floor(this.areaHeight / this.oneWide)
@@ -33,8 +31,6 @@ export default class AllPoetry extends React.Component{
         let comData1 = this.group.map(d => ({ group: d.group, name: d.name, b : Math.ceil(d.value / a) }))
         let comData2 = comData1.map(d => ({ group: d.group, name: d.name, b: d.b, groupWidth: d.b * this.oneWide}))
         this.groupdata = this.compute(comData2)
-        // console.log(this.groupdata)
-
         
     }
     compute(data){
