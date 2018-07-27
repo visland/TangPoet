@@ -102,6 +102,10 @@ render() {
           		x="1650" 
           		y="50">逍遥闲暇之功，无非云水之念。
           	</ tspan>
+						<tspan           	
+          		x="1600" 
+          		y="400">——《唐才子传》
+          	</ tspan>
           </text>
 
 					<image xlinkHref={ flower } height='90' width='90'>
