@@ -88,7 +88,7 @@ export default class LyRelation extends React.Component {
 
 		  /* Interactions. */
 			nodes.on('click', (n) => {
-			    nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
+			    nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group !== 0) {return '#d9b611';}});
 			    this.setState({
 			    	maleName : n.id, 
 			    	des : n.des,

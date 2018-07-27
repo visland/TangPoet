@@ -3,6 +3,7 @@ import * as d3 from 'd3'
 import AllData from '../Part/data/alldata2.json'
 import OnePoetry from './OnePoetry'
 import '../Part/style/tooltip.less'
+
 import bgimg from '../Part/style/bg.png'
 
 
@@ -10,8 +11,13 @@ export default class AllPoetry extends React.Component{
 
     componentWillMount(){      
         this.data  = AllData
+        this.stastic = {
+            length : AllData.length,
+            mnum: AllData.filter(d => d.sex === "male").length,
+            fnum: AllData.filter(d => d.sex === "female").length
+        }
         this.radius = 5
-        this.padding = 4     
+        this.padding = 3.7 
         this.group = [
             { "group": "1", "value": 943, "name": "留诗一首" },
             { "group": "2", "value": 323, "name": "小作两曲" },
@@ -21,10 +27,11 @@ export default class AllPoetry extends React.Component{
             { "group": "50+", "value": 155, "name": "高产诗人" },
         ]
 
+        console.log(this.stastic)
         const { svgHeight } = this.props
         
         this.margin = ( this.radius + this.padding )* 2
-        this.areaHeight = svgHeight * 0.85
+        this.areaHeight = svgHeight * 0.78
         this.oneWide = this.radius * 2 + this.padding
         let a = Math.floor(this.areaHeight / this.oneWide)
 
@@ -47,14 +54,14 @@ export default class AllPoetry extends React.Component{
         const { viewbox, gstyle, svgHeight} = this.props
 
         return (
-            <div className="chart-style">
+            <div className="chart-style" id="allpoetry">
                 <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
                     <image xlinkHref={bgimg} width="100%" height="100%"></image>
                     <g style={gstyle}>
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, ${svgHeight * 0.04})`} 
+                            transform={`translate(${d.transform}, ${svgHeight * 0.12})`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}
@@ -74,7 +81,65 @@ export default class AllPoetry extends React.Component{
         return data 
     }
     componentDidMount(){
+        
+        this.drawmsvg()
+        this.drawTooltip()  
     
+    }
+    drawmsvg(){
+        let choosed = [
+            // { "name": "李白", "x": 0, "y": 0, "fame": "《》", "sex": "male", "value": 100 },
+            { "name": "白居易", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
+            { "name": "白居易", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
+            { "name": "薛涛", "x": 0, "y": 0, "fame": "《送友人》", "sex": "female", "value": 93 },
+            { "name": "元稹", "x": 0, "y": 0, "fame": "《离思》", "sex": "male", "value": 910 },
+            { "name": "张若虚", "x": 0, "y": 0, "fame": "《春江花月夜》", "sex": "male", "value": 3 },
+            { "name": "王之涣", "x": 0, "y": 0, "fame": "《登鹳雀楼》", "sex": "male", "value": 7 }            
+        ]
+        function compute(data, d){
+            for( d of data){
+                let dom = d3.select(`[id=${d.name}]`).node(),
+                    cx = dom.getAttribute("cx"),
+                    cy = dom.getAttribute("cy"),
+                    f = dom.getCTM()
+                
+                    d.x = cx * f.a + cy * f.c + f.e //circle相对于svg的位置
+                    d.y = cx * f.b + cy * f.d + f.f
+                    // console.log(cx)
+                    // console.log(cy)
+                    // console.log(d.x)
+                    // console.log(d.y)
+
+            }
+            // console.log(data)
+            return data
+        }
+        let computedData = compute(choosed)
+
+        d3.select("#allpoetry").append("div").attr("id", "msvg")
+            .selectAll(".msvg")
+            .data(computedData)
+            .enter()
+            .append("div")
+            .style("position", "absolute")
+            .style("left", d => `${d.x}px`)
+            .style("top", d => `${d.y}px`)
+            .attr("class", d => `msvg ${ d.sex === "male" ? "male" : "female"}`)
+
+        let msvg = d3.selectAll(".msvg")
+
+        let Pic = msvg.append("div").attr("class","pic"),
+            Info = msvg.append("div").attr("class", "info")
+        
+        Pic.append("img").attr("src", d =>`${require("./img/" + d.name + ".jpg")}`); 
+        Info.append("p").attr("class", "name").html(d => `${d.name}`)
+        Info.append("p").html(d => `成名作${d.fame}`)
+        Info.append("p").html(d => `作诗${d.value}首`)
+
+
+
+    }
+    drawTooltip(){
         let tooltip = d3.select("body").append("div")
             .attr("class", "tooltip")
             .style("position", "absolute")
@@ -91,12 +156,22 @@ export default class AllPoetry extends React.Component{
                     .style("left", (d3.event.pageX - 25) + "px")
                     .style("top", (d3.event.pageY - 25) + "px");
 
-                    let sex = d3.event.target.getAttribute("data-sex"),
+                let sex = d3.event.target.getAttribute("data-sex"),
                     sexClass = sex === "male" ? "male" : "female"
 
                 Name.attr("class", `${sexClass} poetry-name`).select("p").html(d3.event.target.id)
                 Info.attr("class", `${sexClass} poetry-info`).select("p").html("作诗" + d3.event.target.getAttribute("data-value") + "首")
 
+                d3.select("#msvg").selectAll(".msvg")
+                    .attr('visibility', 'hidden')
+                    .selectAll(".pic")
+                    .attr("class", "noanimate")
+
+                d3.select("#msvg").selectAll(".msvg")
+                    .selectAll(".info")
+                    .attr("class", "noanimateI")
+                
+                
             })
 
             .on("mouseout", function (d) {
@@ -105,6 +180,16 @@ export default class AllPoetry extends React.Component{
                     .selectAll("div").attr("class", "")
                 Name.select("p").html("")
                 Info.select("p").html("")
+
+                d3.select("#msvg").selectAll(".msvg")
+                    .attr('visibility', 'visible')
+                    .selectAll(".noanimate")
+                    .attr("class", "pic")
+                    
+                d3.select("#msvg").selectAll(".msvg")
+                    .selectAll(".noanimateI")
+                    .attr("class", "info")
+               
             })
     }
 }

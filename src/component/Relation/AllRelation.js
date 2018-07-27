@@ -6,10 +6,6 @@ import cloud from './img/cloud.png';
 import c from './img/c.png';
 
 export default class AllRelation extends React.Component {
-	constructor() {
-	 	super();
-	}
-
 	componentDidMount() {
     const width = 1920;
     const height = 1080;
@@ -115,8 +111,6 @@ export default class AllRelation extends React.Component {
 	}
 	
 	render() {
-		const text_y = 400;
-
 		return (
 			<div>
 					<svg className='all'

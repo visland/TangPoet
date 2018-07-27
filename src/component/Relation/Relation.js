@@ -1,5 +1,4 @@
 import React from 'react';
-import * as d3 from 'd3';
 import Xtrelationships from './data/xtRelation.json';
 import Lyrelationships from './data/LyRelation.json';
 import Allrelationships from './data/AllRelation.json';

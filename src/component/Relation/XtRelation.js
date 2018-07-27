@@ -58,10 +58,6 @@ export default class XtRelation extends React.Component {
 	  			.attr("stroke-width", 5)
 	  			.attr("fill", function(d) { return d.group === 0? 'maroon' : (d.group=== 1? '#a88462' : '#999');})
 
-		// const nodeImg = nodes.append("image")
-	 //      .attr("width", img_w)
-	 //      .attr("height", img_h)
-	 //      .attr("xlink:href", function(d) { return imgs[d.group];})
 
 		const nodeText = nodes.append("text")
 		      .attr("class", "nodetext")
@@ -88,7 +84,7 @@ export default class XtRelation extends React.Component {
 
 		  /* Interactions. */
 			nodes.on('click', (n) => {
-			    nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group != 0) {return '#d9b611';}});
+			    nodeCircle.style('fill', (d) => {if (d.id === n.id && d.group !== 0) {return '#d9b611';}});
 			    this.setState({
 			    	maleName : n.id, 
 			    	des : n.des,
@@ -106,10 +102,6 @@ export default class XtRelation extends React.Component {
 		        .attr("y1", function(d) { return d.source.y; })
 		        .attr("x2", function(d) { return d.target.x; })
 		        .attr("y2", function(d) { return d.target.y; });
-
-		    // nodeImg
-		    // 		.attr("x", function(d) { return d.x - img_w / 2; })
-		    //     .attr("y", function(d) { return d.y - img_h / 2; });
 		   
 		    nodeText
 		    		.attr("x", function(d) { return d.x; })

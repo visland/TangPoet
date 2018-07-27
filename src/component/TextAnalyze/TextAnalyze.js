@@ -18,18 +18,12 @@ export default class TextAnalyze extends React.Component{
         this.click = this.click.bind(this)
     }
     componentWillMount(){
-        const ColorRuler = [
-            'rgb(190, 113, 51)',  'rgb(141, 35, 35)', 'rgb(151, 31, 31)'
-        ]
-        // let len = ColorRuler.length - 1
+        const ColorRuler = ['rgb(190, 113, 51)',  'rgb(141, 35, 35)', 'rgb(151, 31, 31)']
         this.ciColor = d3
             .scaleLinear()
             .clamp(true)
             .domain(d3.extent(word, d => d.value))
             .range(ColorRuler)
-        // this.ciColor = chroma
-        // console.log(d3.extent(word, d.value))
-        console.log(this.ciColor(20))
     }
     render(){
         var settings = {
@@ -72,27 +66,16 @@ export default class TextAnalyze extends React.Component{
         this.slider.goTo(e.target.getAttribute("index"))
     }
     wordcolor(d) {
-       
-        // let len = ColorRuler.length - 1
-
-        // let a = "black"
-        let a = this.ciColor(d.value)
-        console.log(a)
-
-        let i = d.index
+        let a = this.ciColor(d.value),
+            i = d.index
         const current = this.state.slideIndex
 
         if (i === current || current === 0) {
-            a = this.ciColor(d.value)
-        
-        } 
-        else if (i !== current) { a = "rgb(184, 162, 116)"}
-        console.log(a)
+            a = this.ciColor(d.value)   
+        } else if (i !== current) { a = "rgb(184, 162, 116)"}
 
         let style = { color: a }
         return style
-        
-
     }
 }
 

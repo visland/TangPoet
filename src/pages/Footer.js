@@ -8,9 +8,9 @@ export default class Footer extends React.Component{
         return (
             <div className="footer">
                 <div className="footer-icon">
-                    < img src={ xhw } />  
+                    <img src={ xhw } alt="新华网数据新闻"/>  
                     <p>&nbsp;</p>   
-                    < img src={zju } width='10%' syle={{
+                    < img src={zju} width='10%' alt='浙大可视化小组' syle={{
                         position:'relative',
                         left:'20%'
                     }}/>
