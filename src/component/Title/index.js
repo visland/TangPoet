@@ -18,7 +18,6 @@ export default class Title extends React.Component{
                 {info.map((d, i) =>
                     <p key={i} className="title-info">{d}</p>
                 )}
-                
             </div>
         )
     }
