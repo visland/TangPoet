@@ -85,6 +85,7 @@ export default class ChartPoetry extends React.Component{
                     )}                
                 </g>
             </svg>
+            <p className="note">花朵越大，诗作数量越多，鼠标悬浮可查看每位女诗人的具体信息</p>
         </div>
         )
     }
