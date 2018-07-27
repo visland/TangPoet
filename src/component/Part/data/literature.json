@@ -1,0 +1,16 @@
+参考文献：
+
+唐代女性诗歌之女性意识研究 吕靖
+唐五代女性诗歌研究 郭海文
+唐代女冠诗人创作研究 苏竹梅
+
+数据库：
+1.chinese-poetry，为github上最全中华古诗词数据库，收录唐朝超过3500位诗人的共将近5.5万首唐诗。http: //shici.store
+2.哈佛大学编纂的《中国历代人物传记资料库》
+Harvard University, Academia Sinica, and Peking University, China Biographical Database (July 26,
+2018)
+3.诗词名句网:http: //www.shicimingju.com/
+
+最终统计超过2300位诗人共将近5万首唐诗。
+
+数据说明：从CBDB中共提取两层人物关系，删去后人为前人作传记这类关系，仅保留唐代人物。后又根据百度百科上资料增添几条数据库未记载完全的关系。

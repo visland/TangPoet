@@ -42,7 +42,6 @@ export default class OneFlow extends React.Component{
                     data-value={value}
                     width={ width*2 } height={ width*2 } 
                     fill={btnTrans.symcolor}
-                    // className={ btnTrans.isBreath ? "breath-flow" : ""}
                 />
                 <text fill="#645e52"
                     className="name"
@@ -50,6 +49,11 @@ export default class OneFlow extends React.Component{
                     y={ yFlow + width - 33 }
                 >{name}
                 </text>
+                <circle
+                    className="hover"
+                    cx={xFlow + width} cy={yFlow + width}
+                    r={width + 10}
+                ></circle>
             </g>
         )
     }
@@ -76,7 +80,6 @@ export default class OneFlow extends React.Component{
                 .style("fill-opacity", 1)
                 
             el.select("text.name").transition(t)
-                // .attr("transform", "translate(0, 12)")
                 .style("font-size", "24px")
                 .attr("fill", "#c33d3c")
                 .style("opacity", 1)

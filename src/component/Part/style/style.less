@@ -1,23 +1,20 @@
-@btn-width: 25px;
 @margin-left: 5px;
 
 @pos: relative;
 @posA: absolute;
 
-// @bg-width: 2746px * 0.45;
-// @bg-height: 1372px * 0.45;
-// @bg-scale: 2746 / 2355;
-@svg-scale: 2355 / 1054 * 100%;
-@svg-hscale: 1054 / 1372 * 100%;
-@svg-wscale: @svg-scale *  @svg-hscale;
-
-// @left-margin: (100% - @svg-wscale) / 2;
-// @top-margin: (100% - @svg-hscale) / 2;
-
 @partH: 50%;
 @chartH: 75%;
 
 @fontZW: W1;
+
+@allC: rgb(3, 3, 3);
+@maleC:  #75623a;
+@femaleC: #c33e3c;
+
+@noevent: #cca851;
+@hover: #e9706e;
+@choose: #c33e3c;
 
 
 .part-style{
@@ -34,7 +31,27 @@
         font-family: "W2";
         color: black;
     }
-
+    .legend{
+        position: @posA;
+        right: 8%;
+        width: 20%;
+        margin-top: 1.5%;
+        div{
+            float: left;
+            margin-left: 3%;
+            font-family: 'W9';
+            &.male{ color: @maleC}
+            &.female{ color: @femaleC}
+            &.circle.male{ background-color: @maleC}
+            &.circle.female{ background-color: @femaleC}
+            &.circle{
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin-top: 5px;
+            }
+        }
+    }
     .choose-style{
         width: 30%;
         right: 8%;
@@ -48,14 +65,21 @@
             transition: all 1s ease-out;
             float: left;
             margin-right: 10px;
-            &:hover { transform: scale(1.3) }     
-            color: #e9706e;
             font-family: 'W1';
+
+            transform: scale(1.2);
+            color: @noevent;
+            &[data-status = true] { 
+                color: @choose; 
+                img { filter: drop-shadow(40px 0 @choose);}
+            }
+            &:hover img { filter: drop-shadow(40px 0 @hover); }
+            &:hover p { color: @hover; transform: scale(1);}
             p{
                 text-align: center;
                 overflow: hidden;
                 img{ width: 100%;
-                    filter: drop-shadow(40px 0 #e9706e);
+                    filter: drop-shadow(40px 0 @noevent);
                     position: relative;
                     left: -30px;
                     border-right: 20px solid transparent; }
@@ -70,17 +94,43 @@
         width: 100%;
         left: 0;
         position: @pos;
+        p.note{ 
+            font-family: @fontZW;
+            font-size: 0.7rem;
+            position: @posA;
+            bottom: 13%;
+            right: 10%;
+            letter-spacing: -1px;
+            color: #443832;
+        }
         svg{
             width: 100%;
             height: 100%;
             text{
                  text-anchor: middle;
-                 font-family: 'W1';
+                 font-family: 'W1'; 
                 // dominant-baseline: middle; /* 文本垂直居中 */
+                
             }
             position: @pos;
-            .group-style{
+            g.group-style{
                 circle{cursor: pointer;}
+                
+                g.stastic{
+                    font-family: 'W1';
+                    tspan{
+                        font-size: 0.7rem;
+                        font-weight: 600;
+                        font-family: 'W9';
+                        &.all{ fill: @allC}
+                        &.male{ fill: @maleC}
+                        &.female{ fill: @femaleC}
+                    }
+                
+                }          
+                text.group{
+                    font-size: 1rem
+                }
             }
             g.flow-style {                
                 circle.backgroud{
@@ -96,22 +146,16 @@
                     font-size: 15px;
                     font-family: "W1";
                     opacity: 0;
-                    // fill: #645e52;
                 }
                 text.name{ 
                     font-size: 12px;
                     font-family: "W9";
                     opacity: 0;
-                    // fill: #645e52;
                 }
-                .breath-flow{
-                    transform-origin: 18% 20%;
-                    // animation: breath-flow 2s ease infinite;
-                    @keyframes breath-flow {
-                        0% { transform: scale(1)}
-                        50% { transform: scale(1.1)}
-                        100% { transform: scale(1)}
-                    }
+                circle.hover{
+                    fill: transparent;
+                    visibility: hidden;
+                    pointer-events: all;
                 }
             }
         }
@@ -119,6 +163,7 @@
 
     .note-style{
         width: 75%;
+        height:100px;
         margin: -2% 0 0 15%;
         font-family: W9;
         font-size: 1.2em;

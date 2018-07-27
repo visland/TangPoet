@@ -34,10 +34,10 @@ export default class TextAnalyze extends React.Component{
             arrows: true,
             swipeToSlide: true,
             afterChange: () =>
-                this.setState(state => ({ updateCount: state.updateCount + 1 })),
+                this.setState(state => ({ updateCount: state.updateCount + 1})),
             beforeChange: (current, next) => this.setState({ slideIndex: next })
+            
         };
-
         return(
             <div className="Analyze-style">
                 <div className="cloud-pic"> 
@@ -48,7 +48,7 @@ export default class TextAnalyze extends React.Component{
                             style={this.wordcolor(d)} 
                             id={"word" + i} 
                             className="word-style"
-                            index={d.index}
+                            index={d.index - 1}
                         >{d.name}</span>
                     )} 
                     <img src={bgPic} alt="" />
@@ -67,8 +67,8 @@ export default class TextAnalyze extends React.Component{
     }
     wordcolor(d) {
         let a = this.ciColor(d.value),
-            i = d.index
-        const current = this.state.slideIndex
+            i = d.index - 1
+        const current = this.state.slideIndex    
 
         if (i === current || current === 0) {
             a = this.ciColor(d.value)   

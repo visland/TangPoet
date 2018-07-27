@@ -3,10 +3,10 @@ import ChooseBtn from './ChooseBtn'
 
 export default class ChooseFun extends React.Component{
     render(){
-        const { handleClick, hoverHelight, statusList, chooseStyle, chobtnStyle  } = this.props
+        const { btnstatus, handleClick, hoverHelight, statusList, chobtnStyle  } = this.props
 
         return(
-            <div className={chooseStyle} > 
+            <div className="choose-style" > 
                 {statusList.map( (d, i) => 
                     <ChooseBtn 
                         key={i}
@@ -14,8 +14,8 @@ export default class ChooseFun extends React.Component{
                         btnpic={require("../ChartPoetry/img/" + d.picsrc + ".svg")}
                         handleClick={handleClick}
                         hoverHelight={hoverHelight}
-                        chobtnStyle={chobtnStyle}
-                    />
+                        btnstatus={btnstatus}
+                    /> 
                 )}
             </div>
         )

@@ -5,9 +5,10 @@ import ChartPoetry from '../ChartPoetry/ChartPoetry'
 import ChooseFun from './Choose'
 import AllPoetry from '../AllPoetry'
 import Aside from './Aside'
-import FemaleData from './data/femaledata.json'
+import FemaleData from './data/female_info.json'
 import StateList from './data/stateList.json'
 import * as d3 from 'd3'
+import Legend from './legend'
 
 import './style/style.less'
 
@@ -51,29 +52,25 @@ export default class Part extends React.Component{
         let layout2 = { left: mleft, top: mtop }
 
         let viewbox = `0 0 ${chartWidth} ${chartHeight}`,
-            gstyle = { transform: `translate(${layout2.left}, ${layout2.top})` }        
+            gstyle = { transform: `translate(${layout2.left}, ${layout2.top})` }   
 
         return(
             <div id="part1">
-                <div className="part-style" 
-                    // style={screenStyle}
-                >
+                <div className="part-style" >
                     <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/>
                     <Title title={this.info[0].title} />
+                    <Legend />
                     <AllPoetry viewbox={viewbox} gstyle={gstyle} svgHeight={svgHeight}/>
                     <ChartNote chartnote={this.info[0].chartnote} />
                 </div>
 
-                <div className="part-style" 
-                // style={screenStyle}
-                >
+                <div className="part-style" >
                     <Aside asideSrc={require("./style/" + this.aside[1].src + ".png")} asideStyle={this.aside[1].style}/>
                     <Title title={this.info[1].title}/>
                     <ChooseFun 
                         handleClick={this.handleClick} hoverHelight={this.hoverHelight} 
                         statusList={this.statusList}
-                        chooseStyle="choose-style"
-                        chobtnStyle="chobtn-style"
+                        btnstatus={this.state.status}
                     />
 
                     <ChartPoetry 
@@ -89,10 +86,7 @@ export default class Part extends React.Component{
         )
     }
     handleClick(e) {
-        console.log("点击") 
         let status = e.target.getAttribute('alt')
-        console.log(status) 
-        console.log(e.target) 
 
         this.setState({ 
             status: status

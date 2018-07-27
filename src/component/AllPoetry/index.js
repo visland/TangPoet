@@ -1,6 +1,6 @@
 import React from 'react'
 import * as d3 from 'd3'
-import AllData from '../Part/data/alldata2.json'
+import AllData from '../Part/data/alldata.json'
 import OnePoetry from './OnePoetry'
 import '../Part/style/tooltip.less'
 
@@ -11,27 +11,21 @@ export default class AllPoetry extends React.Component{
 
     componentWillMount(){      
         this.data  = AllData
-        this.stastic = {
-            length : AllData.length,
-            mnum: AllData.filter(d => d.sex === "male").length,
-            fnum: AllData.filter(d => d.sex === "female").length
-        }
         this.radius = 5
-        this.padding = 3.7 
+        this.padding = 3.8 // 调试
         this.group = [
             { "group": "1", "value": 943, "name": "留诗一首" },
             { "group": "2", "value": 323, "name": "小作两曲" },
-            { "group": "3-5", "value": 294, "name": "三至五首" },
+            { "group": "3-5", "value": 294, "name": "作诗怡情" },
             { "group": "5-10", "value": 198, "name": "五至十首" },
-            { "group": "10-50", "value": 208, "name": "作诗怡情" },
+            { "group": "10-50", "value": 208, "name": "小有名气" },
             { "group": "50+", "value": 155, "name": "高产诗人" },
         ]
 
-        console.log(this.stastic)
         const { svgHeight } = this.props
         
         this.margin = ( this.radius + this.padding )* 2
-        this.areaHeight = svgHeight * 0.78
+        this.areaHeight = svgHeight * 0.79 //调试
         this.oneWide = this.radius * 2 + this.padding
         let a = Math.floor(this.areaHeight / this.oneWide)
 
@@ -61,7 +55,7 @@ export default class AllPoetry extends React.Component{
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, ${svgHeight * 0.12})`} 
+                            transform={`translate(${d.transform}, ${svgHeight * 0.05})`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}
@@ -80,11 +74,9 @@ export default class AllPoetry extends React.Component{
         let data = this.data.filter(d => d.group === group)
         return data 
     }
-    componentDidMount(){
-        
+    componentDidMount(){    
         this.drawmsvg()
-        this.drawTooltip()  
-    
+        this.drawTooltip()   
     }
     drawmsvg(){
         let choosed = [
@@ -102,16 +94,10 @@ export default class AllPoetry extends React.Component{
                     cx = dom.getAttribute("cx"),
                     cy = dom.getAttribute("cy"),
                     f = dom.getCTM()
-                
+              
                     d.x = cx * f.a + cy * f.c + f.e //circle相对于svg的位置
                     d.y = cx * f.b + cy * f.d + f.f
-                    // console.log(cx)
-                    // console.log(cy)
-                    // console.log(d.x)
-                    // console.log(d.y)
-
             }
-            // console.log(data)
             return data
         }
         let computedData = compute(choosed)
@@ -133,11 +119,8 @@ export default class AllPoetry extends React.Component{
         
         Pic.append("img").attr("src", d =>`${require("./img/" + d.name + ".jpg")}`); 
         Info.append("p").attr("class", "name").html(d => `${d.name}`)
-        Info.append("p").html(d => `成名作${d.fame}`)
+        Info.append("p").html(d => `代表作${d.fame}`)
         Info.append("p").html(d => `作诗${d.value}首`)
-
-
-
     }
     drawTooltip(){
         let tooltip = d3.select("body").append("div")
