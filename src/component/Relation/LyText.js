@@ -24,7 +24,7 @@ export default class RelationText extends React.Component {
 
 	componentDidUpdate() {
 		//title
-		d3.select('.male')
+		d3.select('.maleN')
 			.text(this.props.maleName)
 
 		// from poem
@@ -72,7 +72,7 @@ export default class RelationText extends React.Component {
 		return(
 			<g className='frame'>
 				<image></image>
-				<text className='male'></text>
+				<text className='maleN'></text>
 				<text className='relation' x='1450' y='230' width='200' height='100'
 					style={{
 						fontSize: '25px',

@@ -24,7 +24,7 @@ export default class XtRelation extends React.Component {
     const width = 1920;
     const height = 1080;
     const center_x = width / 1.8;
-    const center_y = height / 2;
+    const center_y = height / 2.3;
 	  const force = d3.forceManyBody().strength(-2200);
 	  this.setState({name: this.props.relationships.nodes[0].id});
 
@@ -200,21 +200,9 @@ export default class XtRelation extends React.Component {
 					</text>
 
 					<text className='description'>
-            <tspan           	
-          		x="1700" 
-          		y={ text_y }>字洪度，长安人，因父亲被贬谪流落蜀中，十六岁入乐籍。
-          	</tspan>
-            <tspan           	
-          		x="1660" 
-          		y={ text_y }>常出入幕府赋诗侑酒，更参与案牍工作，被称为“女校书”。
-          	</tspan>
-          	<tspan           	
-          		x="1620" 
-          		y={ text_y }>后脱去乐籍，暮年屏居浣花溪，着女冠服（道袍）。
-          	</ tspan>
 						<tspan           	
-          		x="545" 
-          		y={ 80 }>连线越粗，关系越紧密。深红色连线代表相传有过恋爱关系。
+          		x="800" 
+          		y='950'>连线越粗，关系越紧密。深红色连线代表相传有过恋爱关系。
           	</ tspan>
           </text>
 					

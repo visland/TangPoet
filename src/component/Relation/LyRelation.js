@@ -24,7 +24,7 @@ export default class LyRelation extends React.Component {
     const width = 1920;
     const height = 1080;
     const center_x = width / 2.2;
-    const center_y = height / 2;
+    const center_y = height / 2.3;
 	  const force = d3.forceManyBody().strength(-2600);
 	  this.setState({name: this.props.relationships.nodes[0].id});
 
@@ -208,25 +208,9 @@ export default class LyRelation extends React.Component {
 					</text>
 
 					<text className='description'>
-          	<tspan           	
-          		x="190" 
-          		y={ text_y }>“美姿容，神情萧散。专心翰墨，善弹琴，尤工格律”。
-          	</ tspan>
-            <tspan           	
-          		x="230" 
-          		y={ text_y }>刘长卿赞其为“诗中女豪”。《唐才子传》评价其为：
-          	</tspan>
-            <tspan           	
-          		x="270" 
-          		y={ text_y }>被认为是“唐代四大女诗人”中诗文最了得的，
-          	</tspan>
-          	<tspan           	
-          		x="310" 
-          		y={ text_y }>李冶，字季兰，乌程人（今浙江吴兴），后为女道士，
-          	</ tspan>
 						<tspan           	
-          		x="1385" 
-          		y={ 80 }>连线越粗，关系越紧密。深红色连线代表相传有过恋爱关系。
+          		x="600" 
+          		y='950'>连线越粗，关系越紧密。深红色连线代表相传有过恋爱关系。
           	</ tspan>
           </text>
 					
