@@ -11980,6 +11980,12 @@
         "group": "50+"
     },
     {
+        "name": "薛涛",
+        "sex": "female",
+        "value": 93,
+        "group": "50+"
+    },
+    {
         "name": "戴叔伦",
         "sex": "male",
         "value": 314,
@@ -11997,12 +12003,7 @@
         "value": 178,
         "group": "50+"
     },
-    {
-        "name": "薛涛",
-        "sex": "female",
-        "value": 93,
-        "group": "50+"
-    },
+    
     {
         "name": "宋之问",
         "sex": "male",
@@ -12262,12 +12263,14 @@
         "value": 85,
         "group": "50+"
     },
+   
     {
         "name": "贯休",
         "sex": "male",
         "value": 743,
         "group": "50+"
     },
+    
     {
         "name": "寒山",
         "sex": "male",
@@ -12329,10 +12332,17 @@
         "value": 227,
         "group": "50+"
     },
+    
     {
         "name": "拾得",
         "sex": "male",
         "value": 56,
+        "group": "50+"
+    },
+    {
+        "name": "元稹",
+        "sex": "male",
+        "value": 910,
         "group": "50+"
     },
     {
@@ -12407,12 +12417,7 @@
         "value": 75,
         "group": "50+"
     },
-    {
-        "name": "元稹",
-        "sex": "male",
-        "value": 910,
-        "group": "50+"
-    },
+   
     {
         "name": "齐己",
         "sex": "male",
@@ -12443,12 +12448,14 @@
         "value": 363,
         "group": "50+"
     },
+    
     {
         "name": "刘言史",
         "sex": "male",
         "value": 83,
         "group": "50+"
     },
+    
     {
         "name": "杨衡",
         "sex": "male",

@@ -16,7 +16,7 @@ export default class Title extends React.Component{
             }} />
                 <p className="title-text" >{titleText}</p>
                 {info.map((d, i) =>
-                    <p key={i} className="title-info">{d}</p>
+                    <p key={i} className="title-info-style">{d}</p>
                 )}
             </div>
         )
