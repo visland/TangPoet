@@ -16,9 +16,9 @@ export default class AllPoetry extends React.Component{
         this.group = [
             { "group": "1", "value": 943, "name": "留诗一首" },
             { "group": "2", "value": 323, "name": "小作两曲" },
-            { "group": "3-5", "value": 294, "name": "作诗怡情" },
+            { "group": "3-5", "value": 294, "name": "三至五首" },
             { "group": "5-10", "value": 198, "name": "五至十首" },
-            { "group": "10-50", "value": 208, "name": "小有名气" },
+            { "group": "10-50", "value": 208, "name": "十至五十" },
             { "group": "50+", "value": 155, "name": "高产诗人" },
         ]
 
@@ -80,7 +80,6 @@ export default class AllPoetry extends React.Component{
     }
     drawmsvg(){
         let choosed = [
-            // { "name": "李白", "x": 0, "y": 0, "fame": "《》", "sex": "male", "value": 100 },
             { "name": "白居易", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
             { "name": "白居易", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
             { "name": "薛涛", "x": 0, "y": 0, "fame": "《送友人》", "sex": "female", "value": 93 },
@@ -95,7 +94,7 @@ export default class AllPoetry extends React.Component{
                     cy = dom.getAttribute("cy"),
                     f = dom.getCTM()
               
-                    d.x = cx * f.a + cy * f.c + f.e //circle相对于svg的位置
+                    d.x = cx * f.a + cy * f.c + f.e 
                     d.y = cx * f.b + cy * f.d + f.f
             }
             return data
@@ -153,8 +152,6 @@ export default class AllPoetry extends React.Component{
                 d3.select("#msvg").selectAll(".msvg")
                     .selectAll(".info")
                     .attr("class", "noanimateI")
-                
-                
             })
 
             .on("mouseout", function (d) {

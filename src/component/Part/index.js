@@ -22,7 +22,6 @@ export default class Part extends React.Component{
     }
 
     componentWillMount(){
-        //json数据导入
         this.flows = FemaleData    
         this.statusList = StateList
         this.info =[ 
@@ -88,9 +87,7 @@ export default class Part extends React.Component{
     handleClick(e) {
         let status = e.target.getAttribute('alt')
 
-        this.setState({ 
-            status: status
-        })
+        this.setState({ status: status})
     }
     Filter(data, status, d) { 
         for (d of data) {if (d.state === status) { return d.chartnote }}

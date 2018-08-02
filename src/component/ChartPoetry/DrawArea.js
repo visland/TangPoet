@@ -1,7 +1,5 @@
 import React from 'react'
 import OneFlow from './OneFlow'
-// import * as d3 from 'd3'
-import Period from './Period'
 
 export default class DrawArea extends React.Component{
     render(){
@@ -18,7 +16,11 @@ export default class DrawArea extends React.Component{
                 width={width} 
                 transform={transform}            
             >    
-                <Period Pimg={Pimg} />
+                <image
+                    xlinkHref={Pimg}
+                    width="50"
+                    height="50"
+                />
                 {flows.map((d, i) =>
                     <OneFlow
                         key={i} width={d.value}
@@ -28,7 +30,6 @@ export default class DrawArea extends React.Component{
                         symbol={this.Filter(statusList, d.data.state)}
                         xFlow={width - Fwide * (Math.floor((i) / a + 1)) + MaxX - d.value}
                         yFlow={Flong * (i - a * Math.floor((i) / a)) + MaxY - d.value + MaxY}
-
                         btnstatus={btnstatus}
                         flowstate={d.data.state}
                     />

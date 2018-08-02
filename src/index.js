@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { AppContainer } from 'react-hot-loader';
 import Home from './pages/Home.js';
-// import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <AppContainer>
@@ -11,6 +11,7 @@ ReactDOM.render(
     </AppContainer>,
     document.getElementById('root')
 );
+registerServiceWorker()
 
 if(module.hot){
     module.hot.accept('./pages/Home',()=>{

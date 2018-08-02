@@ -1,5 +1,4 @@
 import React from 'react'
-// import * as d3 from 'd3'
 
 export default class OnePoetry extends React.Component{
     render(){
@@ -15,8 +14,6 @@ export default class OnePoetry extends React.Component{
             fnum: data.filter(d => d.sex === "female").length
         }
         let group = data[0].group
-
-        console.log(stastic)
         return(
             <g className="group-style" transform={transform}>
                 <g dx={width / 2} dy={height * 0.06} className="stastic">
@@ -47,8 +44,5 @@ export default class OnePoetry extends React.Component{
                 >{name}</text>
             </g>
         )
-    }
-    componentDidMount(){
-
     }
 }
