@@ -140,8 +140,6 @@ export default class LyRelation extends React.Component {
 	}
 	
 	render() {
-		const text_y = 370;
-
 		return (
 			<div>
 					<svg className='lychart'

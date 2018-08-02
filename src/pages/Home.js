@@ -6,7 +6,6 @@ import PartOne from '../component/Part'
 import Title from '../component/Title'
 import Footer from './Footer'
 import TextAnalyze from '../component/TextAnalyze/TextAnalyze'
-import ChartTitle from '../component/Part/Title'
 
 import './style/style.less'
 

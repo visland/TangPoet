@@ -132,8 +132,6 @@ export default class XtRelation extends React.Component {
 	}
 	
 	render() {
-		const text_y = 350;
-
 		return (
 			<div>
 					<svg className='chart'

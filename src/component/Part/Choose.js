@@ -3,7 +3,7 @@ import ChooseBtn from './ChooseBtn'
 
 export default class ChooseFun extends React.Component{
     render(){
-        const { btnstatus, handleClick, hoverHelight, statusList, chobtnStyle  } = this.props
+        const { btnstatus, handleClick, hoverHelight, statusList  } = this.props
 
         return(
             <div className="choose-style" > 
