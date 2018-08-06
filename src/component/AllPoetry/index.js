@@ -55,7 +55,7 @@ export default class AllPoetry extends React.Component{
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, ${svgHeight * 0.05})`} 
+                            transform={`translate(${d.transform}, ${svgHeight    * 0.05})`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}
@@ -65,6 +65,16 @@ export default class AllPoetry extends React.Component{
                             width={d.groupWidth}
                         />
                     )}
+                        <g className="legend" transform="translate(900, -50)">
+                            <g fill="#75623a">
+                                <circle cx="0" cy="0" r="10"></circle>
+                                <text dx="45" dy="7">男诗人</text>
+                            </g>
+                            <g fill="#c33e3c">
+                                <circle cx="100" cy="0" r="10"></circle>
+                                <text dx="145" dy="7">女诗人</text>
+                            </g>
+                        </g>
                     </g>
                 </svg>
             </div>
@@ -169,7 +179,6 @@ export default class AllPoetry extends React.Component{
                 d3.select("#msvg").selectAll(".msvg")
                     .selectAll(".noanimateI")
                     .attr("class", "info")
-               
             })
     }
 }

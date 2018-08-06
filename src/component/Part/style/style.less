@@ -16,7 +16,12 @@
 @hover: #e9706e;
 @choose: #c33e3c;
 
-
+.hover-style{
+    fill: transparent;
+    visibility: hidden;
+    pointer-events: all;
+    cursor: pointer; 
+}
 .part-style{
     left: 7.5%;
     width: 85%; 
@@ -25,98 +30,29 @@
     margin-bottom: 5%;
 
     .title-style{
-        width: 50%;
         margin: 0 0 -4% 8%;  
         font-size: 2.9em;
         font-family: "W2";
         color: black;
     }
     .legend{
-        position: @posA;
-        right: 8%;
-        width: 20%;
-        margin-top: 1.5%;
-        div{
-            float: left;
-            margin-left: 3%;
-            font-family: 'W9';
-            &.male{ color: @maleC}
-            &.female{ color: @femaleC}
-            &.circle.male{ background-color: @maleC}
-            &.circle.female{ background-color: @femaleC}
-            &.circle{
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                margin-top: 5px;
-            }
-        }
-    }
-    .choose-style{
-        width: 30%;
-        right: 8%;
-        position: @posA;
-        height: 40px;
-        z-index: 6;
-        .chobtn-style{
-            width: 50px;
-            height: 100%;
-            cursor: pointer;
-            transition: all 1s ease-out;
-            float: left;
-            margin-right: 10px;
-            font-family: 'W1';
-
-            transform: scale(1.2);
-            color: @noevent;
-            &[data-status = true] { 
-                color: @choose; 
-                img { filter: drop-shadow(40px 0 @choose);}
-            }
-            &:hover img { filter: drop-shadow(40px 0 @hover); }
-            &:hover p { color: @hover; transform: scale(1);}
-            p{
-                text-align: center;
-                overflow: hidden;
-                img{ width: 100%;
-                    filter: drop-shadow(40px 0 @noevent);
-                    position: relative;
-                    left: -30px;
-                    border-right: 20px solid transparent; }
-                line-height: 1em;
-                margin: 0px 0px 3px;
-                font-size: 12px;
-            }
-
-        }
+        font-size: 1rem;
     }
     .chart-style{
         width: 100%;
         left: 0;
-        position: @pos;
-        p.note{ 
-            font-family: @fontZW;
-            font-size: 0.7rem;
-            position: @posA;
-            bottom: 13%;
-            right: 10%;
-            letter-spacing: -1px;
-            color: #443832;
-        }
+        position: @pos;        
         svg{
             width: 100%;
             height: 100%;
+            position: @pos;
             text{
                  text-anchor: middle;
                  font-family: 'W1'; 
-                // dominant-baseline: middle; /* 文本垂直居中 */
-                
             }
-            position: @pos;
             g.group-style{
-                circle{cursor: pointer;}
-                
-                g.stastic{
+                circle{cursor: pointer;}             
+                .stastic{
                     font-family: 'W1';
                     tspan{
                         font-size: 0.7rem;
@@ -126,21 +62,17 @@
                         &.male{ fill: @maleC}
                         &.female{ fill: @femaleC}
                     }
-                
                 }          
-                text.group{
-                    font-size: 1rem
-                }
+                .group{ font-size: 1rem }
             }
-            g.flow-style {                
+            
+            g.flow-style {    
+                circle.hover{ .hover-style;}            
                 circle.backgroud{
                     fill-opacity: 0;
                     fill: rgba(255, 255, 255, 1);
                     pointer-events: none;
                     stroke-width: 0.8px;
-                }
-                use{
-                    cursor: pointer;     
                 }
                 text.number{ 
                     font-size: 15px;
@@ -152,15 +84,14 @@
                     font-family: "W9";
                     opacity: 0;
                 }
-                circle.hover{
-                    fill: transparent;
-                    visibility: hidden;
-                    pointer-events: all;
-                }
+            }
+            g.btn-style{
+                transition: all 1s ease-out;
+                rect{ .hover-style; width:60px; height: 60px;}
+                &:hover { fill: @hover;}
             }
         }
     }
-
     .note-style{
         width: 75%;
         height:100px;
@@ -170,10 +101,21 @@
         text-align: justify;
         color: #443832;
     }
+    
     .aside-style{
         width: 20%;
         position: @posA;
         z-index: 4;
+    }
+
+    @media only screen and (max-width: 768px) {
+    .title-style{
+        font-size: 1em;
+    }
+	.note-style{
+            height:100px;     
+            font-size: 0.2em;
+        }
     }
 }
 

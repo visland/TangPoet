@@ -1,7 +1,7 @@
 @pos: relative;
 .posA{position: absolute}
 .Analyze-style{
-
+ 
     width: 100%;
     position: @pos;
     height: 600px;
@@ -67,9 +67,68 @@
             top: 30%; right: 5%;
         }
     }   
+    .slick-dots{bottom: 20px;}
+    .Info-style{  
+    font-family: 'W1';
+    .poem{
+        font-size: 1.6em;
+        text-align: center;
+        &_1{
+            font-size: 3.2rem;
+            margin-bottom: 0;
+            font-family: 'w2';
+        }
+        &_3{ color: #c33e3c;}
+    }
+    .info{
+        font-size: 1.4em;
+        line-height: 1.4em;
+        margin: 8% 0 1%;
+        text-indent: 2em;
+        text-align: justify;
+    }  
+}
 
-    .slick-dots{
-        bottom: 20px;
+    @media only screen and (max-width: 768px) {
+        height: 350px;
+
+        .cloud-pic{
+            .posA;
+            left: 5%;
+            width: 100%;
+            height: 300px;
+            img{ width: 30%; }
+            .word-style{
+                .posA;
+                cursor: pointer;
+                font-family: 'W9';
+                z-index: 15;
+            }
+            #word{
+                &0{ top: 7%; left: 30%; font-size: 1rem; }
+                &1{ top: 7%; left: 20%; font-size: 1rem; }
+                &2{ top: 7%; left: 40%; font-size: 1rem; }
+                &3{ top: 7%; left: 5%; font-size: 1rem; }
+                &4{ top: 7%; left: 65%; font-size: 1rem; }
+                &5{ top: 7%; left: 50%; font-size: 1rem; }
+                &6{ top: 7%; left: 80%; font-size: 1rem; }
+            }
+        }
+        .ant-carousel{ width: 100%; right: 0; top: 20%;
+            .slick-prev, .slick-next{ visibility: hidden;}            
+        }
+        .Info-style{
+            .poem{
+                font-size: 1em;
+                &_1{ font-size: 1.2rem;}
+            }
+            .info{
+                width: 80%;
+                left: 10%;
+                font-size: 0.6em;
+                margin: 8% auto 1%;
+            }
+        }
     }
 }
 .arrow{
@@ -77,33 +136,5 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-.Info-style{  
-        font-family: 'W1';
-        .poem{
-            width: 53%;
-            position: @pos;
-            left: 20%;
-            font-size: 1.6em;
-            text-align: center;
-            &_1{
-                font-size: 3.2rem;
-                margin-bottom: 0;
-                font-family: 'w2';
-            }
-            &_2{
 
-            }
-            &_3{
-                color: #c33e3c;
-            }
-
-        }
-        .info{
-            font-size: 1.4em;
-            line-height: 1.4em;
-            margin: 8% 0 1%;
-            text-indent: 2em;
-            text-align: justify;
-        }
-}
 

@@ -12,15 +12,8 @@ export default class DrawArea extends React.Component{
         const width = (b + 1)  * Fwide
 
         return (
-            <g 
-                width={width} 
-                transform={transform}            
-            >    
-                <image
-                    xlinkHref={Pimg}
-                    width="50"
-                    height="50"
-                />
+            <g width={width} transform={transform}>    
+                <image xlinkHref={Pimg} width="50" height="50"/> 
                 {flows.map((d, i) =>
                     <OneFlow
                         key={i} width={d.value}

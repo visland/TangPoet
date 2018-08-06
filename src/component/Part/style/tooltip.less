@@ -2,12 +2,28 @@
 @femaleC: #c33e3c;
 
 .tooltip{
+    @media only screen and (max-width: 768px) {
+        height: 100px;
+        .poetry-name{
+            width: 60px;
+            height: 60px; 
+            margin-top: -10px;
+            P{ line-height: 60px; }
+        }
+        .poetry-info{
+            height: 30px;
+            max-width: 100px;
+            padding: 5px 8px;
+            margin-top: 8px;
+            margin-left: -5px;
+        }
+    }
+
     height: 100px;
     z-index: 5;
     pointer-events: none;
     text-align: center;
-    
-    
+
     .poetry-name{
         width: 60px;height: 60px;   
         margin-top: -10px;
@@ -31,7 +47,6 @@
     }
 
     .poetry-info{
-        // width: 110px;
         height: 30px;
         max-width: 100px;
         animation-name: titleWind;
@@ -89,23 +104,23 @@
 
 #allpoetry{
     .msvg{
+        @media only screen and (max-width: 768px) {
+            visibility: hidden;
+        }
         width: 110px;
         height: 140px;
         margin: -55px 0px 0px -70px;
         pointer-events: none;
         &.male{ 
-            div.pic img{ animation-name: image_showM }
-            div.noanimate img{ animation-name: image_hideM }
-            div.info, div.noanimateI{ background-color: @maleC;}
-            // p.name{ color: @maleC; }
+            .pic img{ animation-name: image_showM }
+            .noanimate img{ animation-name: image_hideM }
+            .info, .noanimateI{ background-color: @maleC;}
         }
         &.female{ 
-            div.pic img{ animation-name: image_showF }
-            div.noanimate img{ animation-name: image_hideF }
-            div.info, div.noanimateI{ background-color: @femaleC;}
-            // p.name{ color: @femaleC;}
+            .pic img{ animation-name: image_showF }
+            .noanimate img{ animation-name: image_hideF }
+            .info, .noanimateI{ background-color: @femaleC;}
         }
-        
         div{
             width: 100%;
             text-align: center;

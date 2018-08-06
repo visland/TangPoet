@@ -18,7 +18,7 @@ export default class OneFlow extends React.Component{
                     className="backgroud"
                     cx={xFlow + width} cy={yFlow + width}
                     r={ width + 10}
-                    stroke={btnTrans.isStroke}
+                    // stroke={btnTrans.isStroke}
                 ></circle>
                 <text 
                     className="number"
@@ -63,7 +63,6 @@ export default class OneFlow extends React.Component{
         
         function mouseOver(d){
             const el = d3.select(this)
-            console.log(el)
             const t = d3.transition().duration(1000)
 
             //append a new group

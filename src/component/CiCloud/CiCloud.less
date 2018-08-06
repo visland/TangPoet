@@ -1,4 +1,29 @@
-.radio {
+#ci-cloud {
+	.ciCloud{
+		width: '90%';
+		position:'relative';
+		left: '5%';
+		height:500px;
+	}
+	.ci-note{
+		display: flex;
+		flex-direction: row;
+		p{
+			width: 50%;
+			text-align: center;
+			font-size: 30px;
+			font-family: 'W1';
+			color:maroon;			
+		}
+	}
+	.ant-radio-group{
+		display: block;
+		width: 132px;
+		margin: 0px auto;
+		font-size: 18px;
+        font-family:'W9';
+	}
+
 	.ant-radio-button-wrapper {
 		border: 0 solid;
 		background-color: #c39143;
@@ -21,4 +46,17 @@
 		opacity: 1;
 		background-color: #d9d9d9!important;
 	}
+
+
+
+
+	@media only screen and (max-width: 768px) {
+
+		.ciCloud{ height:300px;}
+		.ci-note{
+		p{ font-size: 12px;	}}
+	}
 }
+
+
+	

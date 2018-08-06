@@ -10,7 +10,6 @@ export default class ChartPoetry extends React.Component{
         super(props);
         this.state = {
             tooltip: { display: false, data: { key: '', name: '', value: ''}},
-            status: "女冠",
             flowsdata: this.props.flows
         }
     }
@@ -33,7 +32,7 @@ export default class ChartPoetry extends React.Component{
         return data
     }
     render(){    
-        const {  btnstatus, statusList, viewbox, gstyle} = this.props  
+        const { btnstatus, statusList, viewbox, gstyle, handleClick} = this.props  
         let boxWidth = 2355,
             boxHeight = 1054
 
@@ -46,7 +45,7 @@ export default class ChartPoetry extends React.Component{
         
         const flowsdata = this.state.flowsdata
 
-        const xScale = d3.scaleLinear().range([18, 32]).domain(d3.extent(flowsdata, d => d.value));
+        const xScale = d3.scaleLinear().range([20, 32]).domain(d3.extent(flowsdata, d => d.value));
 
         const MaxY = d3.max(flowsdata, d => xScale(d.value)),  padding = 3
 
@@ -63,10 +62,10 @@ export default class ChartPoetry extends React.Component{
 
         return(
         <div className="chart-style">
-            <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
+            <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet"> 
                 <image xlinkHref={bgimg} width="100%" height="100%"></image>
                 <g style={gstyle}>
-                    <Flow />
+                    <Flow />                   
                     {this.periodD.map((item, i) =>
                         <DrawArea 
                             key={i} 
@@ -82,10 +81,26 @@ export default class ChartPoetry extends React.Component{
                             Flong={Flong}
                             width={item.width}  
                         />
-                    )}                
+                    )}         
+                    <g transform="translate(780, -80)" >
+                        {statusList.map((d, i) =>
+                            <g
+                                key={i}
+                                transform={`translate(${i * 75}, 0)`}
+                                fill={d.state === btnstatus ? "#c33e3c" : "#cca851"}
+                                className="btn-style"
+                            >  
+                                <use xlinkHref={d.symbol} width="35" height="35" />
+                                <text x="17.5" y="50">{d.state}</text>
+                                <rect
+                                    x1="-5" x2="60" y1="-5" y2="60"
+                                    fill="white" data-status={d.state} onClick={handleClick}></rect>
+                            </g>
+                        )}
+                    </g>       
                 </g>
+                <text x="1100"y='580'>鼠标悬浮可查看每位女诗人的具体信息</text>
             </svg>
-            <p className="note">花朵越大，诗作数量越多，鼠标悬浮可查看每位女诗人的具体信息</p>
         </div>
         )
     }

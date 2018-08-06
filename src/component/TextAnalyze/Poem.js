@@ -3,7 +3,6 @@ import React from 'react'
 export default class Poem extends React.Component{
     render(){
         const {data} = this.props
-
         let poemS = data.poem.split("。")
 
         return(

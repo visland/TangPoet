@@ -122,65 +122,17 @@ export default class CiCloud extends React.Component {
 
   render() {
     return (
-      <div style={{
-            width: '100%',
-            height: '100%'
-          }}>
+      <div>
         <div
           className="ciCloud"
-          ref={ref => {
-              this.container = ref;
-          }}
-          style={{
-            width: '90%',
-            height: '90%',            
-            position:'relative',
-            left: '5%',
-          }}>
+          ref={ref => {this.container = ref;}}>
         </div>
-        <p style={{
-            width: '20%',
-            float:'left',
-            height: 50,
-            fontSize:30,
-            fontFamily:'W1',
-            color:'maroon',
-            position:'relative',
-            left:'24%',
-            top:'-10%',
-            bottom:'20%'
-          }}>全部诗人</p>
-        <p  style={{
-            width: '20%',
-            height: 50,
-            fontSize:30,
-            fontFamily:'W1',
-            float:'right',
-            color:'maroon',
-            position:'relative',
-            left:'-14%',
-            top:'-10%',
-            bottom:'20%'
-          }}>女性诗人</p>
-        <div 
-          className="radio"
-          style = {{
-            position:'relative',
-            left: '24%',
-            fontSize: '18px',
-            fontFamily:'W1',
-            top:'5%',
-            bottom:'10%'
-          }}> 
-        <Radio.Group style={{
-          backgroundColor: 'transparent',
-          fontFamily:'W9',
-        }}
-        onChange={this.onRadioChange} value={this.state.value} buttonStyle="solid">
+        <div className="ci-note"><p>全部诗人</p><p>女性诗人</p></div>
+        <Radio.Group style={{ backgroundColor: 'transparent'}}
+              onChange={this.onRadioChange} value={this.state.value} buttonStyle="solid">
           <Radio.Button value={0}>词频</Radio.Button>
           <Radio.Button value={1}>字频</Radio.Button>
         </Radio.Group>
-        </div>    
       </div>
     );
   }
