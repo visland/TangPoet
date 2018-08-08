@@ -16,7 +16,7 @@ export default class RelationText extends React.Component {
 			.select('text')
 			.attr("x", 1450)
 			.attr("y", 190)
-			.attr("font-size", 70)
+			.attr("font-size", 50)
 			.attr("font-family", 'W2')
 			.text(this.props.des)
 
@@ -36,7 +36,7 @@ export default class RelationText extends React.Component {
 
 		fromUpdate.enter()
 			.append('text')
-			.attr('font-size', 25)
+			.attr('font-size', 22)
 			.attr('font-family', 'W1')
 			.attr('text-anchor', 'middle')
 			.attr("x", 1655)
@@ -56,7 +56,7 @@ export default class RelationText extends React.Component {
 
 		toUpdate.enter()
 			.append('text')
-			.attr('font-size', 25)
+			.attr('font-size', 22)
 			.attr('font-family', 'W1')
 			.attr('text-anchor', 'middle')
 			.attr("x", 1655)
@@ -75,7 +75,7 @@ export default class RelationText extends React.Component {
 				<text className='maleN'></text>
 				<text className='relation' x='1450' y='230' width='200' height='100'
 					style={{
-						fontSize: '25px',
+						fontSize: '22px',
         		fontFamily:'W1',
         		fill:'maroon'
 					}}>
@@ -83,7 +83,7 @@ export default class RelationText extends React.Component {
 				
 				<text className='title' x='1655' y='510' width='200' height='200'
 					style={{
-						fontSize: '30px',
+						fontSize: '28px',
         		fontFamily:'W1',
         		textAnchor:'middle'
 					}}>
@@ -91,7 +91,7 @@ export default class RelationText extends React.Component {
 
 				<text className='title2' x='1655' y='750' width='200' height='200'
 					style={{
-						fontSize: '30px',
+						fontSize: '28px',
         		fontFamily:'W1',
         		textAnchor:'middle'
 					}}>
@@ -100,7 +100,7 @@ export default class RelationText extends React.Component {
 				<svg>
   				<foreignObject width="420" height="600" x='1450' y='240'>
 	        	<p style={{
-	        		fontSize: '23px',
+	        		fontSize: '22px',
 	        		fontFamily:'W1'
 	        	}}>
 	        		{ this.props.des }

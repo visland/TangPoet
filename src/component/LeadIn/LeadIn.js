@@ -57,17 +57,17 @@ render() {
           		repeatCount="0" />
           	<tspan           	
           		x="1040" 
-          		y="80">我有柔情似水
+          		y="150">我有柔情似水
           	</ tspan>
           	<tspan           	
           		x="910" 
-          		y="250">亦有豪情万丈
+          		y="320">亦有豪情万丈
           		</ tspan>
           </text>
 
           <text className='subtitleText' 
           	x="780" 
-          	y="450">
+          	y="500">
            <animate attributeName="opacity" 
 	        		from="0" to="1" 
 	        		begin="5s" dur="3s" 

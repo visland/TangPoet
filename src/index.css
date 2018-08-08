@@ -1,22 +1,22 @@
 @font-face {  
    font-family: 'W9';  
-   src:url('./font/宋体.ttf')  
+   src:url('./font/HuaKangJianBiaoTiSong-2.ttf')  
 }  
 
 @font-face {  
    font-family: 'W2';  
-   src:url('./font/隶书.ttf')  
+   src:url('./font/HuaKangJianBiaoTiSong-2.ttf')  
 }  
 
 @font-face {  
    font-family: 'W1';  
-   src:url('./font/手写.ttf')  
+   src:url('./font/华康宋体W7.TTF')  
 } 
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'W2';
+  font-family: 'W1';
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
