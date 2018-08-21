@@ -1,6 +1,6 @@
 .titleText {
     font-family: 'W2';
-    font-size:80px;
+    font-size:70px;
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
     opacity:0;
@@ -8,7 +8,7 @@
 
 .subtitleText {
     font-family: 'W2';
-    font-size:48px;
+    font-size:39px;
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
     opacity:0;
@@ -23,7 +23,7 @@
   height:600px;
   width:400px;
   font-family: 'W1';
-  font-size:28px;
+  font-size:22px;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
