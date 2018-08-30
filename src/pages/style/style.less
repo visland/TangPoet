@@ -50,21 +50,35 @@
 .footer{
 	height: 500px;
 	position: @pos;
+	.resources{
+		position: @posA;
+		width: 30%;
+		left: 5%;
+		a{ color: #71684e}
+		a:hover{ color: #352823}
+
+	}
 	.footer-icon{
-		position: @pos;
+		position: @posA;
 		top:10%;
 		left:35%;
-		width:80%;
+		width:30%;
+		text-align: center;
 	}
 	.copyright{
 		width: 30%;
 		position: @posA;
-		right: 15%;
-		top: 15%;
+		right: 5%;
 	}
+
 	@media only screen and (max-width: 768px) {
-		.footer-icon{ img{width: 35%;}}
-		.copyright{
+		.footer-icon{ 
+			top: 2%;
+			margin-bottom: 10%;
+			position: @pos;
+			img{width: 70%; 
+		}}
+		.copyright, .resources {
 			text-align: center;
 			width: 90%;
 			position: @pos;
