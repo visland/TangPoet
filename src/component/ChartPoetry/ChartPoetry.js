@@ -2,7 +2,7 @@ import React from 'react'
 import DrawArea from './DrawArea'
 import Flow from './Flow'
 import * as d3 from 'd3'
-import bgimg from '../Part/style/bg.png'
+import bgimg from './img/bg.png'
 
 
 export default class ChartPoetry extends React.Component{
@@ -70,7 +70,7 @@ export default class ChartPoetry extends React.Component{
                         <DrawArea 
                             key={i} 
                             flows={this.choosedata(item.data.time)} 
-                            Pimg={require("./img/" + item.data.imgsrc + ".png")}
+                            // Pimg={require("./img/" + item.data.imgsrc + ".png")}
                             transform={`translate(${item.transform}, ${marginTop})`} 
         
                             btnstatus={btnstatus}
