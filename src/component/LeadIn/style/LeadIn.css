@@ -15,11 +15,11 @@
 }
  
 .ink{
-  opacity:0;
+  opacity:0.6;
 }
 
 .appendText {
-  opacity:0;
+  opacity:1;
   height:600px;
   width:400px;
   font-family: 'W1';
