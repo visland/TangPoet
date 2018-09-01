@@ -1,0 +1,177 @@
+@maleC:  #75623a;;
+@femaleC: #c33e3c;
+
+.tooltip{
+    @media only screen and (max-width: 768px) {
+        height: 100px;
+        .poetry-name{
+            width: 60px;
+            height: 60px; 
+            margin-top: -10px;
+            P{ line-height: 60px; }
+        }
+        .poetry-info{
+            height: 30px;
+            max-width: 100px;
+            padding: 5px 8px;
+            margin-top: 8px;
+            margin-left: -5px;
+        }
+    }
+
+    height: 100px;
+    z-index: 5;
+    pointer-events: none;
+    text-align: center;
+
+    .poetry-name{
+        width: 60px;height: 60px;   
+        margin-top: -10px;
+        border-radius: 50%;
+        background-color: rgba(247, 212, 138, 0.938);
+        transition: width .5s ease,height .5s ease,margin .5s ease,border-radius .5s ease;
+        animation-delay: .7s;
+        animation-duration: .8s;
+        animation-fill-mode: both; 
+        background-size: 70%;
+        transform: scale(0);
+        &.male{ animation-name: image_showM }
+        &.female{ animation-name: image_showF }
+        p{       
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            line-height: 60px;
+            color: #f1eaca;
+        }
+    }
+
+    .poetry-info{
+        height: 30px;
+        max-width: 100px;
+        animation-name: titleWind;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-delay: .7s;
+        background: #fff;
+        display: inline-block;
+        padding: 5px 8px;
+        margin-top: 8px;
+        margin-left: -5px;
+        &.male{ color: @maleC; }
+        &.female{ color: @femaleC }
+        font-family: 'W2';
+    }
+}
+
+@keyframes image_showM{
+    0%{box-shadow:0 0 0 0 #fff; background-color: @maleC; }
+    50%{box-shadow:0 0 0 3pt #fff; background-color: @maleC; transform: scale(1)}
+    100%{box-shadow:0 0 0 2pt #fff; background-color: @maleC;  transform: scale(1)}
+}
+@keyframes image_showF{
+    0%{box-shadow:0 0 0 0 #fff; background-color: @femaleC; }
+    50%{box-shadow:0 0 0 3pt #fff; background-color: @femaleC; transform: scale(1)}
+    100%{box-shadow:0 0 0 2pt #fff; background-color: @femaleC;  transform: scale(1)}
+}
+
+@keyframes image_hideM{
+    0%{box-shadow:0 0 0 2pt #4d4025;  transform: scale(1)}
+    50%{box-shadow:0 0 0 3pt #4d4025; transform: scale(1)}
+    100%{box-shadow:10 0 0 0 #4d4025; transform: scale(0) }
+    
+}
+@keyframes image_hideF{
+    0%{box-shadow:0 0 0 2pt #c33e3c;  transform: scale(1)}
+    50%{box-shadow:0 0 0 3pt #c33e3c; transform: scale(1)}
+    100%{box-shadow:0 0 0 0 #c33e3c; transform: scale(0) }
+}
+@keyframes titleWind{
+    0%{opacity:0}
+    5%{opacity:1;transform-origin:50% 0; transform:perspective(800px) rotateX(-80deg)}
+    30%{opacity:1;transform-origin:50% 0; transform: perspective(800px) rotateX(30deg)}
+    70%{opacity:1;transform-origin:50% 0; transform:perspective(800px) rotateX(-20deg)}
+    100%{opacity:1;transform-origin:50% 0;transform:perspective(800px) rotateX(0)}
+}
+
+@keyframes RtitleWind{
+    100%{opacity:0}
+    95%{opacity:1;transform-origin:50% 0; transform:perspective(800px) rotateX(-80deg)}
+    70%{opacity:1;transform-origin:50% 0; transform: perspective(800px) rotateX(20deg)}
+    20%{opacity:1;transform-origin:50% 0; transform:perspective(800px) rotateX(-20deg)}
+    0%{opacity:1;transform-origin:50% 0;transform:perspective(800px) rotateX(0)}
+}
+
+#allpoetry{
+    .msvg{
+        @media only screen and (max-width: 768px) {
+            visibility: hidden;
+        }
+        width: 110px;
+        height: 140px;
+        margin: -55px 0px 0px -70px;
+        pointer-events: none;
+        &.male{ 
+            .pic img{ animation-name: image_showM }
+            .noanimate img{ animation-name: image_hideM }
+            .info, .noanimateI{ background-color: @maleC;}
+        }
+        &.female{ 
+            .pic img{ animation-name: image_showF }
+            .noanimate img{ animation-name: image_hideF }
+            .info, .noanimateI{ background-color: @femaleC;}
+        }
+        div{
+            width: 100%;
+            text-align: center;
+            &.pic, &.noanimate{
+                margin-bottom: 10px; 
+                img{
+                    .animation;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;                 
+                }
+            }
+            &.pic { img{ animation-delay: .3s; animation-duration: .8s}}
+            &.noanimate { img{ animation-delay: .3s; animation-duration: .7s}}
+
+            &.info, &.noanimateI{
+                .animationI;
+                p{
+                    font-family: 'W1';
+                    color: antiquewhite;
+                    font-size: 0.5rem;
+                    line-height: 0.6rem;
+                    margin: 0;
+                    &.name{
+                        font-size: 0.8rem; font-family: "W2";
+                        line-height: 1rem;                 
+                    }
+                }
+            }
+            &.info{
+                animation-duration: 2s;
+                animation-delay: .3s;
+                animation-name: titleWind;
+            }
+            &.noanimateI{
+                animation-duration: 1s;
+                animation-delay: 0s;
+                animation-name: RtitleWind;
+            }
+            
+        }
+    }
+}
+
+.animation{
+    transition: width .5s ease,height .5s ease,margin .5s ease,border-radius .5s ease;
+    animation-fill-mode: both;
+}
+
+.animationI{
+    animation-fill-mode: both;
+    padding: 3%;
+    
+}

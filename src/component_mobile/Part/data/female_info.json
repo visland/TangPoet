@@ -1,0 +1,877 @@
+[
+    {
+        "name": "鱼玄机",
+        "value": 51,
+        "index": 1,
+        "time": "晚唐",
+        "state": "女冠诗人"
+    },
+    {
+        "name": "陈玉兰",
+        "value": 1,
+        "index": 2,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "关盼盼",
+        "value": 5,
+        "index": 3,
+        "time": "中唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "武昌妓",
+        "value": 1,
+        "index": 4,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "徐贤妃",
+        "value": 6,
+        "index": 5,
+        "time": "初唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "上官昭容",
+        "value": 33,
+        "index": 6,
+        "time": "初唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "江妃",
+        "value": 1,
+        "index": 7,
+        "time": "盛唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "宜芬公主",
+        "value": 1,
+        "index": 8,
+        "time": "盛唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "宋若莘",
+        "value": 1,
+        "index": 9,
+        "time": "中唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "宋若昭",
+        "value": 1,
+        "index": 10,
+        "time": "中唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "鲍君徽",
+        "value": 3,
+        "index": 11,
+        "time": "中唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "萧妃",
+        "value": 1,
+        "index": 12,
+        "time": "初唐",
+        "state": ""
+    },
+    {
+        "name": "田娥",
+        "value": 5,
+        "index": 13,
+        "time": "无考",
+        "state": ""
+    },
+    {
+        "name": "天宝宫人",
+        "value": 2,
+        "index": 14,
+        "time": "盛唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "李舜弦",
+        "value": 3,
+        "index": 15,
+        "time": "五代十国",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "杨容华",
+        "value": 1,
+        "index": 16,
+        "time": "初唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "乔氏",
+        "value": 1,
+        "index": 17,
+        "time": "初唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "七岁女子",
+        "value": 1,
+        "index": 18,
+        "time": "初唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "郭绍兰",
+        "value": 1,
+        "index": 19,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "薛媛",
+        "value": 1,
+        "index": 20,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "慎氏",
+        "value": 1,
+        "index": 21,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "张文姬",
+        "value": 4,
+        "index": 22,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "程长文",
+        "value": 3,
+        "index": 23,
+        "time": "五代十国",
+        "state": "民间女子"
+    },
+    {
+        "name": "程洛宾",
+        "value": 1,
+        "index": 24,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "崔莺莺",
+        "value": 3,
+        "index": 25,
+        "time": "中唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "步非烟",
+        "value": 4,
+        "index": 26,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "姚月华",
+        "value": 6,
+        "index": 27,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "崔素娥",
+        "value": 1,
+        "index": 28,
+        "time": "五代十国",
+        "state": "歌妓"
+    },
+    {
+        "name": "梁琼",
+        "value": 8,
+        "index": 29,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "裴羽仙",
+        "value": 2,
+        "index": 30,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "刘淑柔",
+        "value": 1,
+        "index": 31,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "赵虚舟",
+        "value": 1,
+        "index": 32,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "葛氏女",
+        "value": 1,
+        "index": 33,
+        "time": "无考",
+        "state": ""
+    },
+    {
+        "name": "京兆女子",
+        "value": 1,
+        "index": 34,
+        "time": "无考",
+        "state": ""
+    },
+    {
+        "name": "越溪杨女",
+        "value": 2,
+        "index": 35,
+        "time": "无考",
+        "state": ""
+    },
+    {
+        "name": "曹文姬",
+        "value": 1,
+        "index": 36,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "常浩",
+        "value": 4,
+        "index": 37,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "王福娘",
+        "value": 3,
+        "index": 38,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "赵鸾鸾",
+        "value": 5,
+        "index": 39,
+        "time": "无考",
+        "state": ""
+    },
+    {
+        "name": "元淳",
+        "value": 5,
+        "index": 40,
+        "time": "晚唐",
+        "state": "女冠诗人"
+    },
+    {
+        "name": "卿云",
+        "value": 4,
+        "index": 41,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "崔少玄",
+        "value": 1,
+        "index": 42,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "戚逍遥",
+        "value": 1,
+        "index": 43,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "卓英英",
+        "value": 4,
+        "index": 44,
+        "time": "",
+        "state": "女冠诗人"
+    },
+    {
+        "name": "眉娘",
+        "value": 3,
+        "index": 45,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "嵩山女",
+        "value": 3,
+        "index": 46,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "吴彩鸾",
+        "value": 1,
+        "index": 47,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "王丽真",
+        "value": 2,
+        "index": 48,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "武则天",
+        "value": 14,
+        "index": 49,
+        "time": "初唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "长孙皇后",
+        "value": 1,
+        "index": 50,
+        "time": "初唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "金真德",
+        "value": 1,
+        "index": 51,
+        "time": "初唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "郎大家宋氏",
+        "value": 10,
+        "index": 52,
+        "time": "初唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "杨贵妃",
+        "value": 3,
+        "index": 53,
+        "time": "盛唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "开元宫人",
+        "value": 1,
+        "index": 54,
+        "time": "盛唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "德宗宫人",
+        "value": 1,
+        "index": 55,
+        "time": "盛唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "林氏",
+        "value": 1,
+        "index": 56,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "魏氏",
+        "value": 1,
+        "index": 57,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "王韫秀",
+        "value": 3,
+        "index": 58,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "赵氏",
+        "value": 8,
+        "index": 59,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "薛琼",
+        "value": 1,
+        "index": 60,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "崔氏",
+        "value": 1,
+        "index": 61,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "张窈窕",
+        "value": 7,
+        "index": 62,
+        "time": "盛唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "张夫人",
+        "value": 6,
+        "index": 63,
+        "time": "中唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "柳氏",
+        "value": 2,
+        "index": 64,
+        "time": "中唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "王氏",
+        "value": 1,
+        "index": 65,
+        "time": "中唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "太原妓",
+        "value": 1,
+        "index": 66,
+        "time": "中唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "张氏",
+        "value": 2,
+        "index": 67,
+        "time": "中唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "晁采",
+        "value": 23,
+        "index": 68,
+        "time": "中唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "李冶",
+        "value": 19,
+        "index": 69,
+        "time": "中唐",
+        "state": "女冠诗人"
+    },
+    {
+        "name": "裴淑",
+        "value": 1,
+        "index": 70,
+        "time": "中唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "薛涛",
+        "value": 93,
+        "index": 71,
+        "time": "中唐",
+        "state": "女冠诗人"
+    },
+    {
+        "name": "宣宗宫人",
+        "value": 1,
+        "index": 72,
+        "time": "晚唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "僖宗宫人",
+        "value": 1,
+        "index": 73,
+        "time": "晚唐",
+        "state": "宫廷诗人"
+    },
+    {
+        "name": "张立本女",
+        "value": 1,
+        "index": 74,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "侯氏",
+        "value": 1,
+        "index": 75,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "王霞卿",
+        "value": 2,
+        "index": 76,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "李节度姬",
+        "value": 3,
+        "index": 77,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "葛鸦儿",
+        "value": 3,
+        "index": 78,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "黄崇嘏",
+        "value": 2,
+        "index": 79,
+        "time": "晚唐",
+        "state": "士大夫妻妾女"
+    },
+    {
+        "name": "刘媛",
+        "value": 6,
+        "index": 80,
+        "time": "晚唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "崔公远",
+        "value": 4,
+        "index": 81,
+        "time": "晚唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "张琰",
+        "value": 6,
+        "index": 82,
+        "time": "晚唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "刘瑶",
+        "value": 3,
+        "index": 83,
+        "time": "晚唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "若耶溪女子",
+        "value": 1,
+        "index": 84,
+        "time": "晚唐",
+        "state": "民间女子"
+    },
+    {
+        "name": "海印",
+        "value": 3,
+        "index": 85,
+        "time": "晚唐",
+        "state": "女尼"
+    },
+    {
+        "name": "襄阳妓",
+        "value": 1,
+        "index": 86,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "杨莱儿",
+        "value": 2,
+        "index": 87,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "楚儿",
+        "value": 1,
+        "index": 88,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "王苏苏",
+        "value": 1,
+        "index": 89,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "颜令宾",
+        "value": 1,
+        "index": 90,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "平康妓",
+        "value": 1,
+        "index": 91,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "盛小丛",
+        "value": 1,
+        "index": 92,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "孟氏",
+        "value": 2,
+        "index": 93,
+        "time": "晚唐",
+        "state": "歌妓"
+    },
+    {
+        "name": "安邑坊女",
+        "value": 1,
+        "index": 94,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "魏朋妻",
+        "value": 1,
+        "index": 95,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "曾崇范妻",
+        "value": 1,
+        "index": 96,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "苏检妻",
+        "value": 2,
+        "index": 97,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "吴清妻",
+        "value": 5,
+        "index": 98,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "张生妻",
+        "value": 6,
+        "index": 99,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "刘氏妇",
+        "value": 2,
+        "index": 100,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "王氏妇",
+        "value": 8,
+        "index": 101,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "李主簿姬",
+        "value": 1,
+        "index": 102,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "韦检亡姬",
+        "value": 3,
+        "index": 103,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "陈宫妃嫔",
+        "value": 4,
+        "index": 104,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "湘驿女子",
+        "value": 1,
+        "index": 105,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "谁氏女",
+        "value": 1,
+        "index": 106,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "王氏女",
+        "value": 1,
+        "index": 107,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "妙女",
+        "value": 1,
+        "index": 108,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "龙女",
+        "value": 1,
+        "index": 109,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "吴兴神女",
+        "value": 1,
+        "index": 110,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "沙碛女子",
+        "value": 1,
+        "index": 111,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "无名女鬼",
+        "value": 1,
+        "index": 112,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "张氏女",
+        "value": 1,
+        "index": 113,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "毛女正美",
+        "value": 2,
+        "index": 114,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "广利王女",
+        "value": 2,
+        "index": 115,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "洛川仙女",
+        "value": 3,
+        "index": 116,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "织女",
+        "value": 4,
+        "index": 117,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "湘中蛟女",
+        "value": 3,
+        "index": 118,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "南溟夫人",
+        "value": 1,
+        "index": 119,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "桃花夫人",
+        "value": 1,
+        "index": 120,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "上元夫人",
+        "value": 3,
+        "index": 121,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "红绡妓",
+        "value": 1,
+        "index": 122,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "莲花妓",
+        "value": 1,
+        "index": 123,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "金车美人",
+        "value": 4,
+        "index": 124,
+        "time": "",
+        "state": ""
+    },
+    {
+        "name": "黄陵美人",
+        "value": 1,
+        "index": 125,
+        "time": "",
+        "state": ""
+    }
+]

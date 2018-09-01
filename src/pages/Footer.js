@@ -9,8 +9,8 @@ export default class Footer extends React.Component{
             <div className="footer">
                 <div className="resources">
                     <p><strong>数据来源：</strong></p> 
-                    <p><a href="https://github.com/chinese-poetry/chinese-poetry">1.chinese-poetry，为github上最全中华古诗词数据库，收录唐朝超过3500位诗人的共将近5.5万首唐诗。</a></p> 
-                    <p>2.由哈佛大学编纂的《中国历代人物传记资料库》（简称CBDB）</p> 
+                    <p><a href="https://github.com/chinese-poetry/chinese-poetry">1.chinese-poetry，为Github最全中华古诗词数据库，收录唐朝超过3500位诗人的共将近5.5万首唐诗。</a></p> 
+                    <p>2.由哈佛大学编纂的《中国历代人物传记资料库》（CBDB）</p> 
                     <p><a href="http: //www.shicimingju.com/">3.诗词名句网</a></p> 
                     <p><strong>关系数据处理方式：</strong></p> 
                     <p>从CBDB中共提取两层人物关系，删去后人为前人作传记这类关系，仅保留唐代人物。后根据百度百科资料增添几条数据库未记载完全的关系。</p> 
