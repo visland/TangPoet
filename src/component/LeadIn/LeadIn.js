@@ -9,13 +9,13 @@ export default class LeadIn extends React.Component {
 	constructor() {
 	 	super();
 		this.state = {};
-		this.linePath = d3.line().curve(d3.curveCardinal.tension(0.01));
-		this.lines = [[[90,225],[383, 569],[515, 728], [772, 960]],
-								  [[331, 141], [429, 224], [528, 432], [661, 563]],
-								  [[842, 198], [988, 331], [1254, 469],[1583, 853]],
-								  [[16, 620], [161, 873], [364, 980]],
-								  [[1409, 89], [1594, 284],[1839, 590]],
-								  [[449, 103], [872, 258],[1232, 379]]];
+		// this.linePath = d3.line().curve(d3.curveCardinal.tension(0.01));
+		// this.lines = [[[90,225],[383, 569],[515, 728], [772, 960]],
+		// 						  [[331, 141], [429, 224], [528, 432], [661, 563]],
+		// 						  [[842, 198], [988, 331], [1254, 469],[1583, 853]],
+		// 						  [[16, 620], [161, 873], [364, 980]],
+		// 						  [[1409, 89], [1594, 284],[1839, 590]],
+		// 						  [[449, 103], [872, 258],[1232, 379]]];
 	}
 
 	componentDidMount() {
@@ -88,7 +88,7 @@ render() {
           	</ tspan>
           </text>
 
-					<image xlinkHref={ flower } height='90' width='90'>
+					{/* <image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[0]) }
 							dur="20s" 
@@ -99,9 +99,9 @@ render() {
 	        		begin="15s" dur="5s" 
 	        		fill="freeze"
 	        		repeatCount="0" />
-					</ image>
+					</ image> */}
 
-					<image xlinkHref={ flower } height='90' width='90'>
+					{/* <image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[1]) }
 							dur="20s" 
@@ -164,7 +164,7 @@ render() {
 	        		begin="15s" dur="5s" 
 	        		fill="freeze"
 	        		repeatCount="0" />
-					</ image>
+					</ image> */}
 				</svg>
 		</div>
 	)
