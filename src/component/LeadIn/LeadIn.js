@@ -3,29 +3,30 @@ import * as d3 from 'd3'
 import './style/LeadIn.css'
 import flower from './img/flower.png'
 import tree from './img/redTree.png'
+import pic from './img/1.jpg'
 import ink from './img/ink.png'
 
 export default class LeadIn extends React.Component {
 	constructor() {
 	 	super();
 		this.state = {};
-		// this.linePath = d3.line().curve(d3.curveCardinal.tension(0.01));
-		// this.lines = [[[90,225],[383, 569],[515, 728], [772, 960]],
-		// 						  [[331, 141], [429, 224], [528, 432], [661, 563]],
-		// 						  [[842, 198], [988, 331], [1254, 469],[1583, 853]],
-		// 						  [[16, 620], [161, 873], [364, 980]],
-		// 						  [[1409, 89], [1594, 284],[1839, 590]],
-		// 						  [[449, 103], [872, 258],[1232, 379]]];
+		this.linePath = d3.line().curve(d3.curveCardinal.tension(0.01));
+		this.lines = [[[90,225],[383, 569],[515, 728], [772, 960]],
+								  [[331, 141], [429, 224], [528, 432], [661, 563]],
+								  [[842, 198], [988, 331], [1254, 469],[1583, 853]],
+								  [[16, 620], [161, 873], [364, 980]],
+								  [[1409, 89], [1594, 284],[1839, 590]],
+								  [[449, 103], [872, 258],[1232, 379]]];
 	}
 
 	componentDidMount() {
-		d3.select(".subTitle")
-		 .append("image")
-		 .attr("x", 0)
-		 .attr("y", 60)
-		 .attr("height", 528 / 1.6)
-		 .attr("width", 658 / 1.6)
-		 .attr("xlink:href", tree)
+		// d3.select(".subTitle")
+		//  .append("image")
+		//  .attr("x", 0)
+		//  .attr("y", 60)
+		//  .attr("height", 528 / 1.6)
+		//  .attr("width", 658 / 1.6)
+		//  .attr("xlink:href", tree)
 	}
 
 render() {
@@ -36,15 +37,19 @@ render() {
 					height='100%'
 					viewBox="0 0 1920 1080"
 					preserveAspectRatio="xMinYMin meet">
-          <image className='ink'
+          {/* <image className='ink'
           	xlinkHref={ ink } 
           	height='700' 
           	width='700'
           	x="620"
           	y="220">
+					</ image> */}
+					<image 
+          	xlinkHref={ pic } 
+						width = "1920">
 					</ image>
 
-					<text className='titleText'>
+					{/* <text className='titleText'>
           	<tspan           	
           		x="1040" 
           		y="150">我有柔情似水
@@ -86,9 +91,9 @@ render() {
           		x="1600" 
           		y="400">辛文房·唐才子传
           	</ tspan>
-          </text>
+          </text> */}
 
-					{/* <image xlinkHref={ flower } height='90' width='90'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[0]) }
 							dur="20s" 
@@ -99,9 +104,9 @@ render() {
 	        		begin="15s" dur="5s" 
 	        		fill="freeze"
 	        		repeatCount="0" />
-					</ image> */}
+					</ image>
 
-					{/* <image xlinkHref={ flower } height='90' width='90'>
+					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[1]) }
 							dur="20s" 
@@ -164,7 +169,7 @@ render() {
 	        		begin="15s" dur="5s" 
 	        		fill="freeze"
 	        		repeatCount="0" />
-					</ image> */}
+					</ image>
 				</svg>
 		</div>
 	)

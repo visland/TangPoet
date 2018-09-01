@@ -1,8 +1,6 @@
 @font-face {
   font-family: 'W2';
-  src: url('./font/HuaKangJianBiaoTiSong-2.ttf');
-  font-weight: normal;
-  font-style: normal;
+  src: url('./font/HuaKangJianBiaoTiSong.ttf');
 }
 
 @font-face {  
