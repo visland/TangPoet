@@ -1,16 +1,20 @@
-@font-face {  
-   font-family: 'W9';  
-   src:url('./font/HuaKangJianBiaoTiSong-2.ttf')  
-}  
-
-@font-face {  
-   font-family: 'W2';  
-   src:url('./font/HuaKangJianBiaoTiSong-2.ttf')  
-}  
+@font-face {
+  font-family: 'W2';
+  src: url('./font/HuaKangJianBiaoTiSong-2.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {  
    font-family: 'W1';  
-   src:url('./font/华康宋体W7.TTF')  
+   src:url('./font/W7.eot');
+   src:
+   url('./font/W7.eot?#font-spider') format('embedded-opentype'),
+   url('./font/W7.woff') format('woff'),
+   url('./font/W7.ttf') format('truetype'),
+   url('./font/W7.svg') format('svg');
+ font-weight: normal;
+ font-style: normal;
 } 
 
 body {
@@ -21,4 +25,8 @@ body {
   -moz-user-select:none;
   -ms-user-select:none;
   user-select:none;
+}
+
+.t {
+  font-family: 'W1';
 }

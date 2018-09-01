@@ -105,6 +105,8 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.8.0",
+    "grunt-font-spider": "^0.1.5",
+    "gulp-font-spider": "^0.3.6",
     "less": "^3.7.1",
     "less-loader": "^4.1.0"
   }
