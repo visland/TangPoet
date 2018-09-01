@@ -42,19 +42,9 @@ render() {
           	width='700'
           	x="620"
           	y="220">
-          <animate attributeName="opacity" 
-	        		from="0" to="0.5" 
-	        		begin="3s" dur="3s" 
-	        		fill="freeze"
-	        		repeatCount="0" />
 					</ image>
 
 					<text className='titleText'>
-					  <animate attributeName="opacity" 
-          		from="0" to="1" 
-          		begin="4s" dur="3s" 
-          		fill="freeze"
-          		repeatCount="0" />
           	<tspan           	
           		x="1040" 
           		y="150">我有柔情似水
@@ -68,20 +58,10 @@ render() {
           <text className='subtitleText' 
           	x="780" 
           	y="500">
-           <animate attributeName="opacity" 
-	        		from="0" to="1" 
-	        		begin="5s" dur="3s" 
-	        		fill="freeze"
-	        		repeatCount="0" />
           	唐代女诗人群像
           </text>
 
           <text className='appendText'>
-            <animate attributeName="opacity" 
-	        		from="0" to="1" 
-	        		begin="1s" dur="5s" 
-	        		fill="freeze"
-	        		repeatCount="0" />
             <tspan           	
           		x="1850" 
           		y="50">历观唐以雅道奖士类，而闺阁英秀

@@ -3,7 +3,7 @@
     font-size:70px;
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
-    opacity:0;
+    opacity:1;
 }
 
 .subtitleText {
@@ -11,7 +11,7 @@
     font-size:39px;
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
-    opacity:0;
+    opacity:1;
 }
  
 .ink{
