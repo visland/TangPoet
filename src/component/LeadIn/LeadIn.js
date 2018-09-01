@@ -46,7 +46,8 @@ render() {
 					</ image> */}
 					<image 
           	xlinkHref={ pic } 
-						width = "1920">
+						width = "1920"
+						height = "1080">
 					</ image>
 
 					{/* <text className='titleText'>
