@@ -32,7 +32,7 @@ export default class Footer extends React.Component{
                         监制：陈为 马秩群
                     </p>
                     <p>
-                        统筹：马倩 张玮 熊玉兰
+                        统筹：马倩 张玮
                     </p >
                     <p>
                         技术指导：潘如晟
