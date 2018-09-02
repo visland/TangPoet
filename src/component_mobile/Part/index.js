@@ -34,7 +34,7 @@ export default class Part extends React.Component{
     render(){
         // 背景大小        
         let bgWidth = 2746,
-            bgHeight = 5000,
+            bgHeight = 4800,
             // 点阵大小
             boxWidth = 2355,
             boxHeight = 1320

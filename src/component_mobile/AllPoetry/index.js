@@ -50,7 +50,7 @@ export default class AllPoetry extends React.Component{
         return (
             <div className="chart-style" id="allpoetry">
                 <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
-                    <image xlinkHref={bgimg} width="110%" height="120%" x="-4.4%" y="-8%"></image>
+                    <image xlinkHref={bgimg} width="110%" height="110%" x="-4.4%" y="-3%"></image>
                     <g style={gstyle}>
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
