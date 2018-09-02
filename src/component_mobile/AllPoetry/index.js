@@ -11,8 +11,8 @@ export default class AllPoetry extends React.Component{
 
     componentWillMount(){      
         this.data  = AllData
-        this.radius = 5
-        this.padding = 3.8 // 调试
+        this.radius = 13.5
+        this.padding = 6.8 // 调试
         this.group = [
             { "group": "1", "value": 943, "name": "留诗一首" },
             { "group": "2", "value": 323, "name": "小作两曲" },
@@ -25,7 +25,7 @@ export default class AllPoetry extends React.Component{
         const { svgHeight } = this.props
         
         this.margin = ( this.radius + this.padding )* 2
-        this.areaHeight = svgHeight * 0.79 //调试
+        this.areaHeight = svgHeight * 1.8 //调试
         this.oneWide = this.radius * 2 + this.padding
         let a = Math.floor(this.areaHeight / this.oneWide)
 
@@ -40,22 +40,22 @@ export default class AllPoetry extends React.Component{
         for (let i = 0; i < data.length; i ++){
             data[i].transform = transform 
             let a = data[i].groupWidth
-            transform = transform + a + padding
+            transform = transform + a + padding + 150
         }
         return data
     }
     render(){
-        const { viewbox, gstyle, svgHeight} = this.props
+        const { viewbox, gstyle, svgHeight, svgWidth} = this.props
 
         return (
             <div className="chart-style" id="allpoetry">
                 <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
-                    <image xlinkHref={bgimg} width="100%" height="100%"></image>
+                    <image xlinkHref={bgimg} width="110%" height="120%" x="-4.4%" y="-8%"></image>
                     <g style={gstyle}>
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, ${svgHeight    * 0.05})`} 
+                            transform={`translate(${svgHeight * 0.01}, ${d.transform})`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}
@@ -65,14 +65,14 @@ export default class AllPoetry extends React.Component{
                             width={d.groupWidth}
                         />
                     )}
-                        <g className="legend" transform="translate(900, -50)">
+                        <g className="legend" transform="translate(100, -1200)">
                             <g fill="#75623a">
-                                <circle cx="0" cy="0" r="10"></circle>
-                                <text dx="45" dy="7">男诗人</text>
+                                <circle cx="200" cy="-280" r="30"></circle>
+                                <text dx="345" dy="-260">男诗人</text>
                             </g>
                             <g fill="#c33e3c">
-                                <circle cx="100" cy="0" r="10"></circle>
-                                <text dx="145" dy="7">女诗人</text>
+                                <circle cx="600" cy="-280" r="30"></circle>
+                                <text dx="735" dy="-260">女诗人</text>
                             </g>
                         </g>
                     </g>

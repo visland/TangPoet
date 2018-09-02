@@ -63,7 +63,7 @@ export default class ChartPoetry extends React.Component{
         return(
         <div className="chart-style">
             <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet"> 
-                <image xlinkHref={bgimg} width="100%" height="100%"></image>
+                <image xlinkHref={bgimg} width="200%" height="100%"></image>
                 <g style={gstyle}>
                     <Flow />                   
                     {this.periodD.map((item, i) =>

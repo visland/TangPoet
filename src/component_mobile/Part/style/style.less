@@ -36,7 +36,7 @@
         color: black;
     }
     .legend{
-        font-size: 1rem;
+        font-size: 3rem;
     }
     .chart-style{
         width: 100%;
@@ -55,15 +55,21 @@
                 .stastic{
                     font-family: 'W1';
                     tspan{
-                        font-size: 0.7rem;
+                        font-size: 4rem;
                         font-weight: 600;
                         font-family: 'W2';
                         &.all{ fill: @allC}
                         &.male{ fill: @maleC}
                         &.female{ fill: @femaleC}
                     }
+                    text{
+                        font-size: 3em;
+                    }
                 }          
-                .group{ font-size: 1rem }
+                .group{ 
+                    font-size: 4rem;
+                    font-family: 'W2';
+                 }
             }
             
             g.flow-style {    
@@ -93,13 +99,15 @@
         }
     }
     .note-style{
-        width: 75%;
+        width: 80%;
         height:100px;
-        margin: -2% 0 0 15%;
+        margin: 7% 0 0 10%;
         font-family: W1;
-        font-size: 1.2em;
+        font-size: 0.8em;
+        line-height: 1.6em;
         text-align: justify;
         color: #443832;
+        text-indent: 2em;
     }
     
     .aside-style{
@@ -110,11 +118,13 @@
 
     @media only screen and (max-width: 768px) {
     .title-style{
-        font-size: 1em;
+        font-size: 1.2em;
+        padding-left: 20%;
     }
 	.note-style{
             height:100px;     
-            font-size: 0.2em;
+            font-size: 0.8em;
+            padding-bottom: 20%;
         }
     }
 }
