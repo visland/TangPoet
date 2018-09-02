@@ -48,7 +48,7 @@ export default class CiCloud extends React.Component {
     const options = {
         fontFamily: 'W1',
         minFontSize: 20 / cnt, 
-        maxFontSize: 76 / cnt,    
+        maxFontSize: 62 / cnt,    
         tooltip: {
             show: true,
             formatter: function(item) {
@@ -123,11 +123,11 @@ export default class CiCloud extends React.Component {
   render() {
     return (
       <div>
-        <div className="ci-note1"><p>全部诗人</p></div>
         <div
           className="ciCloud"
           ref={ref => {this.container = ref;}}>
         </div>
+        <div className="ci-note1"><p>全部诗人</p></div>
         <div className="ci-note2"><p>女性诗人</p></div>
         <Radio.Group 
           style={{ 

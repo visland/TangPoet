@@ -13,7 +13,7 @@ export default class DrawArea extends React.Component{
 
         return (
             <g width={width} transform={transform}>    
-                <image xlinkHref={Pimg} width="50" height="50"/> 
+                <image xlinkHref={Pimg} width="100" height="100"/> 
                 {flows.map((d, i) =>
                     <OneFlow
                         key={i} width={d.value}
@@ -21,8 +21,8 @@ export default class DrawArea extends React.Component{
                         name={d.data.name}
                         value={d.data.value}
                         symbol={this.Filter(statusList, d.data.state)}
-                        xFlow={width - Fwide * (Math.floor((i) / a + 1)) + MaxX - d.value}
-                        yFlow={Flong * (i - a * Math.floor((i) / a)) + MaxY - d.value + MaxY}
+                        xFlow={Flong * (i - a * Math.floor((i) / a)) + MaxY - d.value + MaxY}
+                        yFlow={width - Fwide * (Math.floor((i) / a + 1)) + MaxX - d.value}
                         btnstatus={btnstatus}
                         flowstate={d.data.state}
                     />

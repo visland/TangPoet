@@ -33,14 +33,14 @@ export default class ChartPoetry extends React.Component{
     }
     render(){    
         const { btnstatus, statusList, viewbox, gstyle, handleClick} = this.props  
-        let boxWidth = 2355,
-            boxHeight = 1054
+        let boxWidth = 7355,
+            boxHeight = 954
 
-        let svgWidth = boxWidth * 0.5,
-            svgHeight = boxHeight * 0.5
+        let svgWidth = boxWidth,
+            svgHeight = boxHeight
 
         let areaWidth = svgWidth / 4,
-            areHeight = svgHeight * 0.85
+            areHeight = svgHeight * 0.56
 
         
         const flowsdata = this.state.flowsdata
@@ -55,15 +55,15 @@ export default class ChartPoetry extends React.Component{
         let compD1 = this.period.map(d => ({ data: d, rowN: Math.ceil( d.value / a ) + 1})),
             compD2 = compD1.map( d => ({data: d.data, width: d.rowN * Fwide}))
 
-        let marginTop =  (areHeight -  Flong * a) / 2 
+        let marginTop =  (areHeight -  Flong * a) / 2 - 62
 
         this.periodD = this.compute(compD2)
         this.flowdata = this.state.flowsdata.map(d => ({ data: d, value: xScale(d.value) }))        
 
         return(
         <div className="chart-style">
-            <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet"> 
-                <image xlinkHref={bgimg} width="200%" height="100%"></image>
+            <svg viewBox="0 0 550 1300" preserveAspectRatio="xMinYMin meet"> 
+                <image xlinkHref={bgimg} width="115%" height="115%" x="-7%" y="2%"></image>
                 <g style={gstyle}>
                     <Flow />                   
                     {this.periodD.map((item, i) =>
@@ -71,8 +71,7 @@ export default class ChartPoetry extends React.Component{
                             key={i} 
                             flows={this.choosedata(item.data.time)} 
                             // Pimg={require("./img/" + item.data.imgsrc + ".png")}
-                            transform={`translate(${item.transform}, ${marginTop})`} 
-        
+                            transform={`translate(${marginTop},${item.transform - 400})`} 
                             btnstatus={btnstatus}
                             areaWidth={areaWidth}
                             areHeight={areHeight}
@@ -82,16 +81,16 @@ export default class ChartPoetry extends React.Component{
                             width={item.width}  
                         />
                     )}         
-                    <g transform="translate(780, -80)" >
+                    <g transform="translate(0, -480)" >
                         {statusList.map((d, i) =>
                             <g
                                 key={i}
-                                transform={`translate(${i * 75}, 0)`}
+                                transform={`translate(${i * 110}, 0)`}
                                 fill={d.state === btnstatus ? "#c33e3c" : "#cca851"}
                                 className="btn-style"
                             >  
-                                <use xlinkHref={d.symbol} width="35" height="35" />
-                                <text x="17.5" y="50">{d.state}</text>
+                                <use xlinkHref={d.symbol} width="40" height="40" />
+                                <text x="20" y="60" font-size="1.4em">{d.state}</text>
                                 <rect
                                     x1="-5" x2="60" y1="-5" y2="60"
                                     fill="white" data-status={d.state} onClick={handleClick}></rect>
@@ -99,7 +98,7 @@ export default class ChartPoetry extends React.Component{
                         )}
                     </g>       
                 </g>
-                <text x="1100"y='580'>鼠标悬浮可查看每位女诗人的具体信息</text>
+                <text x="200"y='190'font-size="1.4em">点击花朵查看每位女诗人的具体信息</text>
             </svg>
         </div>
         )

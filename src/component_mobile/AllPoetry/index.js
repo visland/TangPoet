@@ -75,6 +75,7 @@ export default class AllPoetry extends React.Component{
                                 <text dx="735" dy="-260">女诗人</text>
                             </g>
                         </g>
+                        <text dx="960" dy="-1300" font-size="3.5em">点击圆点查看诗人信息</text>
                     </g>
                 </svg>
             </div>

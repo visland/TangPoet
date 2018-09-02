@@ -1,5 +1,4 @@
 import React from 'react'
-import './style/style.less'
 
 export default class Aside extends React.Component{
     render(){

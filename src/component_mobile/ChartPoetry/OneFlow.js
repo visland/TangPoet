@@ -73,7 +73,7 @@ export default class OneFlow extends React.Component{
                 .style("filter", "url(#shadow)")
                 .transition(t)
                 .attr("fill", "rgba(255, 255, 255, 1)")
-                .attr("r", 80)
+                .attr("r", 75)
                 .style("fill-opacity", 1)
                 
             el.select("text.name").transition(t)
