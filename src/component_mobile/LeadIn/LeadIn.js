@@ -35,7 +35,7 @@ render() {
 				<svg className='subTitle'
 					width='100%'
 					height='100%'
-					viewBox="0 0 1920 2080"
+					viewBox="0 0 1920 2480"
 					preserveAspectRatio="xMinYMin meet">
           {/* <image className='ink'
           	xlinkHref={ ink } 
@@ -48,7 +48,8 @@ render() {
           	xlinkHref={ pic } 
 						width = "4920"
 						height = "2080"
-						x="-1450">
+						x="-1450"
+						y ="200">
 					</ image>
 
 					{/* <text className='titleText'>

@@ -91,12 +91,11 @@ export default class AllPoetry extends React.Component{
     }
     drawmsvg(){
         let choosed = [
-            { "name": "白居易", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
-            { "name": "白居易", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
-            { "name": "薛涛", "x": 0, "y": 0, "fame": "《送友人》", "sex": "female", "value": 93 },
-            { "name": "元稹", "x": 0, "y": 0, "fame": "《离思》", "sex": "male", "value": 910 },
-            { "name": "张若虚", "x": 0, "y": 0, "fame": "《春江花月夜》", "sex": "male", "value": 3 },
-            { "name": "王之涣", "x": 0, "y": 0, "fame": "《登鹳雀楼》", "sex": "male", "value": 7 }            
+            { "name": "白居易", "pic":"bjy", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
+            { "name": "薛涛","pic":"xt", "x": 0, "y": 0, "fame": "《送友人》", "sex": "female", "value": 93 },
+            { "name": "元稹","pic":"yz", "x": 0, "y": 0, "fame": "《离思》", "sex": "male", "value": 910 },
+            { "name": "张若虚", "pic":"zrx","x": 0, "y": 0, "fame": "《春江花月夜》", "sex": "male", "value": 3 },
+            { "name": "王之涣", "pic":"wzh","x": 0, "y": 0, "fame": "《登鹳雀楼》", "sex": "male", "value": 7 }            
         ]
         function compute(data, d){
             for( d of data){
@@ -127,7 +126,7 @@ export default class AllPoetry extends React.Component{
         let Pic = msvg.append("div").attr("class","pic"),
             Info = msvg.append("div").attr("class", "info")
         
-        Pic.append("img").attr("src", d =>`${require("./img/" + d.name + ".jpg")}`); 
+        Pic.append("img").attr("src", d =>`${require("./img/" + d.pic + ".jpg")}`); 
         Info.append("p").attr("class", "name").html(d => `${d.name}`)
         Info.append("p").html(d => `代表作${d.fame}`)
         Info.append("p").html(d => `作诗${d.value}首`)
