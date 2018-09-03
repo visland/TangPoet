@@ -32,6 +32,8 @@ export default class AllPoetry extends React.Component{
         let comData1 = this.group.map(d => ({ group: d.group, name: d.name, b : Math.ceil(d.value / a) }))
         let comData2 = comData1.map(d => ({ group: d.group, name: d.name, b: d.b, groupWidth: d.b * this.oneWide}))
         this.groupdata = this.compute(comData2)
+        this.computeSvg = this.computeSvg.bind(this)
+        this.drawmsvg = this.drawmsvg.bind(this)
         
     }
     compute(data){
@@ -85,10 +87,30 @@ export default class AllPoetry extends React.Component{
         return data 
     }
     componentDidMount(){    
+        window.addEventListener('resize', this.drawmsvg)
+        
         this.drawmsvg()
-        this.drawTooltip()   
+
+        this.drawTooltip()  
+        // window.onresize = function () { this.drawmsvg() } 
+    }
+    componentWillUnmount(){
+        // window.removeEventListener('resize', this.drawmsvg)
+    }
+    computeSvg(data, d){
+        for (d of data) {
+            let dom = d3.select(`[id=${d.name}]`).node(),
+                cx = dom.getAttribute("cx"),
+                cy = dom.getAttribute("cy"),
+                f = dom.getCTM()
+
+                d.x = cx * f.a + cy * f.c + f.e 
+                d.y = cx * f.b + cy * f.d + f.f
+            }
+            return data
     }
     drawmsvg(){
+        console.log('draw')
         let choosed = [
             { "name": "白居易", "pic":"bjy", "x": 0, "y": 0, "fame": "《长恨歌》", "sex": "male", "value": 3009 },
             { "name": "薛涛","pic":"xt", "x": 0, "y": 0, "fame": "《送友人》", "sex": "female", "value": 93 },
@@ -96,19 +118,22 @@ export default class AllPoetry extends React.Component{
             { "name": "张若虚", "pic":"zrx","x": 0, "y": 0, "fame": "《春江花月夜》", "sex": "male", "value": 3 },
             { "name": "王之涣", "pic":"wzh","x": 0, "y": 0, "fame": "《登鹳雀楼》", "sex": "male", "value": 7 }            
         ]
-        function compute(data, d){
-            for( d of data){
-                let dom = d3.select(`[id=${d.name}]`).node(),
-                    cx = dom.getAttribute("cx"),
-                    cy = dom.getAttribute("cy"),
-                    f = dom.getCTM()
+        // function computeSvg(data, d){
+        //     for( d of data){
+        //         let dom = d3.select(`[id=${d.name}]`).node(),
+        //             cx = dom.getAttribute("cx"),
+        //             cy = dom.getAttribute("cy"),
+        //             f = dom.getCTM()
               
-                    d.x = cx * f.a + cy * f.c + f.e 
-                    d.y = cx * f.b + cy * f.d + f.f
-            }
-            return data
-        }
-        let computedData = compute(choosed)
+        //             d.x = cx * f.a + cy * f.c + f.e 
+        //             d.y = cx * f.b + cy * f.d + f.f
+        //     }
+        //     return data
+        // }
+        let computedData = this.computeSvg(choosed)
+
+        d3.selectAll("#msvg").html('')
+        d3.selectAll(".msvg").html('')
 
         d3.select("#allpoetry").append("div").attr("id", "msvg")
             .selectAll(".msvg")
