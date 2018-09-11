@@ -50,24 +50,26 @@
 
 .footer{
 	height: 500px;
+	font-family: 'W1';
+	font-size: 1.2em;
 	position: @pos;
 	.resources{
-		position: @posA;
-		width: 30%;
-		left: 5%;
+		position: @pos;
+		width: 47%;
+		left: 6%;
+		top: 20%;
 		a{ color: #71684e}
 		a:hover{ color: #352823}
 
 	}
 	.footer-icon{
-		position: @posA;
+		position: @pos;
 		top:10%;
-		left:35%;
-		width:30%;
-		text-align: center;
+		left:6%;
 	}
 	.copyright{
-		width: 30%;
+		top: 30%;
+		width: 35%;
 		position: @posA;
 		right: 5%;
 	}
@@ -75,10 +77,11 @@
 	@media only screen and (max-width: 768px) {
 		.footer-icon{ 
 			top: 2%;
-			margin-bottom: 10%;
+			margin-bottom: -25%;
+			margin-top: 10%;
 			position: @pos;
 			img{
-				width: 70%; 
+				width: 90%; 
 		}}
 		.copyright, .resources {
 			text-align: left;

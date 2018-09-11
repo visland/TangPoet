@@ -2,7 +2,7 @@
   "name": "tang-poet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://visland.github.io/tangPoet",
+  "homepage": ".",
   "dependencies": {
     "ajv": "^6.5.2",
     "antd": "^3.7.2",
