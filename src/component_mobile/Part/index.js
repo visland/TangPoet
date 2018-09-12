@@ -58,7 +58,6 @@ export default class Part extends React.Component{
                 <div className="part-style" >
                     {/* <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/> */}
                     <Title title={this.info[0].title} />
-                    <ChartNote chartnote={this.info[0].chartnote} />
                     <AllPoetry viewbox={viewbox} gstyle={gstyle} svgHeight={svgHeight}/>
                 </div>
 
