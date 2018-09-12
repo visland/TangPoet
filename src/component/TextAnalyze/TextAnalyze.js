@@ -52,6 +52,7 @@ export default class TextAnalyze extends React.Component{
                         >{d.name}</span>
                     )} 
                     <img src={bgPic} alt="" />
+                    <p>点击文字可查看对应诗词</p>
                 </div>
                 <Carousel ref={slider => (this.slider = slider)} {...settings}>
                     {textData.map((d, i) =>

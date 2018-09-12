@@ -23,7 +23,7 @@ export default class Part extends React.Component{
         this.flows = FemaleData    
         this.statusList = StateList
         this.info =[ 
-            { "index": "1", "title": "唐代诗人创作一览", "chartnote": "纵观唐代文学史，男性诗人仍占领着绝对优势，女诗人的所有诗作，数量加起来不及白居易的三分之一，不足总量的千分之一。“女子作诗，其工也，难于男子；闺秀之名，其传也，亦难于才士。”写诗不易，存诗愈难。女性诗人平均每人作诗四首，多数仅有一篇诗作流传下来，其中写诗小能手薛涛一人独做九十三首，为唐代女诗人之首。" },
+            { "index": "1", "title": "唐代诗人创作一览", "chartnote": "纵观唐代文学史，男性诗人占领着绝对优势，女诗人的所有诗作，数量加起来不及白居易的三分之一，不足总量的千分之一。“女子作诗，其工也，难于男子；闺秀之名，其传也，亦难于才士。”写诗不易，存诗愈难。女性诗人平均每人作诗四首，多数仅有一篇诗作流传下来，其中写诗小能手薛涛一人独做九十三首，为唐代女诗人之首。" },
             { "index": "2", "title": "唐代女诗人全景图" },
         ]
         this.aside = [
@@ -57,7 +57,7 @@ export default class Part extends React.Component{
                     <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/>
                     <Title title={this.info[0].title} />
                     <AllPoetry viewbox={viewbox} gstyle={gstyle} svgHeight={svgHeight}/>
-                    <ChartNote chartnote={this.info[0].chartnote} />
+                    {/* <ChartNote chartnote={this.info[0].chartnote} /> */}
                 </div>
 
                 <div className="part-style" >

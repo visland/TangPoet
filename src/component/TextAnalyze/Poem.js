@@ -15,7 +15,7 @@ export default class Poem extends React.Component{
                     )}
                 </div>
 
-                <p className="info">{data.info}</p>
+                {/* <p className="info">{data.info}</p> */}
             </div>
         )
     }
