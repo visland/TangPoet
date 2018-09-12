@@ -46,7 +46,7 @@ export default class CiCloud extends React.Component {
       .domain(domain)
       .range(ColorRuler)
     const options = {
-        fontFamily: 'W1',
+        fontFamily: 'W2',
         minFontSize: 20 / cnt, 
         maxFontSize: 62 / cnt,    
         tooltip: {
