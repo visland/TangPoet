@@ -2,9 +2,7 @@ import React from 'react';
 import * as d3 from 'd3'
 import './style/LeadIn.css'
 import flower from './img/flower.png'
-import tree from './img/redTree.png'
 import pic from './img/1.jpg'
-import ink from './img/ink.png'
 
 export default class LeadIn extends React.Component {
 	constructor() {
@@ -20,13 +18,6 @@ export default class LeadIn extends React.Component {
 	}
 
 	componentDidMount() {
-		// d3.select(".subTitle")
-		//  .append("image")
-		//  .attr("x", 0)
-		//  .attr("y", 60)
-		//  .attr("height", 528 / 1.6)
-		//  .attr("width", 658 / 1.6)
-		//  .attr("xlink:href", tree)
 	}
 
 render() {
@@ -37,63 +28,11 @@ render() {
 					height='100%'
 					viewBox="0 0 1920 1080"
 					preserveAspectRatio="xMinYMin meet">
-          {/* <image className='ink'
-          	xlinkHref={ ink } 
-          	height='700' 
-          	width='700'
-          	x="620"
-          	y="220">
-					</ image> */}
 					<image 
           	xlinkHref={ pic } 
 						width = "1920"
 						height = "1080">
 					</ image>
-
-					{/* <text className='titleText'>
-          	<tspan           	
-          		x="1040" 
-          		y="150">我有柔情似水
-          	</ tspan>
-          	<tspan           	
-          		x="910" 
-          		y="320">亦有豪情万丈
-          		</ tspan>
-          </text>
-
-          <text className='subtitleText' 
-          	x="780" 
-          	y="500">
-          	唐代女诗人群像
-          </text>
-
-          <text className='appendText'>
-            <tspan           	
-          		x="1850" 
-          		y="50">历观唐以雅道奖士类，而闺阁英秀
-          	</ tspan>
-          	<tspan           	
-          		x="1800" 
-          		y="50">亦能熏染，锦心绣口，蕙情兰性，足可尚矣
-          	</ tspan>
-            <tspan           	
-          		x="1750" 
-          		y="50">中间如李季兰、鱼玄机
-          	</ tspan>
-            <tspan           	
-          		x="1700" 
-          		y="50">皆跃出方外，修清静之教，陶写幽怀，留连光景
-          	</ tspan>
-          	<tspan           	
-          		x="1650" 
-          		y="50">逍遥闲暇之功，无非云水之念
-          	</ tspan>
-						<tspan           	
-          		x="1600" 
-          		y="400">辛文房·唐才子传
-          	</ tspan>
-          </text> */}
-
 					<image xlinkHref={ flower } height='90' width='90'>
 						<animateMotion
 							path= { this.linePath(this.lines[0]) }

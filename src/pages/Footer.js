@@ -1,7 +1,5 @@
 import React from 'react'
 import './style/style.less'
-import zju from './style/zju.png'
-import xhw from './style/xhw.png'
 import logo from './style/logo.png'
 
 export default class Footer extends React.Component{
@@ -13,7 +11,7 @@ export default class Footer extends React.Component{
                 </div>
                 <div className="resources">
                     <p><strong>数据来源：</strong></p> 
-                    <p><a href="https://github.com/chinese-poetry/chinese-poetry">1.chinese-poetry，Github上的中华古诗词数据库，收录唐朝超过3500位诗人约5.5万首诗。</a></p> 
+                    <p><a href="https://github.com/chinese-poetry/chinese-poetry">1.chinese-poetry，Github上的中华古诗词数据库，收录唐朝超3500位诗人约5.5万首诗。</a></p> 
                     <p>2.由哈佛大学编纂的《中国历代人物传记资料库》（CBDB）</p> 
                     <p><a href="http: //www.shicimingju.com/">3.诗词名句网</a></p> 
                     <p><strong>关系数据处理方式：</strong></p> 

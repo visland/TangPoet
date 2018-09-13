@@ -1,10 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3'
 import './style/LeadIn.css'
-import flower from './img/flower.png'
-import tree from './img/redTree.png'
 import pic from './img/1.jpg'
-import ink from './img/ink.png'
 
 export default class LeadIn extends React.Component {
 	constructor() {
