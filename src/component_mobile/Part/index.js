@@ -3,7 +3,6 @@ import ChartNote from './ChartNote'
 import Title from './Title'
 import ChartPoetry from '../ChartPoetry/ChartPoetry'
 import AllPoetry from '../AllPoetry'
-import Aside from './Aside'
 import FemaleData from './data/female_info.json'
 import StateList from './data/stateList.json'
 import * as d3 from 'd3'
@@ -51,20 +50,21 @@ export default class Part extends React.Component{
         let layout2 = { left: mleft, top: mtop }
 
         let viewbox = `0 0 ${chartWidth} ${chartHeight}`,
-            gstyle = { transform: `translate(${layout2.left}, ${layout2.top})` }   
+            gstyle = { transform: `translate(8%, 41%)` }   
 
         return(
             <div id="part1">
                 <div className="part-style" >
-                    {/* <Aside asideSrc={require("./style/" + this.aside[0].src + ".png")} asideStyle={this.aside[0].style}/> */}
                     <Title title={this.info[0].title} />
                     <AllPoetry viewbox={viewbox} gstyle={gstyle} svgHeight={svgHeight}/>
                 </div>
 
                 <div className="part-style" >
-                    {/* <Aside asideSrc={require("./style/" + this.aside[1].src + ".png")} asideStyle={this.aside[1].style}/> */}
                     <Title title={this.info[1].title}/>
                     <ChartNote chartnote={this.Filter(this.statusList, this.state.status)} />
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <ChartPoetry 
                         flows={this.flows} 
                         btnstatus={this.state.status}

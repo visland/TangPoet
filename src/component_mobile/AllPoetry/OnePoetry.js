@@ -39,8 +39,8 @@ export default class OnePoetry extends React.Component{
                     )}
                 </g>
                 <text className="group"
-                    dx={100}
-                    dy={-810-h}
+                    dx="10%"
+                    dy="-31.5%"
                 >{name}</text>
             </g>
         )

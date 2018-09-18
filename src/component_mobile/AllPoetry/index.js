@@ -51,32 +51,30 @@ export default class AllPoetry extends React.Component{
             <div className="chart-style" id="allpoetry">
                 <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
                     <image xlinkHref={bgimg} width="110%" height="110%" x="-4.4%" y="-3%"></image>
-                    <g style={gstyle}>
-                    {this.groupdata.map((d, i) => 
-                        <OnePoetry 
-                            key={i}
-                            transform={`translate(${svgHeight * 0.01}, ${d.transform})`} 
-                            data={this.choosedata(d.group)}
-                            dotR={this.radius}
-                            numW={d.b}
-                            oneWide={this.oneWide}
-                            height={this.areaHeight}
-                            name={d.name}
-                            width={d.groupWidth}
-                        />
-                    )}
-                        <g className="legend" transform="translate(100, -1200)">
+                        {this.groupdata.map((d, i) => 
+                            <OnePoetry
+                                key={i}
+                                transform={`translate(${svgHeight * 0.01+120}, ${d.transform + 1560})`} 
+                                data={this.choosedata(d.group)}
+                                dotR={this.radius}
+                                numW={d.b}
+                                oneWide={this.oneWide}
+                                height={this.areaHeight}
+                                name={d.name}
+                                width={d.groupWidth}
+                            />
+                        )}
+                        <g className="legend">
                             <g fill="#75623a">
-                                <circle cx="200" cy="-280" r="30"></circle>
-                                <text dx="345" dy="-260">男诗人</text>
+                                <circle cx="425" cy="115" r="30"></circle>
+                                <text dx="545" dy="130">男诗人</text>
                             </g>
                             <g fill="#c33e3c">
-                                <circle cx="600" cy="-280" r="30"></circle>
-                                <text dx="735" dy="-260">女诗人</text>
+                                <circle cx="815" cy="115" r="30"></circle>
+                                <text dx="935" dy="130">女诗人</text>
                             </g>
                         </g>
-                        <text dx="960" dy="-1300" font-size="3.5em">点击圆点查看诗人信息</text>
-                    </g>
+                    <text dx="960" dy="310" font-size="3.5em">点击圆点查看诗人信息</text>
                 </svg>
             </div>
         )

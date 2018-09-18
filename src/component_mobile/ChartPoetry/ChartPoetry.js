@@ -64,14 +64,13 @@ export default class ChartPoetry extends React.Component{
         <div className="chart-style">
             <svg viewBox="0 0 550 1300" preserveAspectRatio="xMinYMin meet"> 
                 <image xlinkHref={bgimg} width="115%" height="115%" x="-7%" y="2%"></image>
-                <g style={gstyle}>
                     <Flow />                   
                     {this.periodD.map((item, i) =>
                         <DrawArea 
                             key={i} 
                             flows={this.choosedata(item.data.time)} 
                             // Pimg={require("./img/" + item.data.imgsrc + ".png")}
-                            transform={`translate(${marginTop},${item.transform - 400})`} 
+                            transform={`translate(${marginTop + 40},${item.transform + 130})`} 
                             btnstatus={btnstatus}
                             areaWidth={areaWidth}
                             areHeight={areHeight}
@@ -81,11 +80,10 @@ export default class ChartPoetry extends React.Component{
                             width={item.width}  
                         />
                     )}         
-                    <g transform="translate(0, -480)" >
                         {statusList.map((d, i) =>
                             <g
                                 key={i}
-                                transform={`translate(${i * 110}, 0)`}
+                                transform={`translate(${i * 110 + 50}, 60)`}
                                 fill={d.state === btnstatus ? "#c33e3c" : "#cca851"}
                                 className="btn-style"
                             >  
@@ -95,9 +93,7 @@ export default class ChartPoetry extends React.Component{
                                     x1="-5" x2="60" y1="-5" y2="60"
                                     fill="white" data-status={d.state} onClick={handleClick}></rect>
                             </g>
-                        )}
-                    </g>       
-                </g>
+                        )}     
                 <text x="200"y='190'font-size="1.4em">点击花朵查看每位女诗人的具体信息</text>
             </svg>
         </div>
