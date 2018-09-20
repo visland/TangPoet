@@ -8,7 +8,7 @@ import FemaleData from './data/female_info.json'
 import StateList from './data/stateList.json'
 import * as d3 from 'd3'
 
-import './style/style2.less'
+import '../../component_mobile/Part/style/style1.less'
 
 export default class Part extends React.Component{
     constructor(props){

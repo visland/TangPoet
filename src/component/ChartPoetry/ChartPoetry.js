@@ -64,15 +64,14 @@ export default class ChartPoetry extends React.Component{
         <div className="chart-style">
             <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet"> 
                 <image xlinkHref={bgimg} width="100%" height="100%"></image>
-                <g style={gstyle}>
+                <text x="1100"y='580'>鼠标悬浮可查看每位女诗人的具体信息</text>
                     <Flow />                   
                     {this.periodD.map((item, i) =>
                         <DrawArea 
                             key={i} 
                             flows={this.choosedata(item.data.time)} 
                             // Pimg={require("./img/" + item.data.imgsrc + ".png")}
-                            transform={`translate(${item.transform}, ${marginTop})`} 
-        
+                            transform={`translate(${item.transform + 100}, ${marginTop + 80})`} 
                             btnstatus={btnstatus}
                             areaWidth={areaWidth}
                             areHeight={areHeight}
@@ -98,8 +97,6 @@ export default class ChartPoetry extends React.Component{
                             </g>
                         )}
                     </g>       
-                </g>
-                <text x="1100"y='580'>鼠标悬浮可查看每位女诗人的具体信息</text>
             </svg>
         </div>
         )

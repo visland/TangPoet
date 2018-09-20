@@ -7,7 +7,7 @@ import Mobile from './pages/Mobile.js'
 import registerServiceWorker from './registerServiceWorker';
 
 let isMobile = ()=>{
-    return window.screen.availHeight > window.screen.availWidth && window.screen.availWidth < 1024
+    return window.screen.availWidth <= 768
 }
 
 ReactDOM.render(

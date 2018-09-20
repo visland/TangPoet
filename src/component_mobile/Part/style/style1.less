@@ -109,6 +109,118 @@
     }
 }
 
+@margin-left: 5px;
+
+@pos: relative;
+@posA: absolute;
+
+@partH: 50%;
+@chartH: 75%;
+
+@fontZW: W1;
+
+@allC: rgb(3, 3, 3);
+@maleC:  #75623a;
+@femaleC: #c33e3c;
+
+@noevent:#534931;
+@hover: #e9706e;
+@choose: #c33e3c;
+
+.hover-style{
+    fill: transparent;
+    visibility: hidden;
+    pointer-events: all;
+    cursor: pointer; 
+}
+.part-style{
+    left: 7.5%;
+    width: 85%; 
+    position: @pos;
+    padding-top: 5%;
+    margin-bottom: 5%;
+
+    .title-style{
+        margin: 0 0 -3% 8%;  
+        font-size:1.9em;
+        font-family: "W2";
+        color: black;
+    }
+    .legend{
+        font-size: 1rem;
+    }
+    .chart-style{
+        width: 100%;
+        left: 0;
+        position: @pos;        
+        svg{
+            width: 100%;
+            height: 100%;
+            position: @pos;
+            text{
+                 text-anchor: middle;
+                 font-family: 'W1'; 
+            }
+            g.group-style{
+                circle{cursor: pointer;}             
+                .stastic{
+                    font-family: 'W1';
+                    tspan{
+                        font-size: 0.7rem;
+                        font-weight: 600;
+                        font-family: 'W2';
+                        &.all{ fill: @allC}
+                        &.male{ fill: @maleC}
+                        &.female{ fill: @femaleC}
+                    }
+                }          
+                .group{ font-size: 1rem }
+            }
+            
+            g.flow-style {    
+                circle.hover{ .hover-style;}            
+                circle.backgroud{
+                    fill-opacity: 0;
+                    fill: rgba(255, 255, 255, 1);
+                    pointer-events: none;
+                    stroke-width: 0.8px;
+                }
+                text.number{ 
+                    font-size: 15px;
+                    font-family: "W1";
+                    opacity: 0;
+                }
+                text.name{ 
+                    font-size: 12px;
+                    font-family: "W2";
+                    opacity: 0;
+                }
+            }
+            g.btn-style{
+                transition: all 1s ease-out;
+                rect{ .hover-style; width:60px; height: 60px;}
+                &:hover { fill: @hover;}
+            }
+        }
+    }
+    .note-style{
+        width: 75%;
+        height:100px;
+        margin: -2% 0 0 15%;
+        font-family: W1;
+        font-size: 1.2em;
+        text-align: justify;
+        color: #443832;
+    }
+    
+    .aside-style{
+        width: 20%;
+        position: @posA;
+        z-index: 4;
+    }
+}
+
+
 
 
 @media only screen and (max-width: 768px) {

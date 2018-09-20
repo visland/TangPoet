@@ -53,11 +53,10 @@ export default class AllPoetry extends React.Component{
             <div className="chart-style" id="allpoetry">
                 <svg viewBox={viewbox} preserveAspectRatio="xMinYMin meet">
                     <image xlinkHref={bgimg} width="100%" height="100%"></image>
-                    <g style={gstyle}>
                     {this.groupdata.map((d, i) => 
                         <OnePoetry 
                             key={i}
-                            transform={`translate(${d.transform}, ${svgHeight    * 0.05})`} 
+                            transform={`translate(${d.transform + 100}, ${svgHeight* 0.05 + 90})`} 
                             data={this.choosedata(d.group)}
                             dotR={this.radius}
                             numW={d.b}
@@ -67,7 +66,7 @@ export default class AllPoetry extends React.Component{
                             width={d.groupWidth}
                         />
                     )}
-                        <g className="legend" transform="translate(900, -50)">
+                        <g className="legend" transform="translate(950, 30)">
                             <g fill="#75623a">
                                 <circle cx="0" cy="0" r="10"></circle>
                                 <text dx="45" dy="7">男诗人</text>
@@ -77,7 +76,6 @@ export default class AllPoetry extends React.Component{
                                 <text dx="145" dy="7">女诗人</text>
                             </g>
                         </g>
-                    </g>
                 </svg>
             </div>
         )

@@ -21,7 +21,7 @@ export default class OnePoetry extends React.Component{
                     <text dx={500} dy={-810-h}><tspan className="male">{stastic.mnum}</tspan>位男诗人</text>
                     <text dx={800} dy={-810-h}><tspan className="female">{stastic.fnum}</tspan>位女诗人</text>
                 </g>
-                <g transform="translate(0, 40)">       
+                <g className="dots" transform="translate(0, 40)">       
                     {data.map((d, i) => 
                         <g className="poetry-style" key={i}>           
                             <circle
